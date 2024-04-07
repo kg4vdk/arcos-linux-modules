@@ -7,7 +7,7 @@ Issues for arcOS Linux and QRV Modules may be reported here.
 
 ## QRV Modules for arcOS Linux
 
-Example directory structure for QRV modules
+Example directory structure for QRV modules:
 
 <pre>/media/user/ARCOS-DATA/
 ├── QRV
