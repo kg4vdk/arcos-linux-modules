@@ -1,4 +1,9 @@
-# QRV Modules for arcOS-Linux
+# Welcome to arcOS Linux!
+arcOS Linux can be obtained at https://arcos-linux.com
+
+Issues for arcOS and QRV Modules may be reported here. 
+
+## QRV Modules for arcOS Linux
 
 Example directory structure for QRV modules
 
