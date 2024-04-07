@@ -2,7 +2,7 @@
 
 Example directory structure for QRV modules
 
-/media/user/ARCOS-DATA/
+<pre>/media/user/ARCOS-DATA/
 ├── QRV
     └── KG4VDK
         ├── MODULES
@@ -26,3 +26,4 @@ Example directory structure for QRV modules
         |   |   └── save-winlink.sh
         │   └── WINLINK.sh
         └── wallpaper.jpg   <-- Personal wallpaper (overrides default)
+        </pre>
