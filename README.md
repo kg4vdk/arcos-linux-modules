@@ -1,4 +1,4 @@
-# Welcome to arcOS Linux!
+# Welcome to the arcOS Linux Github repository!
 ### arcOS Linux can be obtained by visiting https://arcos-linux.com
 
 ### Issues for arcOS Linux and QRV Modules may be reported here.
