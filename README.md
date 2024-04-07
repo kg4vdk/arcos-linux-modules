@@ -3,9 +3,7 @@ arcOS Linux can be obtained by visiting https://arcos-linux.com
 
 Issues for arcOS Linux and QRV Modules may be reported here.
 
-Donations of any amount are appreciated! <a href="https://google.com"><button type="button">Click Me!</button></a>
-
-<a href="https://www.paypal.com/donate/?hosted_button_id=4SAKRN2MH7NEW"><button name="button">Donate with PayPal</button></a>
+[Donations](https://www.paypal.com/donate/?hosted_button_id=4SAKRN2MH7NEW) of any amount are greatly appreciated!
 
 ## QRV Modules for arcOS Linux
 
