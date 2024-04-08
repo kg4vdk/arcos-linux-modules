@@ -16,22 +16,23 @@ Example directory structure for QRV modules:
         │   ├── APRS
         |   |   ├── tiledir               <-- Offline maps
         |   |   ├── yaac-profile.tgz      <-- Copy of saved profile, named yaac-profile.tgz to be active
-        │   │   ├── KG4VDK-9_Mobile.tgz   <-- Saved profile (with descriptive name)
-        │   │   ├── KG4VDK_Home.tgz       <-- Saved profile (with descriptive name)
+        │   │   ├── KG4VDK-9_Mobile.tgz   
+        │   │   ├── KG4VDK_Home.tgz       
         |   |   └── save-aprs.sh          <-- Script to save the current APRS configuration
         │   ├── APRS.sh                   <-- Module script ("hide" inside the APRS directory to DISABLE)
         │   ├── FL-SUITE
-        |   |   ├── fl-suite.tgz          <-- Copy of saved profile, named fl-suite.tgz to be active
-        │   │   ├── Tuesday-Diginet.tgz   <-- Saved profile (with descriptive name)
+        |   |   ├── fl-suite.tgz          <-- Copy of saved configuration, named fl-suite.tgz to be active
+        │   │   ├── fl-suite_Tuesday-Diginet.tgz  
         |   |   └── save-fl-suite.sh      <-- Script to save the current FL-SUITE configuration
         │   ├── FL-SUITE.sh               <-- Module script ("hide" inside the FL-SUITE directory to DISABLE)
         │   ├── WIFI
         │   │   ├── Home.nmconnection
-        │   │   ├── Mobile-Hotspot.nmconnection
+        │   │   ├── EMA.nmconnection
         │   │   └── save-wifi.sh          <-- Script to save the current WIFI connections
         │   ├── WIFI.sh                   <-- Module script ("hide" inside the WIFI directory to DISABLE)
         │   ├── WINLINK
-        │   │   ├── config.json           <-- Customized config.json with aliases and password
+        │   │   ├── config.json           <-- Copy of saved config, named config.json to be active
+        |   |   ├── config_with-aliases.json
         |   |   └── save-winlink.sh       <-- Script to save the current WINLINK configuration
         │   └── WINLINK.sh                <-- Module script ("hide" inside the WINLINK directory to DISABLE)
         └── wallpaper.jpg                 <-- Personal wallpaper (overrides default)
