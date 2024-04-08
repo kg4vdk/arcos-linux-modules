@@ -14,23 +14,25 @@ Example directory structure for QRV modules:
     └── KG4VDK
         ├── MODULES
         │   ├── APRS
-        |   |   ├── yaac-profile.tgz     <-- Copy of one of the below, named yaac-profile.tgz
+        |   |   ├── tiledir   <-- Offline maps
+        |   |   ├── yaac-profile.tgz     <-- Copy of saved profile, named yaac-profile.tgz to be active
         │   │   ├── KG4VDK-9_Mobile.tgz  <-- Saved profile (with descriptive name)
         │   │   ├── KG4VDK_Home.tgz      <-- Saved profile (with descriptive name)
-        |   |   └── save-aprs.sh         <-- Script to save the current profile
-        │   ├── APRS.sh   <-- Module script (place inside the APRS directory to disable)
+        |   |   └── save-aprs.sh         <-- Script to save the current APRS configuration
+        │   ├── APRS.sh   <-- Module script ("hide" inside the APRS directory to DISABLE)
         │   ├── FL-SUITE
-        │   │   ├── fl-suite.tgz
-        |   |   └── save-fl-suite.sh
-        │   ├── FL-SUITE.sh
+        |   |   ├── fl-suite.tgz          <-- Copy of saved profile, named fl-suite.tgz to be active
+        │   │   ├── Tuesday-Diginet.tgz   <-- Saved profile (with descriptive name)
+        |   |   └── save-fl-suite.sh      <-- Script to save the current FL-SUITE configuration
+        │   ├── FL-SUITE.sh   <-- Module script ("hide" inside the FL-SUITE directory to DISABLE)
         │   ├── WIFI
         │   │   ├── Home.nmconnection
         │   │   ├── Mobile-Hotspot.nmconnection
-        │   │   └── save-wifi.sh
-        │   ├── WIFI.sh
+        │   │   └── save-wifi.sh   <-- Script to save the current WIFI connections
+        │   ├── WIFI.sh   <-- Module script ("hide" inside the WIFI directory to DISABLE)
         │   ├── WINLINK
-        │   │   ├── config.json   <-- Customized config.json with aliases and password
-        |   |   └── save-winlink.sh
-        │   └── WINLINK.sh
+        │   │   ├── config.json       <-- Customized config.json with aliases and password
+        |   |   └── save-winlink.sh   <-- Script to save the current WINLINK configuration
+        │   └── WINLINK.sh   <-- Module script ("hide" inside the WINLINK directory to DISABLE)
         └── wallpaper.jpg   <-- Personal wallpaper (overrides default)
         </pre>
