@@ -24,18 +24,22 @@ module_commands () {
 
 FL_SUITE_CONFIG=$MODULE_DIR/fl-suite.tgz
 
-tar -C $HOME -xzf $FL_SUITE_CONFIG
+if [ -f $FL_SUITE_CONFIG ]; then
+	tar -C $HOME -xzf $FL_SUITE_CONFIG
+fi
 
 mkdir -p $MODULE_DIR/{logs,FLAMP,ICS}
 mkdir -p $MODULE_DIR/FLAMP/{rx,tx}
 mkdir -p $MODULE_DIR/ICS/{messages,templates}
 
-rm -rf $HOME/.fldigi/logs
-rm -rf $HOME/.nbems/{FLAMP,ICS}
+rm -rf $HOME/.fldigi/logs $HOME/.nbems/FLAMP/{rx,tx,scripts} $HOME/.nbems/ICS/{messages,templates}
 
 ln -sTF $MODULE_DIR/logs $HOME/.fldigi/logs
-ln -sTF $MODULE_DIR/FLAMP $HOME/.nbems/FLAMP
-ln -sTF $MODULE_DIR/ICS $HOME/.nbems/ICS
+ln -sTF $MODULE_DIR/FLAMP/rx $HOME/.nbems/FLAMP/rx
+ln -sTF $MODULE_DIR/FLAMP/tx $HOME/.nbems/FLAMP/tx
+ln -sTF $MODULE_DIR/FLAMP/scripts $HOME/.nbems/FLAMP/scripts
+ln -sTF $MODULE_DIR/ICS/messages $HOME/.nbems/ICS/messages
+ln -sTF $MODULE_DIR/ICS/templates $HOME/.nbems/ICS/templates
 
 } # END OF MODULE COMMANDS FUNCTION
 
