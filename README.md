@@ -13,7 +13,7 @@ Example directory structure for QRV modules:
 <pre>
 ├── /media/user/ARCOS-DATA/QRV
     └── KG4VDK
-        ├── MODULES
+        ├── arcos-linux-modules
         │   ├── APRS
         |   |   ├── tiledir               <-- Offline maps
         |   |   ├── aprs-profile          <-- Extracted contents of desired saved profile *.tgz
