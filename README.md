@@ -1,10 +1,10 @@
 # Welcome to the arcOS Linux Github repository!
 ### arcOS Linux can be obtained by visiting https://arcos-linux.com
-arcOS Linux source files can be obtained <a target="_blank" href="https://s3.amazonaws.com/arcos-linux.com/arcOS-21.3-QRV.tar.gz">here</a>
+arcOS Linux source files can be obtained [here](https://s3.amazonaws.com/arcos-linux.com/arcOS-21.3-QRV.tar.gz)
 
 ### Issues for arcOS Linux and QRV Modules may be reported here.
 
-<a target="_blank" href="https://www.paypal.com/donate/?hosted_button_id=4SAKRN2MH7NEW">Donations</a> of any amount are greatly appreciated!
+[Donations](https://www.paypal.com/donate/?hosted_button_id=4SAKRN2MH7NEW) of any amount are greatly appreciated and help keep the project going!
 
 ## QRV Modules for arcOS Linux
 
