@@ -24,12 +24,12 @@ module_commands () {
 
 YAAC_DIR=$HOME/YAAC
 YAAC_PROFILE_DIR=$HOME/.java/.userPrefs/org/ka2ddo/yaac/Profiles
-YAAC_PROFILE=$MODULE_DIR/yaac-profile.tgz
+YAAC_PROFILE=$MODULE_DIR/aprs-profile
 
 mkdir -p $YAAC_DIR
 
-if [ -f $YAAC_PROFILE ]; then
-    rm -rf $YAAC_PROFILE_DIR/arcOS && tar -C $YAAC_PROFILE_DIR -xzf $YAAC_PROFILE
+if [ -d $YAAC_PROFILE ]; then
+    rm -rf $YAAC_PROFILE_DIR/arcOS && cp -r $YAAC_PROFILE $YAAC_PROFILE_DIR/arcOS
 fi
 
 mkdir -p $MODULE_DIR/tiledir
