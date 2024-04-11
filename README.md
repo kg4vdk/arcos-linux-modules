@@ -8,6 +8,10 @@ arcOS Linux source files can be obtained [here](https://s3.amazonaws.com/arcos-l
 
 ## QRV Modules for arcOS Linux
 
+To install the QRV modules, clone the repository into <code>/media/user/ARCOS-DATA/QRV/CALLSIGN</code>:
+
+<code>user@arcOS:~$ git clone https://github.com/kg4vdk/arcos-linux-modules /media/user/ARCOS-DATA/QRV/CALLSIGN <--Replace "CALLSIGN" with your callsign</code>
+
 Example directory structure for QRV modules:
 
 <pre>
