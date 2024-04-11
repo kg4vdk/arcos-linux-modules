@@ -1,4 +1,7 @@
 #!/bin/bash
 
-tar -C $HOME/.java/.userPrefs/org/ka2ddo/yaac/Profiles -czf yaac-profile_$(date +"%Y%m%d%H%M").tgz arcOS
+cp -r $HOME/.java/.userPrefs/org/ka2ddo/yaac/Profiles/arcOS /tmp/aprs-profile
 
+tar -C /tmp -czf aprs-profile_$(date +"%Y%m%d%H%M").tgz aprs-profile
+
+rm -rf /tmp/aprs-profile
