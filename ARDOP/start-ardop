@@ -1,0 +1,9 @@
+#!/bin/bash
+echo
+echo "===== ARDOP-MODEM ====="
+
+# Muting Auto Gain Control on USB audio device
+amixer -c 5 sset "Auto Gain Control" mute
+
+# Run ardopcf
+ardopcf --logdir ~/ardop_logs -p /dev/digirig 8515 plughw:5,0 plughw:5,0

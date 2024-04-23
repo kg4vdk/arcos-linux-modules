@@ -1,0 +1,9 @@
+[Desktop Entry]
+Name=Start ARDOP Modem
+GenericName=Start ARDOP Modem
+Comment=Start ARDOP Modem
+Exec=gnome-terminal --class=start-ardop --hide-menubar --title="ARDOP Modem" --zoom=0.75 -- start-ardop
+Icon=ardop-custom-icon
+Terminal=false
+Type=Application
+Categories=Network;HamRadio;
