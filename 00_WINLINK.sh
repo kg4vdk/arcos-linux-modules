@@ -24,6 +24,8 @@ module_commands () {
 
 cp $MODULE_DIR/config.json $HOME/.config/pat/config.json
 
+cp $MODULE_DIR/rmslist.json $HOME/.local/share/pat/rmslist.json
+
 for mailbox in archive in out sent; do
     rm -rf $HOME/.local/share/pat/mailbox/$MYCALL/$mailbox
     mkdir -p $MODULE_DIR/$mailbox
