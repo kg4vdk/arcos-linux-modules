@@ -2,6 +2,8 @@
 echo
 echo "===== ARDOP-MODEM ====="
 
+mkdir -p $HOME/.ardop_logs
+
 # Muting Auto Gain Control on USB audio device
 amixer -c 5 sset "Auto Gain Control" mute
 
