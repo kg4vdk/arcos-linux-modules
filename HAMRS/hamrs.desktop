@@ -1,9 +1,0 @@
-[Desktop Entry]
-Name=HamRS
-GenericName=Amateur Radio Logging
-Comment=Amateur Radio Logging
-Exec=/media/user/ARCOS-DATA/QRV/KG4VDK/arcos-linux-modules/HAMRS/hamrs-1.0.7-linux-x86_64.AppImage --no-sandbox
-Icon=hamrs
-Terminal=false
-Type=Application
-Categories=Network;HamRadio;
