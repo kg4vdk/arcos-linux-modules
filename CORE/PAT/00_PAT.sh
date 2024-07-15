@@ -22,15 +22,14 @@ LOGFILE=$MODULE_DIR/$MODULE.log
 ### MODULE COMMANDS FUNCTION ###
 module_commands () {
 
-if [ ! -f $MODULE_DIR/config.json ]; then
+if [ -f $MODULE_DIR/config.json ]; then
 	cp $MODULE_DIR/config.json $HOME/.config/pat/config.json
 fi
 
-if [ ! -f $MODULE_DIR/rmslist.json ]; then
-	cp $HOME/.local/share/pat/rmslist.json $MODULE_DIR/rmslist.json
-	rm $HOME/.local/share/pat/rmslist.json
-	ln -s $MODULE_DIR/rmslist.json $HOME/.local/share/pat/rmslist.json
+if [ -f $MODULE_DIR/rmslist.json ]; then
+	ln -sf $MODULE_DIR/rmslist.json $HOME/.local/share/pat/rmslist.json
 else
+	cp $HOME/.local/share/pat/rmslist.json $MODULE_DIR/rmslist.json
 	rm $HOME/.local/share/pat/rmslist.json
 	ln -s $MODULE_DIR/rmslist.json $HOME/.local/share/pat/rmslist.json
 fi
