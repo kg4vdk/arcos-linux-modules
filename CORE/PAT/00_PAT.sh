@@ -23,8 +23,7 @@ LOGFILE=$MODULE_DIR/$MODULE.log
 module_commands () {
 
 if [ ! -f $MODULE_DIR/config.json ]; then
-	rm $HOME/.config/pat/config.json
-	ln -s $MODULE_DIR/config.json $HOME/.config/pat/config.json
+	cp $MODULE_DIR/config.json $HOME/.config/pat/config.json
 fi
 
 if [ ! -f $MODULE_DIR/rmslist.json ]; then
