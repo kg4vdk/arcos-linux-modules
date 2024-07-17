@@ -1,7 +1,7 @@
 # Welcome to the arcOS Linux Github repository!
 ### arcOS Linux can be obtained by visiting https://arcos-linux.com
 
-Modules are currently tested to work on arcOS-21.3_QRV_Delta
+Modules are currently tested to work on arcOS-21.3_QRV_Echo
 
 ### Issues for arcOS Linux and QRV Modules may be reported here.
 
