@@ -15,16 +15,14 @@ MYLOC=$(head -n 5 $HOME/.station-info | tail -n 1)
 
 # PATHS
 ARCOS_DATA=/media/$USER/ARCOS-DATA
-MODULE_DIR=$ARCOS_DATA/QRV/$MYCALL/arcos-linux-modules/$MODULE
+MODULE_DIR=$ARCOS_DATA/QRV/$MYCALL/arcos-linux-modules/COMMUNITY/$MODULE
 LOGFILE=$MODULE_DIR/$MODULE.log
 ########################
 
 ### MODULE COMMANDS FUNCTION ###
 module_commands () {
 
-sudo timedatectl set-timezone US/Central
-
-#sudo dpkg -i $MODULE_DIR/packages/*.deb
+sudo dpkg -i $MODULE_DIR/packages/*.deb
 
 sudo cp $MODULE_DIR/nginx.conf /etc/nginx/nginx.conf
 sudo cp $MODULE_DIR/sites-available/default /etc/nginx/sites-available/default
