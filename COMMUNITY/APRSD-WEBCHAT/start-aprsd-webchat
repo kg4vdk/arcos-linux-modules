@@ -1,0 +1,11 @@
+#!/bin/bash
+
+gtk-launch start-direwolf &
+
+sleep 3
+
+gnome-terminal --class=hipchat --hide-menubar --title="APRSD" --zoom=0.75 -- $HOME/.local/bin/aprsd webchat -c $HOME/.config/aprsd/aprsd.yml &
+
+sleep 3
+
+firefox localhost:8888 &

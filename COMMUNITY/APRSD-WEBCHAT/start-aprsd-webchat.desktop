@@ -1,0 +1,9 @@
+[Desktop Entry]
+Name=APRSD WEBCHAT
+GenericName=APRSD WEBCHAT
+Comment=APRSD WEBCHAT
+Exec=start-aprsd-webchat
+Icon=hipchat
+Terminal=false
+Type=Application
+Categories=HamRadio;

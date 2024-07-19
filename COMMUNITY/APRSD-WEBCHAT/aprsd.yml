@@ -1,0 +1,26 @@
+[DEFAULT]
+callsign = XXXCALLSIGNXXX
+[admin]
+[aprs_fi]
+[aprs_network]
+enabled = false
+[aprs_registry]
+[avwx_plugin]
+[email_plugin]
+[fake_client]
+[kiss_serial]
+[kiss_tcp]
+enabled = true
+host = localhost
+port = 8001
+[location_plugin]
+[logging]
+[owm_weather_plugin]
+[query_plugin]
+[rpc_settings]
+[watch_list]
+[webchat]
+web_ip = 0.0.0.0
+web_port = 8888
+latitude = XXXLATITUDEXXX
+longitude = XXXLONGITUDEXXX
