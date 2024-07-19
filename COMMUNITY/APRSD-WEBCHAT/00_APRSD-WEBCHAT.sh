@@ -46,7 +46,7 @@ local_install () {
 	cp $MODULE_DIR/start-aprsd-webchat.desktop $HOME/Desktop/
 }
 
-if [ ${PKGS} != "empty" ] || [ ${PIP} != "empty" ]; then
+if [[ ${PKGS} != "empty" ]] || [[ ${PIP} != "empty" ]]; then
 	notify-send --icon=gnome-break-timer "$MODULE" "$MODULE is being installed. Please be patient..."
 	local_install
 else
