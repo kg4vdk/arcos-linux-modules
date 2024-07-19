@@ -25,7 +25,7 @@ module_commands () {
 WIFI_DEVICE=$(iwconfig 2> /dev/null | grep wl | awk -F " " '{print $1}')
 if ls $MODULE_DIR/*.nmconnection &>/dev/null; then
     for nmconnection in $MODULE_DIR/*.nmconnection; do
-        sed -i "s/^interface-name=.*$/interface-name=$WIFI_DEVICE/" $nmconnection
+        sed -i "s/^interface-name=.*$/interface-name=$WIFI_DEVICE/" "$nmconnection"
         sudo cp "$nmconnection" /etc/NetworkManager/system-connections/
         sudo chmod 600 /etc/NetworkManager/system-connections/*.nmconnection
     done
