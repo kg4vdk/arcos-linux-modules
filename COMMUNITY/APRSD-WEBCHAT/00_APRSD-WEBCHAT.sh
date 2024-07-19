@@ -24,6 +24,8 @@ LOGFILE=$MODULE_DIR/$MODULE.log
 ### MODULE COMMANDS FUNCTION ###
 module_commands () {
 
+mkdir -p $MODULE_DIR/{packages,pip}
+
 PKGS=$(find $MODULE_DIR/packages -maxdepth 0 -empty -exec echo "empty" \;)
 PIP=$(find $MODULE_DIR/pip -maxdepth 0 -empty -exec echo "empty" \;)
 
@@ -52,7 +54,6 @@ if [[ ${PKGS} != "empty" ]] || [[ ${PIP} != "empty" ]]; then
 else
 	if ping -c 1 8.8.8.8 > /dev/null; then
 		notify-send --icon=gnome-break-timer "$MODULE" "$MODULE is being installed. Please be patient..."
-  		mkdir -p $MODULE_DIR/{packages,pip}
 		sudo apt clean
 		sudo apt install -y --download-only python3-pip
 		cp /var/cache/apt/archives/*.deb $MODULE_DIR/packages/
