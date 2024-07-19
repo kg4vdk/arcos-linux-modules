@@ -52,6 +52,7 @@ if [[ ${PKGS} != "empty" ]] || [[ ${PIP} != "empty" ]]; then
 	notify-send --icon=gnome-break-timer "$MODULE" "$MODULE is being installed. Please be patient..."
 	local_install
 else
+	sleep 5
 	if ping -c 1 8.8.8.8 > /dev/null; then
 		notify-send --icon=gnome-break-timer "$MODULE" "$MODULE is being installed. Please be patient..."
 		sudo apt clean
