@@ -24,6 +24,8 @@ module_commands () {
 
 ###########################################################################
 
+sudo cp $MODULE_DIR/bin/start-yaac /opt/arcOS/bin/
+
 rmdir $HOME/{Documents,Music,Pictures,Public,Templates,Videos}
 echo "file:///home/user/Downloads Downloads" > $HOME/.config/gtk-3.0/bookmarks
 echo "file:///media/user/ARCOS-DATA/QRV/$MYCALL/arcos-linux-modules QRV Modules" >> $HOME/.config/gtk-3.0/bookmarks
