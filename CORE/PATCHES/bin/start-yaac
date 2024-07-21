@@ -1,0 +1,9 @@
+#!/bin/bash
+
+if ! ps -ef | grep "direwolf -c" | grep -v grep; then
+  gtk-launch start-direwolf &
+  sleep 2
+fi
+
+java -jar /home/user/.yaac/YAAC.jar -profile arcOS
+rm -rf $HOME/YAAC
