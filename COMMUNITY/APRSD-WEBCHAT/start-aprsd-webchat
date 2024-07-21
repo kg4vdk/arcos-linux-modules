@@ -1,8 +1,9 @@
 #!/bin/bash
 
-gtk-launch start-direwolf &
-
-sleep 3
+if ! ps -ef | grep "direwolf -c" | grep -v grep; then
+  gtk-launch start-direwolf &
+  sleep 3
+fi
 
 gnome-terminal --class=hipchat --hide-menubar --title="APRSD" --zoom=0.75 -- $HOME/.local/bin/aprsd webchat -c $HOME/.config/aprsd/aprsd.yml &
 
