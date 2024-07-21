@@ -22,7 +22,7 @@ LOGFILE=$MODULE_DIR/$MODULE.log
 ### MODULE COMMANDS FUNCTION ###
 module_commands () {
 
-YAAC_DIR=$HOME/YAAC
+YAAC_DIR=$HOME/.YAAC
 YAAC_PROFILE_DIR=$HOME/.java/.userPrefs/org/ka2ddo/yaac/Profiles
 YAAC_PROFILE=$MODULE_DIR/yaac-profile
 
@@ -39,6 +39,9 @@ ln -sTf $ARCOS_DATA/QRV/offline-maps $YAAC_DIR/tiledir
 mkdir -p $MODULE_DIR/logdir
 rm -rf $YAAC_DIR/logdir
 ln -sTf $MODULE_DIR/logdir $YAAC_DIR/logdir
+
+sed -i 's/YAAC\/logdir/.YAAC\/logdir/' $YAAC_PROFILE_DIR/arcOS/prefs.xml
+sed -i 's/YAAC\/tiledir/.YAAC\/tiledir/' $YAAC_PROFILE_DIR/arcOS/prefs.xml
 
 } # END OF MODULE COMMANDS FUNCTION
 
