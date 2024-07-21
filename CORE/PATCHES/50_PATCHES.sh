@@ -22,10 +22,15 @@ LOGFILE=$MODULE_DIR/$MODULE.log
 ### MODULE COMMANDS FUNCTION ###
 module_commands () {
 
-#//add update-modules application to main menu//
-#
-
 ###########################################################################
+
+rmdir $HOME/{Documents,Music,Pictures,Public,Templates,Videos}
+echo "file:///home/user/Downloads Downloads" > $HOME/.config/gtk-3.0/bookmarks
+echo "file:///media/user/ARCOS-DATA/QRV/$MYCALL/arcos-linux-modules QRV Modules" >> $HOME/.config/gtk-3.0/bookmarks
+
+mkdir -p $ARCOS_DATA/QRV/$MYCALL/Desktop
+rm -rf $HOME/Desktop
+ln -sTf $ARCOS_DATA/QRV/$MYCALL/Desktop $HOME/Desktop
 
 jq '."custom-format"."value" = "%a, %e %b%n%H:%M:%S %Z" | ."custom-tooltip-format"."value" = "%a, %e %b%n%H:%M %Z"' ~/.config/cinnamon/spices/calendar@cinnamon.org/13.json > /tmp/13.json && mv /tmp/13.json ~/.config/cinnamon/spices/calendar@cinnamon.org/13.json
 
