@@ -43,7 +43,7 @@ done
 
 if ping -c 1 8.8.8.8 > /dev/null; then
 	if update; then
-		notify-send --icon=update-manager "QRV Modules updated!" "Run 'Station Setup' to complete the update."
+		notify-send --urgency=critical --icon=update-manager "QRV Modules updated!" "Reboot to complete the update."
 	else
 		notify-send --icon=error "Error updating QRV Modules!"
 	fi
