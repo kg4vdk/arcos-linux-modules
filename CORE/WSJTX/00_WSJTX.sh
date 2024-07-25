@@ -17,18 +17,21 @@ MYLOC=$(head -n 5 $HOME/.station-info | tail -n 1)
 ARCOS_DATA=/media/$USER/ARCOS-DATA
 MODULE_DIR=$ARCOS_DATA/QRV/$MYCALL/arcos-linux-modules/CORE/$MODULE
 LOGFILE=$MODULE_DIR/$MODULE.log
+SAVE_DIR=$ARCOS_DATA/QRV/$MYCALL/SAVED/$MODULE
 ########################
 
 ### MODULE COMMANDS FUNCTION ###
 module_commands () {
 
-if [ -f $MODULE_DIR/WSJT-X.ini ]; then
-	cp $MODULE_DIR/WSJT-X.ini $HOME/.config/WSJT-X.ini
+mkdir -p $SAVE_DIR
+
+if [ -f $SAVE_DIR/WSJT-X.ini ]; then
+	cp $SAVE_DIR/WSJT-X.ini $HOME/.config/WSJT-X.ini
 fi
 
-mkdir -p $MODULE_DIR/WSJT-X
+mkdir -p $SAVE_DIR/WSJT-X
 rm -rf $HOME/.local/share/WSJT-X
-ln -sTf $MODULE_DIR/WSJT-X $HOME/.local/share/WSJT-X
+ln -sTf $SAVE_DIR/WSJT-X $HOME/.local/share/WSJT-X
 
 } # END OF MODULE COMMANDS FUNCTION
 
