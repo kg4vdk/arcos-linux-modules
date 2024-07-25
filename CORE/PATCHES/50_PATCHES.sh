@@ -51,6 +51,9 @@ touch /media/user/ARCOS-DATA/QRV/$MYCALL/arcos-linux-modules/COMMUNITY
 gio set /media/user/ARCOS-DATA/QRV/$MYCALL/arcos-linux-modules/USER metadata::custom-icon file:///usr/share/icons/Mint-Y/places/64/folder.png
 touch /media/user/ARCOS-DATA/QRV/$MYCALL/arcos-linux-modules/USER
 
+gio set -t stringv /media/user/ARCOS-DATA/QRV/${MYCALL}/SAVED metadata::emblems emblem-system
+touch /media/user/ARCOS-DATA/QRV/${MYCALL}/SAVED
+
 ######################
 
 } # END OF MODULE COMMANDS FUNCTION
