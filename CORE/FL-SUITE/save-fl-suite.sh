@@ -17,9 +17,9 @@ SAVE_DIR=$ARCOS_DATA/QRV/$MYCALL/SAVED/$MODULE
 
 mkdir -p $SAVE_DIR
 
-if [ -f $ARCOS_DATA/QRV/$MYCALL/SAVED/FL-SUITE/fl-suite.tgz ]; then
-	mv $ARCOS_DATA/QRV/$MYCALL/SAVED/FL-SUITE/fl-suite.tgz $ARCOS_DATA/QRV/$MYCALL/SAVED/fl-suite_$(date +"%Y%m%d%H%M%Z").tgz
-	tar -C $HOME -czf $ARCOS_DATA/QRV/$MYCALL/SAVED/FL-SUITE/fl-suite.tgz .fldigi .nbems
+if [ -f $SAVE_DIR/fl-suite.tgz ]; then
+	mv $SAVE_DIR/fl-suite.tgz $SAVE_DIR/fl-suite_$(date +"%Y%m%d%H%M%Z").tgz
+	tar -C $HOME -czf $SAVE_DIR/fl-suite.tgz .fldigi .nbems
 else
-	tar -C $HOME -czf $ARCOS_DATA/QRV/$MYCALL/SAVED/FL-SUITE/fl-suite.tgz .fldigi .nbems
+	tar -C $HOME -czf $SAVE_DIR/fl-suite.tgz .fldigi .nbems
 fi
