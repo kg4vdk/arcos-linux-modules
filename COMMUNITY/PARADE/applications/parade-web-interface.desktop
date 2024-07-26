@@ -1,0 +1,12 @@
+[Desktop Entry]
+Version=1.0
+Name=PARADE WEB INTERFACE
+Comment=PARADE WEB INTERFACE
+GenericName=PARADE WEB INTERFACE
+Exec=firefox --profile /home/user/.mozilla/firefox/arcOS.profile http://localhost
+Terminal=false
+X-MultipleArgs=false
+Type=Application
+Icon=web-browser
+Categories=GNOME;GTK;Network;WebBrowser;
+StartupNotify=true
