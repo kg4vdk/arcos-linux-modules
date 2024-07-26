@@ -28,8 +28,8 @@ done
 cd $ARCOS_DATA/QRV/${MYCALL}/arcos-linux-modules
 git fetch --all
 git reset --hard origin/main
-git clean -n ./CORE
-git clean -n ./COMMUNITY
+git clean ./CORE
+git clean ./COMMUNITY
 for i in $(find /media/user/ARCOS-DATA/QRV/${MYCALL}/arcos-linux-modules/CORE -maxdepth 2 -type f -name "*.sh" | grep "[0-9][0-9]_.*\.sh"); do
 	mv "$i" /media/user/ARCOS-DATA/QRV/${MYCALL}/arcos-linux-modules/CORE/
 done
