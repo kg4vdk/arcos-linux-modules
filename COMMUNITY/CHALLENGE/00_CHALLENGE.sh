@@ -22,9 +22,14 @@ LOGFILE=$MODULE_DIR/$MODULE.log
 ### MODULE COMMANDS FUNCTION ###
 module_commands () {
 
+notify-send --icon=gnome-break-timer "Deploying $MODULE Module..." "Please be patient."
+
+mkdir -p $ARCOS_DATA/CHALLENGE_DATA
+
 if [ -f /tmp/coords.log ]; then
 	LATITUDE="$(head -n 1 /tmp/coords.log | awk -F "," '{print $1}' | xargs printf "%.5f\n")"
 	LONGITUDE="$(head -n 1 /tmp/coords.log | awk -F "," '{print $2}' | xargs printf "%.5f\n")"
+	LONGITUDE_ADJ=$(bc <<< "${LONGITUDE} + 0.00500")
 else
 	LATITUDE="00.00000"
 	LONGITUDE="00.00000"
@@ -37,7 +42,7 @@ sed -i "s/XXXCALLSIGNXXX/$MYCALL/" $HOME/.config/direwolf.conf
 MYCALLPHONETIC=$($MODULE_DIR/call2nato.sh $MYCALL | sed 's/ /, /g')
 sed -i "s/XXXCBEACONINFOXXX/${MYCALLPHONETIC}/" $HOME/.config/direwolf.conf
 sed -i "s/XXXLATITUDEXXX/${LATITUDE}/" $HOME/.config/direwolf.conf
-sed -i "s/XXXLONGITUDEXXX/${LONGITUDE}/" $HOME/.config/direwolf.conf
+sed -i "s/XXXLONGITUDEXXX/${LONGITUDE_ADJ}/" $HOME/.config/direwolf.conf
 sudo cp $MODULE_DIR/dwespeak.sh /opt/arcOS/bin/
 sudo cp $MODULE_DIR/aprstt.sh /opt/arcOS/bin/
 sudo cp $MODULE_DIR/call2nato.sh /opt/arcOS/bin/
