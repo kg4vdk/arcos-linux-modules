@@ -17,29 +17,34 @@ MYLOC=$(head -n 5 $HOME/.station-info | tail -n 1)
 ARCOS_DATA=/media/$USER/ARCOS-DATA
 MODULE_DIR=$ARCOS_DATA/QRV/$MYCALL/arcos-linux-modules/CORE/$MODULE
 LOGFILE=$MODULE_DIR/$MODULE.log
+SAVE_DIR=$ARCOS_DATA/QRV/$MYCALL/SAVED/$MODULE
 ########################
 
 ### MODULE COMMANDS FUNCTION ###
 module_commands () {
 
-FL_SUITE_CONFIG=$MODULE_DIR/fl-suite.tgz
+mkdir -p $SAVE_DIR
+
+FL_SUITE_CONFIG=$SAVE_DIR/fl-suite.tgz
 
 if [ -f $FL_SUITE_CONFIG ]; then
 	tar -C $HOME -xzf $FL_SUITE_CONFIG
 fi
 
-mkdir -p $MODULE_DIR/{logs,FLAMP,ICS}
-mkdir -p $MODULE_DIR/FLAMP/{rx,tx}
-mkdir -p $MODULE_DIR/ICS/{messages,templates}
+mkdir -p $SAVE_DIR/{logs,FLAMP,ICS}
+mkdir -p $SAVE_DIR/FLAMP/{rx,tx,scripts}
+mkdir -p $SAVE_DIR/ICS/{messages,templates}
+mkdir -p $SAVE_DIR/CUSTOM
 
-rm -rf $HOME/.fldigi/logs $HOME/.nbems/FLAMP/{rx,tx,scripts} $HOME/.nbems/ICS/{messages,templates}
+rm -rf $HOME/.fldigi/logs $HOME/.nbems/FLAMP/{rx,tx,scripts} $HOME/.nbems/ICS/{messages,templates} $HOME/.nbems/CUSTOM
 
-ln -sTF $MODULE_DIR/logs $HOME/.fldigi/logs
-ln -sTF $MODULE_DIR/FLAMP/rx $HOME/.nbems/FLAMP/rx
-ln -sTF $MODULE_DIR/FLAMP/tx $HOME/.nbems/FLAMP/tx
-ln -sTF $MODULE_DIR/FLAMP/scripts $HOME/.nbems/FLAMP/scripts
-ln -sTF $MODULE_DIR/ICS/messages $HOME/.nbems/ICS/messages
-ln -sTF $MODULE_DIR/ICS/templates $HOME/.nbems/ICS/templates
+ln -sTF $SAVE_DIR/logs $HOME/.fldigi/logs
+ln -sTF $SAVE_DIR/FLAMP/rx $HOME/.nbems/FLAMP/rx
+ln -sTF $SAVE_DIR/FLAMP/tx $HOME/.nbems/FLAMP/tx
+ln -sTF $SAVE_DIR/FLAMP/scripts $HOME/.nbems/FLAMP/scripts
+ln -sTF $SAVE_DIR/ICS/messages $HOME/.nbems/ICS/messages
+ln -sTF $SAVE_DIR/ICS/templates $HOME/.nbems/ICS/templates
+ln -sTF $SAVE_DIR/CUSTOM $HOME/.nbems/CUSTOM
 
 } # END OF MODULE COMMANDS FUNCTION
 

@@ -2,7 +2,7 @@
 
 TIMESTAMP=$(date +%s)
 
-LOG_PATH=/media/user/ARCOS-DATA/CHALLENGE/$TTCALL
+LOG_PATH=/media/user/ARCOS-DATA/CHALLENGE_DATA/$TTCALL
 
 mkdir -p $LOG_PATH
 

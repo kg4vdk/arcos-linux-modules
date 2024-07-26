@@ -17,14 +17,17 @@ MYLOC=$(head -n 5 $HOME/.station-info | tail -n 1)
 ARCOS_DATA=/media/$USER/ARCOS-DATA
 MODULE_DIR=$ARCOS_DATA/QRV/$MYCALL/arcos-linux-modules/CORE/$MODULE
 LOGFILE=$MODULE_DIR/$MODULE.log
+SAVE_DIR=$ARCOS_DATA/QRV/$MYCALL/SAVED/$MODULE
 ########################
 
 ### MODULE COMMANDS FUNCTION ###
 module_commands () {
 
-mkdir -p $MODULE_DIR/arcOS.profile
+mkdir -p $SAVE_DIR
+
+mkdir -p $SAVE_DIR/arcOS.profile
 mkdir -p $HOME/.mozilla/firefox
-ln -sTf $MODULE_DIR/arcOS.profile $HOME/.mozilla/firefox/arcOS.profile
+ln -sTf $SAVE_DIR/arcOS.profile $HOME/.mozilla/firefox/arcOS.profile
 cp $MODULE_DIR/firefox.desktop $HOME/.local/share/applications/
 
 } # END OF MODULE COMMANDS FUNCTION

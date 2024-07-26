@@ -17,14 +17,17 @@ MYLOC=$(head -n 5 $HOME/.station-info | tail -n 1)
 ARCOS_DATA=/media/$USER/ARCOS-DATA
 MODULE_DIR=$ARCOS_DATA/QRV/$MYCALL/arcos-linux-modules/CORE/$MODULE
 LOGFILE=$MODULE_DIR/$MODULE.log
+SAVE_DIR=$ARCOS_DATA/QRV/$MYCALL/SAVED/$MODULE
 ########################
 
 ### MODULE COMMANDS FUNCTION ###
 module_commands () {
 
+mkdir -p $SAVE_DIR
+
 YAAC_DIR=$HOME/.YAAC
 YAAC_PROFILE_DIR=$HOME/.java/.userPrefs/org/ka2ddo/yaac/Profiles
-YAAC_PROFILE=$MODULE_DIR/yaac-profile
+YAAC_PROFILE=$SAVE_DIR/yaac-profile
 
 mkdir -p $YAAC_DIR
 

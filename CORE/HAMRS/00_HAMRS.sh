@@ -17,13 +17,16 @@ MYLOC=$(head -n 5 $HOME/.station-info | tail -n 1)
 ARCOS_DATA=/media/$USER/ARCOS-DATA
 MODULE_DIR=$ARCOS_DATA/QRV/$MYCALL/arcos-linux-modules/CORE/$MODULE
 LOGFILE=$MODULE_DIR/$MODULE.log
+SAVE_DIR=$ARCOS_DATA/QRV/$MYCALL/SAVED/$MODULE
 ########################
 
 ### MODULE COMMANDS FUNCTION ###
 module_commands () {
 
-if ls $MODULE_DIR | grep "AppImage"; then
-	APPIMAGE=$(ls $MODULE_DIR/hamrs*.AppImage | tail -n 1)
+mkdir -p $SAVE_DIR
+
+if ls $SAVE_DIR| grep "AppImage"; then
+	APPIMAGE=$(ls $SAVE_DIR/hamrs*.AppImage | tail -n 1)
 	sed -i "s:^Exec=.*$:Exec=$APPIMAGE --no-sandbox:" $HOME/.local/share/applications/hamrs.desktop
 fi
 
