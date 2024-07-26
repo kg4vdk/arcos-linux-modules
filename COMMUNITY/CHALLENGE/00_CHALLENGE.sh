@@ -15,7 +15,7 @@ MYLOC=$(head -n 5 $HOME/.station-info | tail -n 1)
 
 # PATHS
 ARCOS_DATA=/media/$USER/ARCOS-DATA
-MODULE_DIR=$ARCOS_DATA/QRV/$MYCALL/arcos-linux-modules/$MODULE
+MODULE_DIR=$ARCOS_DATA/QRV/$MYCALL/arcos-linux-modules/COMMUNITY/$MODULE
 LOGFILE=$MODULE_DIR/$MODULE.log
 ########################
 
