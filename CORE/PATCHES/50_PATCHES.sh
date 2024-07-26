@@ -54,7 +54,7 @@ touch /media/user/ARCOS-DATA/QRV/$MYCALL/arcos-linux-modules/USER
 gio set -t stringv /media/user/ARCOS-DATA/QRV/${MYCALL}/SAVED metadata::emblems emblem-system
 touch /media/user/ARCOS-DATA/QRV/${MYCALL}/SAVED
 
-gio set /media/user/ARCOS-DATA/Downloads metadata::custom-icon file:///usr/share/icons/Mint-Y-Sand/places/64/folder-downloads.png
+gio set /media/user/ARCOS-DATA/Downloads metadata::custom-icon file:///usr/share/icons/Mint-Y-Sand/places/64/folder-download.png
 touch /media/user/ARCOS-DATA/Downloads
 
 ######################
