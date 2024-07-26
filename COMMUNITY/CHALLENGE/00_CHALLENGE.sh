@@ -43,6 +43,7 @@ sudo cp $MODULE_DIR/aprstt.sh /opt/arcOS/bin/
 sudo cp $MODULE_DIR/call2nato.sh /opt/arcOS/bin/
 sudo cp $MODULE_DIR/challenge-times.sh /opt/arcOS/bin/
 sudo cp $MODULE_DIR/start-challenge.sh /opt/arcOS/bin/
+cp $MODULE_DIR/start-challenge.desktop $HOME/Desktop/
 
 } # END OF MODULE COMMANDS FUNCTION
 
