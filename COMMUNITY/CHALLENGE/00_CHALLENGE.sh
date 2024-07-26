@@ -22,20 +22,27 @@ LOGFILE=$MODULE_DIR/$MODULE.log
 ### MODULE COMMANDS FUNCTION ###
 module_commands () {
 
+if [ -f /tmp/coords.log ]; then
+	LATITUDE="$(head -n 1 /tmp/coords.log | awk -F "," '{print $1}' | xargs printf "%.5f\n")"
+	LONGITUDE="$(head -n 1 /tmp/coords.log | awk -F "," '{print $2}' | xargs printf "%.5f\n")"
+else
+	LATITUDE="00.00000"
+	LONGITUDE="00.00000"
+fi
+
 sudo dpkg -i $MODULE_DIR/packages/*.deb
 
 cp $MODULE_DIR/direwolf.conf $HOME/.config/direwolf.conf
 sed -i "s/XXXCALLSIGNXXX/$MYCALL/" $HOME/.config/direwolf.conf
 MYCALLPHONETIC=$($MODULE_DIR/call2nato.sh $MYCALL | sed 's/ /, /g')
 sed -i "s/XXXCBEACONINFOXXX/${MYCALLPHONETIC}/" $HOME/.config/direwolf.conf
+sed -i "s/XXXLATITUDEXXX/${LATITUDE}/" $HOME/.config/direwolf.conf
+sed -i "s/XXXLONGITUDEXXX/${LONGITUDE}/" $HOME/.config/direwolf.conf
 sudo cp $MODULE_DIR/dwespeak.sh /opt/arcOS/bin/
 sudo cp $MODULE_DIR/aprstt.sh /opt/arcOS/bin/
 sudo cp $MODULE_DIR/call2nato.sh /opt/arcOS/bin/
 sudo cp $MODULE_DIR/challenge-times.sh /opt/arcOS/bin/
-
-gtk-launch start-direwolf.desktop > /dev/null 2>&1 &
-sleep 3
-gtk-launch yaac.desktop > /dev/null 2>&1 &
+sudo cp $MODULE_DIR/start-challenge.sh /opt/arcOS/bin/
 
 } # END OF MODULE COMMANDS FUNCTION
 
