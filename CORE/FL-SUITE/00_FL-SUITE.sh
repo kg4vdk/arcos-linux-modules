@@ -32,7 +32,7 @@ if [ -f $FL_SUITE_CONFIG ]; then
 fi
 
 mkdir -p $SAVE_DIR/{logs,FLAMP,ICS}
-mkdir -p $SAVE_DIR/FLAMP/{rx,tx}
+mkdir -p $SAVE_DIR/FLAMP/{rx,tx,scripts}
 mkdir -p $SAVE_DIR/ICS/{messages,templates}
 mkdir -p $SAVE_DIR/CUSTOM
 
