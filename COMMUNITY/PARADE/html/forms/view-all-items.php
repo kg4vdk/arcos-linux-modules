@@ -20,9 +20,8 @@
 	'<div class="item-icon"><i class="fa-solid fa-car"></i> = ' . $vehicles . "</div>" .
 	'<div class="item-icon"><i class="fa-solid fa-trailer"></i> = ' . $trailers . "</div>" .
 	'<div class="item-icon"><i class="fa-solid fa-walking"></i> = ' . $walkers . "</div>" .
-	"<div class='item-contact'>" . $contact . " @ " . $phone . "</div>" .
-	"<div class='item-notes'>Notes: " . $notes . "</div>" .
-	"</div>"; ?>
+	"<div class='item-contact'>" . "<i class='fa-solid fa-phone'></i> " . $contact . " @ " . "<a href='tel:" . $phone . "'>" . $phone . "</a>" . "</div>" .
+	"<div class='item-notes'><span style='font-weight: bold; font-style: normal;'>Notes:</span> <br>" . $notes . "</div>" . "</div>"; ?>
 		<?php echo $item; ?>
 	<?php endforeach; ?>
 </div>
