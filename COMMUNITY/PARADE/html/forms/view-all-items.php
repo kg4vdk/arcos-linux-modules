@@ -14,8 +14,16 @@
 	<?php $trailers = trim($lines[5], "\n"); ?>
 	<?php $walkers = trim($lines[6], "\n"); ?>
 	<?php $notes = trim($lines[7], "\n"); ?>
-	<?php $item = "<span style='font-size: 1.5em; font-weight: bold; padding: 8px 150px; background-color: #404040; color: #ffffff; border-radius: 15px;'>" . $id . "</span>" . "<br>" . "<span style='font-weight: bold; font-size: 1.5em'>" . $organization . "</span>" . "<br>" . $contact . " @ " . $phone . "<br>" . '<span style="background-color: #ffffff; color: #000000; border-radius: 15px; padding: 5px 10px;"><i class="fa-solid fa-car"></i> = ' . $vehicles . "</span>   " . '<span style="background-color: #ffffff; color: #000000; border-radius: 15px; padding: 5px 10px;"><i class="fa-solid fa-trailer"></i> = ' . $trailers . "</span>   " . '<span style="background-color: #ffffff; color: #000000; border-radius: 15px; padding: 5px 10px;"><i class="fa-solid fa-walking"></i> = ' . $walkers . "</span><br>" . "Notes: " . $notes; ?>
-		<p class="view-all-items" style="text-transform: uppercase;"><?php echo $item; ?></p>
+	<?php $item = "<div class='item'>" .
+	"<div class='item-id'>" . $id . "</div>" .
+	"<div class='item-org'>" . $organization . "</div>" .
+	'<div class="item-icon"><i class="fa-solid fa-car"></i> = ' . $vehicles . "</div>" .
+	'<div class="item-icon"><i class="fa-solid fa-trailer"></i> = ' . $trailers . "</div>" .
+	'<div class="item-icon"><i class="fa-solid fa-walking"></i> = ' . $walkers . "</div>" .
+	"<div class='item-contact'>" . $contact . " @ " . $phone . "</div>" .
+	"<div class='item-notes'>Notes: " . $notes . "</div>" .
+	"</div>"; ?>
+		<?php echo $item; ?>
 	<?php endforeach; ?>
 </div>
 <?php include "../common/footer.php"; ?>
