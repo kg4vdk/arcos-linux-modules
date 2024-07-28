@@ -64,9 +64,42 @@ label {
 	color: white;
 }
 
-.view-all-items {
-	padding: 10px;
-	border-radius: 15px;
-	text-align: center;
+.item {
 	background-color: #007bff; 
+	text-align: center;
+	padding: 25px 0;
+	border-radius: 15px;
 }
+
+.item-id {
+	width: 35%;
+	margin: auto;
+	font-size: 1.5em;
+	font-weight: bold;
+	background-color: #404040;
+	color: #ffffff;
+	border-radius: 15px;
+}
+
+.item-org {
+	 font-weight: bold;
+	 font-size: 1.5em
+}
+
+.item-icon {
+	display: inline-block;
+	margin: 0 5px;
+	background-color: #ffffff;
+	color: #000000;
+	border-radius: 15px;
+	padding: 5px 10px;
+}
+
+.item-contact {
+	font-weight: bold;
+}
+
+.item-notes {
+	font-style: italic;
+}
+
