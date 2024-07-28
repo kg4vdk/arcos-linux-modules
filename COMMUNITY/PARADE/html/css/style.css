@@ -65,9 +65,10 @@ label {
 }
 
 .item {
+	margin-bottom: 15px;
 	background-color: #007bff; 
 	text-align: center;
-	padding: 25px 0;
+	padding: 25px;
 	border-radius: 15px;
 }
 
@@ -83,23 +84,37 @@ label {
 
 .item-org {
 	 font-weight: bold;
-	 font-size: 1.5em
+	 font-size: 1.5em;
+	 line-height: 1em;
+	 margin: 15px 0;
 }
 
 .item-icon {
 	display: inline-block;
-	margin: 0 5px;
+	margin: 0 15px;
 	background-color: #ffffff;
 	color: #000000;
 	border-radius: 15px;
 	padding: 5px 10px;
-}
-
-.item-contact {
 	font-weight: bold;
 }
 
+.item-contact {
+	margin-top: 15px;
+	font-weight: bold;
+}
+
+.item-contact a {
+	color: #ffffff;
+	text-decoration: none;
+}
+
 .item-notes {
+	margin-top: 10px;
+	background-color: #5baaff;
 	font-style: italic;
+	border-radius: 15px;
+	text-align: left;
+	padding: 15px;
 }
 
