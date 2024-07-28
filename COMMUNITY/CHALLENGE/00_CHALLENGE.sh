@@ -44,6 +44,7 @@ sed -i "s/XXXCBEACONINFOXXX/${MYCALLPHONETIC}/" $HOME/.config/direwolf.conf
 sed -i "s/XXXLATITUDEXXX/${LATITUDE}/" $HOME/.config/direwolf.conf
 sed -i "s/XXXLONGITUDEXXX/${LONGITUDE_ADJ}/" $HOME/.config/direwolf.conf
 sudo cp $MODULE_DIR/bin/* /opt/arcOS/bin/
+cp $MODULE_DIR/applications/* $HOME/.local/share/applications/
 cp $MODULE_DIR/applications/* $HOME/Desktop/
 
 } # END OF MODULE COMMANDS FUNCTION
