@@ -27,22 +27,17 @@ notify-send --icon=gnome-break-timer "Deploying $MODULE Module..." "Please be pa
 sudo dpkg -i $MODULE_DIR/packages/*.deb
 
 sudo cp $MODULE_DIR/config/nginx.conf /etc/nginx/nginx.conf
-sudo cp $MODULE_DIR/sites-available/default /etc/nginx/sites-available/default
+sudo cp $MODULE_DIR/config/sites-available/default /etc/nginx/sites-available/default
 sudo rm -rf /var/www/html
 sudo cp -r $MODULE_DIR/html /var/www/
-sudo chown -R www-data:www-data /var/www/html
 sudo mkdir /var/www/html/items
-sudo chown -R www-data:www-data /var/www/html/items
+sudo chown -R www-data:www-data /var/www/html
 sudo systemctl restart nginx.service
-sudo cp $MODULE_DIR/bin/generate-parade-csv.sh /opt/arcOS/bin/generate-parade-csv.sh
-sudo chmod +x /opt/arcOS/bin/generate-parade-csv.sh
-sudo cp $MODULE_DIR/bin/rsync-parade-items.sh /opt/arcOS/bin/rsync-parade-items.sh
-sudo chmod +x /opt/arcOS/bin/rsync-parade-items.sh
+sudo cp $MODULE_DIR/bin/*.sh /opt/arcOS/bin/
+sudo chmod +x /opt/arcOS/bin/*parade*.sh
+
 echo "* * * * * user /opt/arcOS/bin/rsync-parade-items.sh" | sudo tee --append /etc/crontab
-cp $MODULE_DIR/applications/generate-parade-csv.desktop $HOME/Desktop/
-cp $MODULE_DIR/applications/parade-web-interface.desktop $HOME/Desktop/
-
-
+cp $MODULE_DIR/applications/*.desktop $HOME/Desktop/
 
 } # END OF MODULE COMMANDS FUNCTION
 
