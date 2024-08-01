@@ -1,9 +1,0 @@
-[Desktop Entry]
-Name=Station Setup
-GenericName=Station Setup
-Comment=Configure the system with your information
-Exec=station-setup
-Icon=userinfo
-Terminal=false
-Type=Application
-Categories=HamRadio;
