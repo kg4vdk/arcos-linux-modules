@@ -1,0 +1,5 @@
+Modules are run in the following order:
+
+1) CORE
+2) COMMUNITY
+3) USER
