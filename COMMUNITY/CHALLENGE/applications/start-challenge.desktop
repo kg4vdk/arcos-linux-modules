@@ -1,9 +1,0 @@
-[Desktop Entry]
-Name=START CHALLENGE
-GenericName=START CHALLENGE
-Comment=START CHALLENGE
-Exec=start-challenge.sh
-Icon=emoji-flags-symbolic
-Terminal=false
-Type=Application
-Categories=HamRadio;
