@@ -1,0 +1,9 @@
+[Desktop Entry]
+Name=GENERATE DTMF CALLSIGN
+GenericName=GENERATE DTMF CALLSIGN
+Comment=GENERATE DTMF CALLSIGN
+Exec=gnome-terminal --class=gen-dtmf-call.sh --hide-menubar --title="GENERATE DTMF CALLSIGN" --zoom=0.75 -- gen-dtmf-call.sh
+Icon=applications-system
+Terminal=false
+Type=Application
+Categories=HamRadio;
