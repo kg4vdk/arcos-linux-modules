@@ -1,0 +1,8 @@
+[Desktop Entry]
+Name=SAVE YAAC CONFIG
+GenericName=SAVE YAAC CONFIG
+Comment=SAVE YAAC CONFIG
+Exec=save-yaac.sh
+Icon=applications-system
+Terminal=false
+Type=Application
