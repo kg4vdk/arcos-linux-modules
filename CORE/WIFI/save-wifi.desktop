@@ -1,9 +1,0 @@
-[Desktop Entry]
-Name=SAVE WIFI CONNECTION
-GenericName=SAVE WIFI CONNECTION
-Comment=SAVE WIFI CONNECTION
-Exec=save-wifi.sh
-Icon=applications-system
-Terminal=false
-Type=Application
-Categories=Network;HamRadio;

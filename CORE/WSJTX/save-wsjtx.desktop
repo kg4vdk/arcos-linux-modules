@@ -1,9 +1,0 @@
-[Desktop Entry]
-Name=SAVE WSJTX CONFIG
-GenericName=SAVE WSJTX CONFIG
-Comment=SAVE WSJTX CONFIG
-Exec=save-wsjtx.sh
-Icon=applications-system
-Terminal=false
-Type=Application
-Categories=Network;HamRadio;
