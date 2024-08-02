@@ -1,0 +1,9 @@
+[Desktop Entry]
+Name=SAVE YAAC
+GenericName=SAVE YAAC
+Comment=SAVE YAAC
+Exec=save-yaac.sh
+Icon=applications-system
+Terminal=false
+Type=Application
+Categories=Network;HamRadio;
