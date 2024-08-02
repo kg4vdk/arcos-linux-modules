@@ -1,0 +1,10 @@
+[Desktop Entry]
+Name=SAVE FL-SUITE
+GenericName=SAVE FL-SUITE
+Comment=SAVE FL-SUITE
+Exec=save-fl-suite.sh
+Icon=applications-system
+Terminal=false
+Type=Application
+Categories=Network;HamRadio;
+
