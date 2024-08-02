@@ -1,9 +1,0 @@
-[Desktop Entry]
-Name=SAVE JS8CALL
-GenericName=SAVE JS8CALL
-Comment=SAVE JS8CALL
-Exec=save-js8call.sh
-Icon=applications-system
-Terminal=false
-Type=Application
-Categories=Network;HamRadio;
