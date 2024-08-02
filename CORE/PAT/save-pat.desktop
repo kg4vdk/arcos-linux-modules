@@ -1,7 +1,7 @@
 [Desktop Entry]
-Name=SAVE PAT WLNK
-GenericName=SAVE PAT WLNK
-Comment=SAVE PAT WLNK
+Name=SAVE PAT WLNK CONFIG
+GenericName=SAVE PAT WLNK CONFIG
+Comment=SAVE PAT WLNK CONFIG
 Exec=save-pat.sh
 Icon=applications-system
 Terminal=false

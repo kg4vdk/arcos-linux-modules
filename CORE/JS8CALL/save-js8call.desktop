@@ -1,7 +1,7 @@
 [Desktop Entry]
-Name=SAVE JS8CALL
-GenericName=SAVE JS8CALL
-Comment=SAVE JS8CALL
+Name=SAVE JS8CALL CONFIG
+GenericName=SAVE JS8CALL CONFIG
+Comment=SAVE JS8CALL CONFIG
 Exec=save-js8call.sh
 Icon=applications-system
 Terminal=false
