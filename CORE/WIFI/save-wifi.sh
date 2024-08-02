@@ -22,7 +22,7 @@ sudo cp /etc/NetworkManager/system-connections/*.nmconnection $SAVE_DIR/
 }
 
 if wifi_save; then
-	notify-send --icon=js8call-custom-icon "WIFI" "Configuration saved!"
+	notify-send --icon=network-wireless "WIFI" "Configuration saved!"
 else
 	notify-send --icon=error "WIFI" "Error saving configuration!"
 fi
