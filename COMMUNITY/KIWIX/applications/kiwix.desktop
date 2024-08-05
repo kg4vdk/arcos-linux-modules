@@ -1,0 +1,11 @@
+[Desktop Entry]
+Version=1.0
+Name=KIWIX
+Comment=KIWIX
+GenericName=KIWIX
+Exec=firefox --profile /home/user/.mozilla/firefox/arcOS.profile http://localhost:1234
+Terminal=false
+X-MultipleArgs=false
+Type=Application
+Icon=wikipedia
+StartupNotify=true
