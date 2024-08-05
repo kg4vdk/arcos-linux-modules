@@ -25,7 +25,7 @@ module_commands () {
 
 mkdir -p $SAVE_DIR
 
-$MODULE_DIR/kiwix-tools/kiwix-serve -d -p 1234 -M $SAVE_DIR/zim/*
+$MODULE_DIR/kiwix-tools/kiwix-serve -d -p 1234 -M $SAVE_DIR/*.zim
 
 cp $MODULE_DIR/applications/kiwix.desktop $HOME/Desktop/
 
