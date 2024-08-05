@@ -1,0 +1,11 @@
+[Desktop Entry]
+Version=1.0
+Name=ADSB
+Comment=ADSB
+GenericName=ADSB
+Exec=firefox --profile /home/user/.mozilla/firefox/arcOS.profile http://localhost:1090
+Terminal=false
+X-MultipleArgs=false
+Type=Application
+Icon=web-airdroid
+StartupNotify=true
