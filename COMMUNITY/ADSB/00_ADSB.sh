@@ -31,6 +31,12 @@ sudo piaware-config use-gpsd yes
 
 sudo cp $MODULE_DIR/config/89-skyaware.conf /etc/lighttpd/conf-enabled/
 
+sudo cp $MODULE_DIR/config/script.js /usr/share/skyaware/html/
+
+sudo cp $MODULE_DIR/config/planeObject.js /usr/share/skyaware/html/
+
+sudo cp $MODULE_DIR/config/style.css /usr/share/skyaware/html/
+
 sudo systemctl daemon-reload
 
 sudo systemctl restart lighttpd.service
