@@ -500,7 +500,8 @@ PlaneObject.prototype.updateIcon = function() {
                                         fill: new ol.style.Fill({color: 'white'}),
                                         backgroundFill: new ol.style.Stroke({color: 'rgba(0, 0, 0, 0.65'}),
                                         textAlign: 'left',
-                                        offsetY: -20,
+					offsetX: 10,
+                                        offsetY: -25,
                                         font: '10px monospace',
                                         padding: [2,2,0,2]
                                 })
@@ -540,7 +541,8 @@ PlaneObject.prototype.updateIcon = function() {
                                         fill: new ol.style.Fill({color: 'white'}),
                                         backgroundFill: new ol.style.Stroke({color: 'rgba(0, 0, 0, 0.65)'}),
                                         textAlign: 'left',
-                                        offsetY: -20,
+					offsetX: 10,
+                                        offsetY: -25,
                                         font: '10px monospace',
                                         padding: [2,2,0,2]
                                 })
