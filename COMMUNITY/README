@@ -3,3 +3,9 @@ Modules are run in the following order:
 1) CORE
 2) COMMUNITY
 3) USER
+
+If you would like to modify one of the CORE or COMMUNITY modules to better suit your needs:
+
+Make a copy of the module directory, as well as the NN_MODULE.sh script, and place the copy in the USER module directory. 
+
+When `update-modules` runs, the CORE and COMMUNITY directories are "hard reset" meaning everything in those directories is reset to the current state of the GitHub repo. Activated modules are remembered, and reset to be active following the update.

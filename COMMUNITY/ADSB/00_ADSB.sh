@@ -15,7 +15,7 @@ MYLOC=$(head -n 5 $HOME/.station-info | tail -n 1)
 
 # PATHS
 ARCOS_DATA=/media/$USER/ARCOS-DATA
-MODULE_DIR=$ARCOS_DATA/QRV/$MYCALL/arcos-linux-modules/COMMUNITY/$MODULE
+MODULE_DIR=$ARCOS_DATA/QRV/$MYCALL/arcos-linux-modules/USER/$MODULE
 LOGFILE=$MODULE_DIR/$MODULE.log
 SAVE_DIR=$ARCOS_DATA/QRV/$MYCALL/SAVED/$MODULE
 ########################
@@ -30,6 +30,10 @@ sudo dpkg -i $MODULE_DIR/packages/*.deb
 sudo piaware-config use-gpsd yes
 
 sudo cp $MODULE_DIR/config/89-skyaware.conf /etc/lighttpd/conf-enabled/
+
+sudo cp $MODULE_DIR/config/script.js /usr/share/skyaware/html/
+
+sudo cp $MODULE_DIR/config/planeObject.js /usr/share/skyaware/html/
 
 sudo systemctl daemon-reload
 
