@@ -493,6 +493,8 @@ PlaneObject.prototype.updateIcon = function() {
                 this.markerIcon = icon;
 
                 if (AircraftLabels && this.flight != null) {
+			this.icaotype = this.icaotype || "UNK";
+			this.squawk = this.squawk || "N/A";
                         this.markerStyle = new ol.style.Style({
                                 image: this.markerIcon,
                                 text: new ol.style.Text({
@@ -534,6 +536,8 @@ PlaneObject.prototype.updateIcon = function() {
                 }
 
                 if (AircraftLabels && this.flight != null) {
+			this.icaotype = this.icaotype || "UNK";
+			this.squawk = this.squawk || "N/A";
                         this.markerStyle = new ol.style.Style({
                                 image: this.markerIcon,
                                 text: new ol.style.Text({
