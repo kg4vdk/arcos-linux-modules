@@ -19,7 +19,7 @@ mkdir -p $SAVE_DIR
 
 pat_save () {
 if [ -f $SAVE_DIR/config.json ]; then
-	mv config.json  $SAVE_DIR/config_$(date +"%Y%m%d%H%M%Z").json
+	mv $SAVE_DIR/config.json  $SAVE_DIR/config_$(date +"%Y%m%d%H%M%Z").json
 	cp $HOME/.config/pat/config.json $SAVE_DIR/config.json 
 else
 	cp $HOME/.config/pat/config.json $SAVE_DIR/config.json
