@@ -474,7 +474,7 @@ function initialize() {
         toggleAltitudeChart(false);
         toggleAllPlanes(false);
         toggleGroupByDataType(false);
-        toggleAircraftLabels(false);
+        toggleAircraftLabels(true);
         toggleAllColumns(false);
         toggleADSBAircraft(false);
         toggleUATAircraft(false);
@@ -1661,7 +1661,9 @@ function refreshHighlighted() {
 }
 
 function refreshClock() {
-	$('#clock_div').text(new Date().toLocaleString());
+	var header_date = new Date().toISOString().slice(0, 10);
+	var header_time = new Date().toISOString().slice(11, 19);
+	$('#clock_div').text(header_date + " " + header_time + " UTC");
 	var c = setTimeout(refreshClock, 500);
 }
 
