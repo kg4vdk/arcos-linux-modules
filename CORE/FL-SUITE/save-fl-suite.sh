@@ -20,9 +20,17 @@ mkdir -p $SAVE_DIR
 fl_suite_save () {
 if [ -f $SAVE_DIR/fl-suite.tgz ]; then
 	mv $SAVE_DIR/fl-suite.tgz $SAVE_DIR/fl-suite_$(date +"%Y%m%d%H%M%Z").tgz
-	tar -C $HOME -czf $SAVE_DIR/fl-suite.tgz .fldigi .nbems
+	if [ -d $HOME/.flrig ]; then
+		tar -C $HOME -czf $SAVE_DIR/fl-suite.tgz .fldigi .nbems .flrig
+	else
+		tar -C $HOME -czf $SAVE_DIR/fl-suite.tgz .fldigi .nbems
+	fi
 else
-	tar -C $HOME -czf $SAVE_DIR/fl-suite.tgz .fldigi .nbems
+	if [ -d $HOME/.flrig ]; then
+		tar -C $HOME -czf $SAVE_DIR/fl-suite.tgz .fldigi .nbems .flrig
+	else
+		tar -C $HOME -czf $SAVE_DIR/fl-suite.tgz .fldigi .nbems
+	fi
 fi
 }
 
