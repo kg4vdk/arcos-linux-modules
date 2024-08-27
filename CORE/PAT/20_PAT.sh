@@ -48,9 +48,10 @@ else
 fi
 
 for mailbox in archive in out sent; do
-    rm -rf $HOME/.local/share/pat/mailbox/$MYCALL/$mailbox
-    mkdir -p $SAVE_DIR/$mailbox
-    ln -sTf $SAVE_DIR/$mailbox $HOME/.local/share/pat/mailbox/$MYCALL/$mailbox
+	mkdir -p $SAVE_DIR/$mailbox
+   	unlink $HOME/.local/share/pat/mailbox/$MYCALL/$mailbox 2> /dev/null
+   	rm -rf $HOME/.local/share/pat/mailbox/$MYCALL/$mailbox    	
+	ln -sTf $SAVE_DIR/$mailbox $HOME/.local/share/pat/mailbox/$MYCALL/$mailbox
 done
 
 sudo systemctl restart pat@$USER.service
