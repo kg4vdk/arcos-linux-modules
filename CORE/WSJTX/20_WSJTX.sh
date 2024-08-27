@@ -40,6 +40,7 @@ elif [ -f $QRV_PROFILE_DIR/DEFAULT/$MODULE/WSJT-X_DEFAULT.ini ]; then
 fi
 
 mkdir -p $SAVE_DIR/WSJT-X
+unlink $HOME/.local/share/WSJT-X 2> /dev/null
 rm -rf $HOME/.local/share/WSJT-X
 ln -sTf $SAVE_DIR/WSJT-X $HOME/.local/share/WSJT-X
 
