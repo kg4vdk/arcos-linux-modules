@@ -48,6 +48,13 @@ mkdir -p $SAVE_DIR/FLAMP/{rx,tx,scripts}
 mkdir -p $SAVE_DIR/ICS/{messages,templates}
 mkdir -p $SAVE_DIR/CUSTOM
 
+unlink $HOME/.fldigi/logs 2> /dev/null
+unlink $HOME/.nbems/FLAMP/rx 2> /dev/null
+unlink $HOME/.nbems/FLAMP/tx 2> /dev/null
+unlink $HOME/.nbems/FLAMP/scripts 2> /dev/null
+unlink $HOME/.nbems/ICS/messages 2> /dev/null
+unlink $HOME/.nbems/ICS/templates 2> /dev/null
+unlink $HOME/.nbems/CUSTOM 2> /dev/null
 rm -rf $HOME/.fldigi/logs $HOME/.nbems/FLAMP/{rx,tx,scripts} $HOME/.nbems/ICS/{messages,templates} $HOME/.nbems/CUSTOM
 
 ln -sTF $SAVE_DIR/logs $HOME/.fldigi/logs
