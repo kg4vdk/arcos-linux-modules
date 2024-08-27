@@ -12,12 +12,18 @@ MYCITY=$(head -n 3 $HOME/.station-info | tail -n 1)
 MYST=$(head -n 4 $HOME/.station-info | tail -n 1)
 MYQTH="${MYCITY}, ${MYST}"
 MYLOC=$(head -n 5 $HOME/.station-info | tail -n 1)
+QRV_PROFILE=$(head -n 7 $HOME/.station-info | tail -n 1)
+
+if [ ${QRV_PROFILE} == ${MYLOC} ]; then
+	QRV_PROFILE="NONE"
+fi
 
 # PATHS
 ARCOS_DATA=/media/$USER/ARCOS-DATA
 MODULE_DIR=$ARCOS_DATA/QRV/$MYCALL/arcos-linux-modules/CORE/$MODULE
 LOGFILE=$MODULE_DIR/$MODULE.log
 SAVE_DIR=$ARCOS_DATA/QRV/$MYCALL/SAVED/$MODULE
+QRV_PROFILE_DIR=$ARCOS_DATA/QRV/$MYCALL/SAVED/PROFILES
 ########################
 
 ### MODULE COMMANDS FUNCTION ###
@@ -29,7 +35,12 @@ mkdir -p $SAVE_DIR
 
 YAAC_DIR=$HOME/.YAAC
 YAAC_PROFILE_DIR=$HOME/.java/.userPrefs/org/ka2ddo/yaac/Profiles
-YAAC_PROFILE=$SAVE_DIR/yaac-profile
+
+if [ -d $QRV_PROFILE_DIR/${QRV_PROFILE}/$MODULE/yaac-profile_${QRV_PROFILE} ]; then
+	YAAC_PROFILE=$QRV_PROFILE_DIR/${QRV_PROFILE}/$MODULE/yaac-profile_${QRV_PROFILE}
+else
+	YAAC_PROFILE=$QRV_PROFILE_DIR/DEFAULT/$MODULE/yaac-profile_DEFAULT
+fi
 
 mkdir -p $YAAC_DIR
 
