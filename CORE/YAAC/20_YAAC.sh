@@ -48,9 +48,10 @@ if [ -d $YAAC_PROFILE ]; then
     rm -rf $YAAC_PROFILE_DIR/arcOS && cp -r $YAAC_PROFILE $YAAC_PROFILE_DIR/arcOS
 fi
 
-mkdir -p $ARCOS_DATA/QRV/offline-maps
+mkdir -p $ARCOS_DATA/QRV/OFFLINE-MAPS
+unlink $YAAC_DIR/tiledir 2> /dev/null
 rm -rf $YAAC_DIR/tiledir
-ln -sTf $ARCOS_DATA/QRV/offline-maps $YAAC_DIR/tiledir
+ln -sTf $ARCOS_DATA/QRV/OFFLINE-MAPS $YAAC_DIR/tiledir
 
 } # END OF MODULE COMMANDS FUNCTION
 
