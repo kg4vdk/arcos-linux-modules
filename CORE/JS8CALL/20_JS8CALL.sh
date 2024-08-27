@@ -40,6 +40,7 @@ elif [ -f $QRV_PROFILE_DIR/DEFAULT/$MODULE/JS8Call_DEFAULT.ini ]; then
 fi
 
 mkdir -p $SAVE_DIR/JS8Call
+unlink $HOME/.local/share/JS8Call 2> /dev/null
 rm -rf $HOME/.local/share/JS8Call
 ln -sTf $SAVE_DIR/JS8Call $HOME/.local/share/JS8Call
 
