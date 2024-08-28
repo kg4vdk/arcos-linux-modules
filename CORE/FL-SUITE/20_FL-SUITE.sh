@@ -43,6 +43,10 @@ if [ -f $FL_SUITE_CONFIG ]; then
 	tar -C $HOME -xzf $FL_SUITE_CONFIG
 fi
 
+sed -i "s/<MYNAME>.*<\/MYNAME>/<MYNAME>$MYNAME<\/MYNAME>/" $HOME/.fldigi/fldigi_def.xml
+sed -i "s/<MYQTH>.*<\/MYQTH>/<MYQTH>$MYQTH<\/MYQTH>/" $HOME/.fldigi/fldigi_def.xml
+sed -i "s/<MYLOC>.*<\/MYLOC>/<MYLOC>$MYLOC<\/MYLOC>/" $HOME/.fldigi/fldigi_def.xml
+
 mkdir -p $SAVE_DIR/{logs,FLAMP,ICS}
 mkdir -p $SAVE_DIR/FLAMP/{rx,tx,scripts}
 mkdir -p $SAVE_DIR/ICS/{messages,templates}
