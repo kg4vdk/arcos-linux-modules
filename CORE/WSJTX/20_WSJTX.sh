@@ -39,6 +39,8 @@ elif [ -f $QRV_PROFILE_DIR/DEFAULT/$MODULE/WSJT-X_DEFAULT.ini ]; then
 	cp $QRV_PROFILE_DIR/DEFAULT/$MODULE/WSJT-X_DEFAULT.ini $HOME/.config/WSJT-X.ini
 fi
 
+sed -i "s/MyGrid=.*$/MyGrid=$MYLOC/" $HOME/.config/WSJT-X.ini
+
 mkdir -p $SAVE_DIR/WSJT-X
 unlink $HOME/.local/share/WSJT-X 2> /dev/null
 rm -rf $HOME/.local/share/WSJT-X
