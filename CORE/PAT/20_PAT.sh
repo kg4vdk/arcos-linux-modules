@@ -39,6 +39,8 @@ elif [ -f $QRV_PROFILE_DIR/DEFAULT/$MODULE/config_DEFAULT.json ]; then
 	cp $QRV_PROFILE_DIR/DEFAULT/$MODULE/config_DEFAULT.json $HOME/.config/pat/config.json
 fi
 
+sed -i "s/\"locator\": .*,$/\"locator\": \"$MYLOC\",/" $HOME/.config/pat/config.json
+
 if [ -f $SAVE_DIR/rmslist.json ]; then
 	ln -sf $SAVE_DIR/rmslist.json $HOME/.local/share/pat/rmslist.json
 else
