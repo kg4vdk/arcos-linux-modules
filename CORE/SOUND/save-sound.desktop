@@ -1,0 +1,9 @@
+[Desktop Entry]
+Name=SAVE SOUND CONFIG
+GenericName=SAVE SOUND CONFIG
+Comment=SAVE SOUND CONFIG
+Exec=save-sound.sh
+Icon=applications-system
+Terminal=false
+Type=Application
+
