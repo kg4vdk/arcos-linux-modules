@@ -1,0 +1,9 @@
+[Desktop Entry]
+Name=SAVE ARDOP CONFIG
+GenericName=SAVE ARDOP CONFIG
+Comment=SAVE ARDOP CONFIG
+Exec=save-ardop.sh
+Icon=applications-system
+Terminal=false
+Type=Application
+

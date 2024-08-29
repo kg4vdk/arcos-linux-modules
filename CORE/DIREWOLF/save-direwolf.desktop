@@ -1,0 +1,9 @@
+[Desktop Entry]
+Name=SAVE DIREWOLF CONFIG
+GenericName=SAVE DIREWOLF CONFIG
+Comment=SAVE DIREWOLF CONFIG
+Exec=save-direwolf.sh
+Icon=applications-system
+Terminal=false
+Type=Application
+
