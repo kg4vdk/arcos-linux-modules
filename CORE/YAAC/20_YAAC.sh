@@ -48,8 +48,6 @@ if [ -d $YAAC_PROFILE ]; then
     rm -rf $YAAC_PROFILE_DIR/arcOS && cp -r $YAAC_PROFILE $YAAC_PROFILE_DIR/arcOS
 fi
 
-sed -i "s/key=\"freeText\" value=\".*\"/key=\"freeText\" value=\"${MYNAME}\"/" $HOME/.java/.userPrefs/org/ka2ddo/yaac/Profiles/arcOS/Beacons/MYCALL/prefs.xml
-
 mkdir -p $ARCOS_DATA/QRV/OFFLINE-MAPS
 unlink $YAAC_DIR/tiledir 2> /dev/null
 rm -rf $YAAC_DIR/tiledir
