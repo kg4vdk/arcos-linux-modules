@@ -37,7 +37,9 @@ cp $MODULE_DIR/save-sound.desktop $HOME/.local/share/applications/
 if [ -f $SAVE_DIR/alsa_${MACHINE_SERIAL}.state ]; then
 	alsactl restore -f $SAVE_DIR/alsa_${MACHINE_SERIAL}.state
 else
-	amixer -c 5 set Mic Capture 5
+	if arecord -l | grep "card 5" | grep USB; then
+		amixer -c 5 set Mic Capture 5
+	fi
 fi
 
 } # END OF MODULE COMMANDS FUNCTION
