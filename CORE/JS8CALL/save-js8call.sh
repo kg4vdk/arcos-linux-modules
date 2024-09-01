@@ -41,8 +41,7 @@ QRV_PROFILE=$(yad --title="Save to QRV Profile" \
 --fixed \
 --field="QRV Profile":CBE "${QRV_PROFILE_LIST}" \
 --text="Select (or create) the QRV Profile where the configuration will be saved.\n" \
---buttons-layout=end \
---undecorated)
+--buttons-layout=end)
 
 if echo "${QRV_PROFILE}" | grep "|" > /dev/null; then
 	if js8call_save; then
