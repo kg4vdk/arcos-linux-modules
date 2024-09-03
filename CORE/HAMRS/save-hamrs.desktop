@@ -1,0 +1,9 @@
+[Desktop Entry]
+Name=SAVE HAMRS CONFIG
+GenericName=SAVE HAMRS CONFIG
+Comment=SAVE HAMRS CONFIG
+Exec=save-hamrs.sh
+Icon=applications-system
+Terminal=false
+Type=Application
+
