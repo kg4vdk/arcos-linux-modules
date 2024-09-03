@@ -13,6 +13,10 @@ MYST=$(head -n 4 $HOME/.station-info | tail -n 1)
 MYQTH="${MYCITY}, ${MYST}"
 MYLOC=$(head -n 5 $HOME/.station-info | tail -n 1)
 
+if [ ${QRV_PROFILE} == ${MYLOC} ]; then
+	QRV_PROFILE="NONE"
+fi
+
 # PATHS
 ARCOS_DATA=/media/$USER/ARCOS-DATA
 MODULE_DIR=$ARCOS_DATA/QRV/$MYCALL/arcos-linux-modules/CORE/$MODULE
