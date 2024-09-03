@@ -24,7 +24,6 @@ SAVE_DIR=$ARCOS_DATA/QRV/$MYCALL/SAVED/$MODULE
 module_commands () {
 
 sudo cp $MODULE_DIR/save-hamrs.sh /opt/arcOS/bin/
-sudo cp $MODULE_DIR/autosave-hamrs.sh /opt/arcOS/bin/
 cp $MODULE_DIR/save-hamrs.desktop $HOME/.local/share/applications/
 mkdir -p $SAVE_DIR
 
