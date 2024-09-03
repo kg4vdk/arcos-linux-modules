@@ -24,14 +24,17 @@ SAVE_DIR=$ARCOS_DATA/QRV/$MYCALL/SAVED/$MODULE
 module_commands () {
 
 sudo cp $MODULE_DIR/save-hamrs.sh /opt/arcOS/bin/
+sudo cp $MODULE_DIR/autosave-hamrs.sh /opt/arcOS/bin/
 cp $MODULE_DIR/save-hamrs.desktop $HOME/.local/share/applications/
 mkdir -p $SAVE_DIR
 
 if [ -d $SAVE_DIR/hamrs-1.0.7-linux-x86_64.AppImage.home ]; then
 	cp -r $SAVE_DIR/hamrs-1.0.7-linux-x86_64.AppImage.home $HOME/.appimages/
 else
-	mkdir -p $SAVE_DIR/hamrs-1.0.7-linux-x86_64.AppImage.home
+	mkdir -p $HOME/.appimages/hamrs-1.0.7-linux-x86_64.AppImage.home
 fi
+
+echo "* * * * * user /opt/arcOS/bin/autosave-hamrs.sh" | sudo tee --append /etc/crontab
 
 } # END OF MODULE COMMANDS FUNCTION
 

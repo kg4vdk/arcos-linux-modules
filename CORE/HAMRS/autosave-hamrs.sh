@@ -26,15 +26,6 @@ SAVE_DIR=$ARCOS_DATA/QRV/$MYCALL/SAVED/${MODULE}
 QRV_PROFILE_DIR=$ARCOS_DATA/QRV/$MYCALL/SAVED/PROFILES
 ########################
 
-hamrs_save () {
-
-mkdir -p $SAVE_DIR
-cp -r $HOME/.appimages/hamrs-1.0.7-linux-x86_64.AppImage.home $SAVE_DIR/
-
-}
-
-if hamrs_save; then
-	notify-send --icon=hamrs "HAMRS" "Configuration saved!"
-else
-	notify-send --icon=error "HAMRS" "Error saving configuration!"
+if ps -ef | grep "hamrs --no-sandbox"; then
+	cp -r $HOME/.appimages/hamrs-1.0.7-linux-x86_64.AppImage.home $SAVE_DIR/
 fi
