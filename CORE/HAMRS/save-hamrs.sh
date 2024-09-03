@@ -35,7 +35,7 @@ tar -C $HOME/.appimages -czf $SAVE_DIR/hamrs-1.0.7-linux-x86_64.AppImage.home.tg
 }
 
 if hamrs_save; then
-	notify-send --icon=hamrs "HAMRS" "Configuration saved!"
+	notify-send --icon=hamrs "HAMRS" "Logs saved!"
 else
-	notify-send --icon=error "HAMRS" "Error saving configuration!"
+	notify-send --icon=error "HAMRS" "Error saving logs!"
 fi
