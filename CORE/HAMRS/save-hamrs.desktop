@@ -1,7 +1,7 @@
 [Desktop Entry]
-Name=SAVE HAMRS CONFIG
-GenericName=SAVE HAMRS CONFIG
-Comment=SAVE HAMRS CONFIG
+Name=SAVE HAMRS LOGS
+GenericName=SAVE HAMRS LOGS
+Comment=SAVE HAMRS LOGS
 Exec=save-hamrs.sh
 Icon=applications-system
 Terminal=false
