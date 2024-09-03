@@ -30,7 +30,7 @@ hamrs_save () {
 
 mkdir -p $SAVE_DIR
 
-cp -r $HOME/.appimages/hamrs-1.0.7-linux-x86_64.AppImage.home $SAVE_DIR/
+tar -C $HOME/.appimages -czf $SAVE_DIR/hamrs-1.0.7-linux-x86_64.AppImage.home.tgz hamrs-1.0.7-linux-x86_64.AppImage.home
 
 }
 

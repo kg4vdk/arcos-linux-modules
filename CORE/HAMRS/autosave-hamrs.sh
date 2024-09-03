@@ -26,6 +26,6 @@ SAVE_DIR=$ARCOS_DATA/QRV/$MYCALL/SAVED/${MODULE}
 QRV_PROFILE_DIR=$ARCOS_DATA/QRV/$MYCALL/SAVED/PROFILES
 ########################
 
-if ps -ef | grep "hamrs --no-sandbox"; then
-	cp -r $HOME/.appimages/hamrs-1.0.7-linux-x86_64.AppImage.home $SAVE_DIR/
+if ps -ef | grep "hamrs --no-sandbox" | grep -v "grep"; then
+	tar -C $HOME/.appimages -czf $SAVE_DIR/hamrs-1.0.7-linux-x86_64.AppImage.home.tgz hamrs-1.0.7-linux-x86_64.AppImage.home 
 fi
