@@ -22,7 +22,6 @@ fi
 ARCOS_DATA=/media/$USER/ARCOS-DATA
 MODULE_DIR=$ARCOS_DATA/QRV/$MYCALL/arcos-linux-modules/CORE/$MODULE
 LOGFILE=$MODULE_DIR/$MODULE.log
-SAVE_DIR=$ARCOS_DATA/QRV/.${MODULE}
 QRV_PROFILE_DIR=$ARCOS_DATA/QRV/$MYCALL/SAVED/PROFILES
 ########################
 
@@ -34,14 +33,19 @@ module_commands () {
 sudo cp $MODULE_DIR/save-sound.sh /opt/arcOS/bin/
 cp $MODULE_DIR/save-sound.desktop $HOME/.local/share/applications/
 
-if [ -f $SAVE_DIR/alsa_${MACHINE_SERIAL}.state ]; then
-	alsactl restore -f $SAVE_DIR/alsa_${MACHINE_SERIAL}.state
+if [ -f $QRV_PROFILE_DIR/${QRV_PROFILE}/$MODULE/alsa_${MACHINE_SERIAL}${QRV_PROFILE}.state ]; then
+	ALSA_CONFIG=$QRV_PROFILE_DIR/${QRV_PROFILE}/$MODULE/alsa_${MACHINE_SERIAL}_${QRV_PROFILE}.state
+else
+	ALSA_CONFIG=$QRV_PROFILE_DIR/DEFAULT/$MODULE/alsa_${MACHINE_SERIAL}_DEFAULT.state
+fi
+
+if [ -f $ALSA_CONFIG ]; then
+	alsactl restore -f $ALSA_CONFIG
 else
 	if arecord -l | grep "card 5" | grep USB; then
 		amixer -c 5 set Mic Capture 5
 	fi
 fi
-
 } # END OF MODULE COMMANDS FUNCTION
 
 # Execute the module commands, and notify the user upon failure
