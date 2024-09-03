@@ -22,21 +22,38 @@ fi
 ARCOS_DATA=/media/$USER/ARCOS-DATA
 MODULE_DIR=$ARCOS_DATA/QRV/$MYCALL/arcos-linux-modules/CORE/$MODULE
 LOGFILE=$MODULE_DIR/$MODULE.log
-SAVE_DIR=$ARCOS_DATA/QRV/.${MODULE}
 QRV_PROFILE_DIR=$ARCOS_DATA/QRV/$MYCALL/SAVED/PROFILES
 ########################
 
 MACHINE_SERIAL=$(sudo dmidecode -s system-serial-number)
 
 sound_save () {
+QRV_PROFILE=$(echo "${QRV_PROFILE}" | tr '[:lower:]' '[:upper:]' | sed 's/|//')
 
-mkdir -p $SAVE_DIR
-alsactl store -f $SAVE_DIR/alsa_${MACHINE_SERIAL}.state
-
+if [ -f $QRV_PROFILE_DIR/${QRV_PROFILE}/$MODULE/alsa_${MACHINE_SERIAL}_${QRV_PROFILE}.state ]; then
+	mv $QRV_PROFILE_DIR/${QRV_PROFILE}/$MODULE/alsa_${MACHINE_SERIAL}_${QRV_PROFILE}.state $QRV_PROFILE_DIR/${QRV_PROFILE}/$MODULE/alsa_${MACHINE_SERIAL}_${QRV_PROFILE}_$(date +"%F_%H%M").state
+	alsactl store -f $QRV_PROFILE_DIR/${QRV_PROFILE}/$MODULE/alsa_${MACHINE_SERIAL}_${QRV_PROFILE}.state
+else
+	mkdir -p $QRV_PROFILE_DIR/${QRV_PROFILE}/$MODULE
+	alsactl store -f $QRV_PROFILE_DIR/${QRV_PROFILE}/$MODULE/alsa_${MACHINE_SERIAL}_${QRV_PROFILE}.state
+fi
 }
 
-if sound_save; then
-	notify-send --icon=sound "SOUND" "Configuration saved!"
-else
-	notify-send --icon=error "SOUND" "Error saving configuration!"
+QRV_PROFILE_LIST="^DEFAULT$(for profile in $(ls /media/$USER/ARCOS-DATA/QRV/${MYCALL}/SAVED/PROFILES 2> /dev/null); do echo -n "!$profile"; done)"
+
+QRV_PROFILE=$(yad --title="Save to QRV Profile" \
+--window-icon="checkbox-qt" \
+--form --borders=36 \
+--center \
+--fixed \
+--field="QRV Profile":CBE "${QRV_PROFILE_LIST}" \
+--text="Select (or create) the QRV Profile where the configuration will be saved.\n" \
+--buttons-layout=end)
+
+if echo "${QRV_PROFILE}" | grep "|" > /dev/null; then
+	if sound_save; then
+		notify-send --icon=sound "SOUND" "Configuration saved!"
+	else
+		notify-send --icon=error "SOUND" "Error saving configuration!"
+	fi
 fi
