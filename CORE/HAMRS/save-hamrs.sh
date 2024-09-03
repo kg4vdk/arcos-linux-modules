@@ -29,6 +29,7 @@ QRV_PROFILE_DIR=$ARCOS_DATA/QRV/$MYCALL/SAVED/PROFILES
 hamrs_save () {
 
 mkdir -p $SAVE_DIR
+
 cp -r $HOME/.appimages/hamrs-1.0.7-linux-x86_64.AppImage.home $SAVE_DIR/
 
 }
