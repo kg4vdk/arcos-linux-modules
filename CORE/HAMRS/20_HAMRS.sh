@@ -35,6 +35,7 @@ else
 fi
 
 echo "* * * * * user /opt/arcOS/bin/autosave-hamrs.sh" | sudo tee --append /etc/crontab
+sudo systemctl restart cron.service
 
 } # END OF MODULE COMMANDS FUNCTION
 
