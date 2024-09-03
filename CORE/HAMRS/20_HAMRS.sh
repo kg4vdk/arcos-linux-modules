@@ -34,9 +34,6 @@ else
 	mkdir -p $HOME/.appimages/hamrs-1.0.7-linux-x86_64.AppImage.home
 fi
 
-echo "* * * * * user /opt/arcOS/bin/autosave-hamrs.sh" | sudo tee --append /etc/crontab
-sudo systemctl restart cron.service
-
 } # END OF MODULE COMMANDS FUNCTION
 
 # Execute the module commands, and notify the user upon failure
