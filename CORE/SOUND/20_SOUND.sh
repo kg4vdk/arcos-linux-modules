@@ -33,7 +33,7 @@ module_commands () {
 sudo cp $MODULE_DIR/save-sound.sh /opt/arcOS/bin/
 cp $MODULE_DIR/save-sound.desktop $HOME/.local/share/applications/
 
-if [ -f $QRV_PROFILE_DIR/${QRV_PROFILE}/$MODULE/alsa_${MACHINE_SERIAL}${QRV_PROFILE}.state ]; then
+if [ -f $QRV_PROFILE_DIR/${QRV_PROFILE}/$MODULE/alsa_${MACHINE_SERIAL}_${QRV_PROFILE}.state ]; then
 	ALSA_CONFIG=$QRV_PROFILE_DIR/${QRV_PROFILE}/$MODULE/alsa_${MACHINE_SERIAL}_${QRV_PROFILE}.state
 else
 	ALSA_CONFIG=$QRV_PROFILE_DIR/DEFAULT/$MODULE/alsa_${MACHINE_SERIAL}_DEFAULT.state
