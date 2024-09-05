@@ -1,10 +1,10 @@
 #!/bin/bash
 
-mkdir -p /media/$USER/ARCOS-DATA/PARADE_DATA
+mkdir -p /ARCOS-DATA/PARADE_DATA
 
 date=$(date +"%FT%H%M")
 
-echo "ID,ORGANIZATION,CONTACT,PHONE,VEHICLES,TRAILERS,WALKERS,NOTES" > /media/$USER/ARCOS-DATA/PARADE_DATA/parade_$date.csv
+echo "ID,ORGANIZATION,CONTACT,PHONE,VEHICLES,TRAILERS,WALKERS,NOTES" > /ARCOS-DATA/PARADE_DATA/parade_$date.csv
 
 for i in $(find /var/www/html/items -type f ! -path '*/deleted/*' | sort); do
 
@@ -16,11 +16,11 @@ for i in $(find /var/www/html/items -type f ! -path '*/deleted/*' | sort); do
     trailers=$(head -n 6 $i | tail -n 1)
     walkers=$(head -n 7 $i | tail -n 1)
     notes=$(head -n 8 $i | tail -n 1)    
-	echo "$id,\"$organization\",\"$contact\",$phone,$vehicles,$trailers,$walkers,\"$notes\"" >> /media/$USER/ARCOS-DATA/PARADE_DATA/parade_$date.csv
+	echo "$id,\"$organization\",\"$contact\",$phone,$vehicles,$trailers,$walkers,\"$notes\"" >> /ARCOS-DATA/PARADE_DATA/parade_$date.csv
 done
 
-ln -s /media/$USER/ARCOS-DATA/PARADE_DATA/parade_$date.csv $HOME/.nbems/FLAMP/parade_$date.csv
+ln -s /ARCOS-DATA/PARADE_DATA/parade_$date.csv $HOME/.nbems/FLAMP/parade_$date.csv
 
-ln -s /media/$USER/ARCOS-DATA/PARADE_DATA/parade_$date.csv $HOME/Desktop/parade_$date.csv
+ln -s /ARCOS-DATA/PARADE_DATA/parade_$date.csv $HOME/Desktop/parade_$date.csv
 
 notify-send --icon=text-csv "CSV file generated..." "File is ready for transmission by FLAMP."
