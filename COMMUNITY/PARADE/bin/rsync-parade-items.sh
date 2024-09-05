@@ -1,5 +1,5 @@
 #!/bin/bash
 
-mkdir -p /media/user/ARCOS-DATA/PARADE_DATA
+mkdir -p /ARCOS-DATA/PARADE_DATA
 
-rsync -avz /var/www/html/items /media/user/ARCOS-DATA/PARADE_DATA/
+rsync -avz /var/www/html/items /ARCOS-DATA/PARADE_DATA/
