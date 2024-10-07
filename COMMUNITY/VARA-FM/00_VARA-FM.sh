@@ -117,7 +117,7 @@ if [ -f $SAVE_DIR/wine_vara-fm.tar ]; then
 	sudo cp $MODULE_DIR/save-vara-fm.sh /opt/arcOS/bin/
 	cp $MODULE_DIR/save-vara-fm.desktop $HOME/.local/share/applications/
 else
-	if grep "+" /etc/os-release > /dev/null && command -v wine > /dev/null; then
+	if command -v wine > /dev/null; then
 		notify-send --icon=gnome-break-timer "Deploying VARA-FM Module for the first time..."
 		vara_progress () {
 		echo "5"
