@@ -1,0 +1,10 @@
+[Desktop Entry]
+Name=SAVE VARA-FM CONFIG
+GenericName=SAVE VARA-FM CONFIG
+Comment=SAVE VARA-FM CONFIG
+Exec=save-vara-fm.sh
+Icon=applications-system
+Terminal=false
+Type=Application
+Categories=Wine
+
