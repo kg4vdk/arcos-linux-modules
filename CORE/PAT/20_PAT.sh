@@ -30,7 +30,9 @@ QRV_PROFILE_DIR=$ARCOS_DATA/QRV/$MYCALL/SAVED/PROFILES
 module_commands () {
 
 sudo cp $MODULE_DIR/save-pat.sh /opt/arcOS/bin/
+sudo cp $MODULE_DIR/set-pat-password.sh /opt/arcOS/bin/
 cp $MODULE_DIR/save-pat.desktop $HOME/.local/share/applications/
+cp $MODULE_DIR/set-pat-password.desktop $HOME/.local/share/applications/
 mkdir -p $SAVE_DIR
 
 if [ -f $QRV_PROFILE_DIR/${QRV_PROFILE}/$MODULE/config_${QRV_PROFILE}.json ]; then
