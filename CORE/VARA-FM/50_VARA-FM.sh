@@ -126,6 +126,7 @@ else
 		notify-send --icon=info "VARA-FM" "VARA-FM is installed, and is available in the Wine category of the Main Menu."
 		}
 		vara_progress | yad --progress \
+  		--window-icon=wine \
 		--fixed \
 		--center \
 		--width=300 \
