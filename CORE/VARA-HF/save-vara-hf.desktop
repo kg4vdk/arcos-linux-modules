@@ -1,0 +1,10 @@
+[Desktop Entry]
+Name=SAVE VARA-HF CONFIG
+GenericName=SAVE VARA-HF CONFIG
+Comment=SAVE VARA-HF CONFIG
+Exec=save-vara-hf.sh
+Icon=applications-system
+Terminal=false
+Type=Application
+Categories=Wine
+
