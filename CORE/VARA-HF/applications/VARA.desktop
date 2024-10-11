@@ -1,0 +1,8 @@
+#!/usr/bin/env xdg-open
+[Desktop Entry]
+Name=VARA
+Exec=start-vara-hf.sh
+Type=Application
+StartupNotify=true
+Icon=E455_VARA.0
+StartupWMClass=vara.exe
