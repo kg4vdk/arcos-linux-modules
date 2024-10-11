@@ -77,6 +77,7 @@ cp $MODULE_DIR/applications/VARA.desktop $SAVE_DIR/applications/
 echo "99"
 
 sudo cp $MODULE_DIR/save-vara-hf.sh /opt/arcOS/bin/
+cp $MODULE_DIR/save-vara-hf.desktop $HOME/.local/share/applications/
 sudo cp $MODULE_DIR/start-vara-hf.sh /opt/arcOS/bin/
 cp $MODULE_DIR/applications/VARA.desktop $HOME/.local/share/applications/wine/Programs/VARA/
 echo "100"
