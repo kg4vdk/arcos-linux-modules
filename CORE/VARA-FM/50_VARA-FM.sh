@@ -57,7 +57,7 @@ echo "70"
 
 echo "75"
 wine /tmp/"VARA FM setup (Run as Administrator)".exe
-sleep 1
+sleep 0.5
 echo "80"
 killall VARAFM.exe
 echo "85"
