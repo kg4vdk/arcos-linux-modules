@@ -118,6 +118,7 @@ if [ -f $SAVE_DIR/wine_vara-hf.tar ]; then
 	fi
 	sudo cp $MODULE_DIR/save-vara-hf.sh /opt/arcOS/bin/
 	cp $MODULE_DIR/save-vara-hf.desktop $HOME/.local/share/applications/
+ 	sudo cp $MODULE_DIR/start-vara-hf.sh /opt/arcOS/bin/
 else
 	if command -v wine > /dev/null; then
 		notify-send --icon=gnome-break-timer "Deploying VARA-HF Module for the first time..."
