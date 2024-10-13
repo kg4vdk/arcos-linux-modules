@@ -90,8 +90,8 @@ LICENSE=$(yad --title="VARA License..." \
 --form --borders=36 \
 --center \
 --fixed \
---field="VARA License" \
---text="Enter VARA Registration Code, or leave empty to continue without registration.\n\nYou can add a registration code later by copying the code into the 'LICENSE' file in /ARCOS-DATA/QRV/${MYCALL}/SAVED/VARA-FM directory." \
+--field="VARA Registration Code" \
+--text="Enter VARA Registration Code, or leave empty to continue without registration.\n\nYou can add a registration code later by copying the code into the 'LICENSE' file in the\n/ARCOS-DATA/QRV/${MYCALL}/SAVED/VARA-FM directory." \
 --buttons-layout=end)
 
 LICENSE=$(echo -n "$LICENSE" | sed 's/|//')
