@@ -49,7 +49,7 @@ echo "15"
 
 cp $MODULE_DIR/dll/pdh.dll $HOME/.wine_varafm_32/drive_c/windows/system32
 
-wine reg add "HKLM\Software\Wine\Ports" /v com1 /d /dev/digirig /t REG_SZ /f
+wine reg add "HKLM\Software\Wine\Ports" /v COM1 /d /dev/digirig /t REG_SZ /f
 echo "60"
 
 unzip -o -d /tmp $MODULE_DIR/"VARA FM v4.3.8 setup.zip"
@@ -110,6 +110,9 @@ if [ -f $SAVE_DIR/wine_vara-fm.tar ]; then
 		echo "Categories=Wine" >> $HOME/.local/share/applications/wine/Programs/VARA\ FM/VARA\ FM.desktop
 	fi
 	tar -C $HOME -xf $SAVE_DIR/wine_vara-fm.tar
+	export WINEARCH=win32
+	export WINEPREFIX=$HOME/.wine_varafm_32
+	wine reg add "HKLM\Software\Wine\Ports" /v COM1 /d /dev/digirig /t REG_SZ /f
 	if [ -f $SAVE_DIR/LICENSE ]; then
 		LICENSE=$(cat $SAVE_DIR/LICENSE)
 		sed -i 's/^Registration Code=.*$/Registration Code='"$LICENSE"'/' $HOME/.wine_varafm_32/drive_c/VARA\ FM/VARAFM.ini
