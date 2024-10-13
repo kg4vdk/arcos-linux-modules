@@ -106,7 +106,7 @@ sed -i 's/^Registration Code=.*$/Registration Code='"$LICENSE"'/' $HOME/.wine_va
 if [ -f $SAVE_DIR/wine_vara-hf.tar ]; then
 	mkdir -p $HOME/.local/share/icons/hicolor/48x48/apps
 	cp $SAVE_DIR/icons/E455_VARA.0.png  $HOME/.local/share/icons/hicolor/48x48/apps/
- 	sudo cp $MODULE_DIR/start-vara-hf.sh /opt/arcOS/bin/
+	sudo cp $MODULE_DIR/start-vara-hf.sh /opt/arcOS/bin/
 	mkdir -p $HOME/.local/share/applications/wine/Programs/VARA
 	cp $SAVE_DIR/applications/VARA.desktop $HOME/.local/share/applications/wine/Programs/VARA/
 	if ! grep "Categories" $HOME/.local/share/applications/wine/Programs/VARA/VARA.desktop > /dev/null; then
