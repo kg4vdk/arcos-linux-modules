@@ -16,7 +16,7 @@ sed -i 's/^.*"secure_login_password": ".*",$/  "secure_login_password": "'"$PAT_
 
 sudo systemctl restart pat@user.service
 
-notify-send --icon=pat-custom-icon "PAT WLNK" "Password set!\n\nTo save the password persistently, use 'Menu > arcOS Tools > SAVE PAT WLNK CONFIG'."
+notify-send --urgency=critical --icon=pat-custom-icon "PAT WLNK" "Password set! To save the password persistently, use\n\n'Menu > arcOS Tools > SAVE PAT WLNK CONFIG'.\n\nClick to dismiss this message."
 }
 
 save_pat_password
