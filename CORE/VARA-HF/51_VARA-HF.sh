@@ -138,7 +138,7 @@ else
 		--text="Installing VARA-HF..." \
 		--auto-close
 	else
-		notify-send --icon=error --urgency=critical "VARA-HF" "To enable compatibility with VARA, you may purchase a license key for arcOS at https://arcos-linux.com.\n\nPlease consider using the included open source modems instead."
+		notify-send --icon=error --urgency=critical "VARA-HF" "To enable compatibility with VARA, you may purchase an unlock key for arcOS at https://arcos-linux.com.\n\nPlease consider using the included open source modems instead."
 	fi
 fi
 
