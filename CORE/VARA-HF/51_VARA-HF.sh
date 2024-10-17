@@ -87,7 +87,7 @@ sleep 2
 export -f install_varahf
 
 register_varahf () {
-LICENSE=$(yad --title="VARA License..." \
+LICENSE=$(yad --title="VARA Registration..." \
 --window-icon="dialog-password-symbolic" \
 --form --borders=36 \
 --center \
