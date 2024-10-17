@@ -5,6 +5,9 @@
 #####################
 MODULE="MANUAL"
 
+# STATION INFO
+MYCALL=$(head -n 1 $HOME/.station-info)
+
 # PATHS
 ARCOS_DATA=/ARCOS-DATA
 MODULE_DIR=$ARCOS_DATA/QRV/$MYCALL/arcos-linux-modules/CORE/$MODULE
