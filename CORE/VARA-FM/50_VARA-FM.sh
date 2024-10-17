@@ -85,7 +85,7 @@ sleep 2
 export -f install_varafm
 
 register_varafm () {
-LICENSE=$(yad --title="VARA License..." \
+LICENSE=$(yad --title="VARA Registration..." \
 --window-icon="dialog-password-symbolic" \
 --form --borders=36 \
 --center \
