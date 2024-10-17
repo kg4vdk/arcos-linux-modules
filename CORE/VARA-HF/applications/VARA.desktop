@@ -1,6 +1,6 @@
 #!/usr/bin/env xdg-open
 [Desktop Entry]
-Name=VARA
+Name=VARA HF
 Exec=start-vara-hf.sh
 Type=Application
 StartupNotify=true
