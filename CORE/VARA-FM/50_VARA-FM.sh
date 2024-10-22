@@ -39,7 +39,7 @@ echo "15"
 	winetricks -q vb6run
 	echo "45"
 	mkdir -p $HOME/.cache/winetricks/vcrun2015
-	cp $MODULE_DIR/exe/vc_redist.x64.exe $HOME/.cache/winetricks/vcrun2015/
+	cp $MODULE_DIR/exe/vc_redist.x86.exe $HOME/.cache/winetricks/vcrun2015/
 	winetricks -q vcrun2015
 	echo "55"
 #else
