@@ -101,6 +101,7 @@ REG_CODE=$(echo -n "$REG_CODE" | sed 's/|//')
 echo "$REG_CODE" > $SAVE_DIR/REGISTRATION_CODE
 
 sed -i 's/^Registration Code=.*$/Registration Code='"$REG_CODE"'/' $HOME/.wine_vara_32/drive_c/VARA\ FM/VARAFM.ini
+sed -i 's/^Registration Code=.*$/Registration Code='"$REG_CODE"'/' $HOME/.wine_vara_32/drive_c/VARA/VARA.ini
 }
 
 progress_window () {
