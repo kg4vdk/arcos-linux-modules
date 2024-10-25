@@ -7,7 +7,7 @@ if [ -L /dev/digirig ]; then
 
   sleep 1
 
-  env WINEPREFIX="/home/user/.wine_varahf_32" wine /home/user/.wine_varahf_32/drive_c/VARA/VARA.exe > /dev/null 2>&1 &
+  env WINEPREFIX="/home/user/.wine_vara_32" wine /home/user/.wine_vara_32/drive_c/VARA/VARA.exe > /dev/null 2>&1 &
 else
   notify-send --icon=error "VARA-HF" "VARA-HF requires a Digirig device to be accessible by rigctld. Please connect a Digirig device and try again."
 fi
