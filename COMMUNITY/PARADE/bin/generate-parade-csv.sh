@@ -1,0 +1,25 @@
+#!/bin/bash
+
+mkdir -p /ARCOS-DATA/PARADE_DATA
+
+date=$(date +"%F_%H%M%S%Z")
+
+echo "ID,ORGANIZATION,CONTACT,PHONE,VEHICLES,TRAILERS,WALKERS,NOTES" > /ARCOS-DATA/PARADE_DATA/parade_$date.csv
+
+for i in $(find /var/www/html/items -type f ! -path '*/deleted/*' | sort); do
+
+	id=$(head -n 1 $i)
+    organization=$(head -n 2 $i | tail -n 1)
+    contact=$(head -n 3 $i | tail -n 1)
+    phone=$(head -n 4 $i | tail -n 1)
+    vehicles=$(head -n 5 $i | tail -n 1)
+    trailers=$(head -n 6 $i | tail -n 1)
+    walkers=$(head -n 7 $i | tail -n 1)
+    notes=$(head -n 8 $i | tail -n 1)    
+	echo "$id,\"$organization\",\"$contact\",$phone,$vehicles,$trailers,$walkers,\"$notes\"" >> /ARCOS-DATA/PARADE_DATA/parade_$date.csv
+done
+
+ln -s /ARCOS-DATA/PARADE_DATA/parade_$date.csv $HOME/Desktop/parade_$date.csv
+#ln -s /ARCOS-DATA/PARADE_DATA/parade_$date.csv $HOME/.nbems/FLAMP/parade_$date.csv
+
+notify-send --icon=text-csv "Parade CSV file generated!"

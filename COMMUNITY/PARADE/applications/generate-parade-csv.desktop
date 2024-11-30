@@ -1,0 +1,9 @@
+[Desktop Entry]
+Name=GENERATE PARADE CSV
+GenericName=GENERATE PARADE CSV
+Comment=GENERATE PARADE CSV
+Exec=generate-parade-csv.sh
+Icon=applications-system
+Terminal=false
+Type=Application
+Categories=HamRadio;
