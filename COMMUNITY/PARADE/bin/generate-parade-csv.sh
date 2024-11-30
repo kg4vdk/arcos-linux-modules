@@ -2,7 +2,7 @@
 
 mkdir -p /ARCOS-DATA/PARADE_DATA
 
-date=$(date +"%FT%H%M")
+date=$(date +"%F_%H%M%S%Z")
 
 echo "ID,ORGANIZATION,CONTACT,PHONE,VEHICLES,TRAILERS,WALKERS,NOTES" > /ARCOS-DATA/PARADE_DATA/parade_$date.csv
 
@@ -19,8 +19,7 @@ for i in $(find /var/www/html/items -type f ! -path '*/deleted/*' | sort); do
 	echo "$id,\"$organization\",\"$contact\",$phone,$vehicles,$trailers,$walkers,\"$notes\"" >> /ARCOS-DATA/PARADE_DATA/parade_$date.csv
 done
 
-ln -s /ARCOS-DATA/PARADE_DATA/parade_$date.csv $HOME/.nbems/FLAMP/parade_$date.csv
-
 ln -s /ARCOS-DATA/PARADE_DATA/parade_$date.csv $HOME/Desktop/parade_$date.csv
+#ln -s /ARCOS-DATA/PARADE_DATA/parade_$date.csv $HOME/.nbems/FLAMP/parade_$date.csv
 
-notify-send --icon=text-csv "CSV file generated..." "File is ready for transmission by FLAMP."
+notify-send --icon=text-csv "Parade CSV file generated!"

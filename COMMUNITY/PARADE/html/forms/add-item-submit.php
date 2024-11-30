@@ -5,8 +5,8 @@ error_reporting(E_ALL);
 ?>
 
 <?php
-$id = sprintf('%03d', $_POST["id"]);
-$filename = "/var/www/html/items/" . $id . "_" . $_POST["addtimestamp"];
+$id = sprintf('%04d', $_POST["id"]);
+$filename = "/var/www/html/items/" . $_POST["addtimestamp"] . "_" . $id;
 $id = $id . "\n";
 $organization = $_POST["organization"] . "\n";
 $contact = $_POST["contact"] . "\n";
@@ -24,6 +24,7 @@ fwrite($file, $vehicles);
 fwrite($file, $trailers);
 fwrite($file, $walkers);
 fwrite($file, $notes);
+fwrite($file, $_POST["addtimestamp"]);
 fclose($file);
 ?>
 

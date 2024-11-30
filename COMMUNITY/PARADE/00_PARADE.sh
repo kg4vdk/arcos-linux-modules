@@ -22,7 +22,7 @@ LOGFILE=$MODULE_DIR/$MODULE.log
 ### MODULE COMMANDS FUNCTION ###
 module_commands () {
 
-notify-send --icon=gnome-break-timer "Deploying $MODULE Module..." "Please be patient."
+notify-send --icon=gnome-break-timer "Deploying $MODULE Module..." "Please be patient!"
 
 sudo dpkg -i $MODULE_DIR/packages/*.deb
 
@@ -30,13 +30,19 @@ sudo cp $MODULE_DIR/config/nginx.conf /etc/nginx/nginx.conf
 sudo cp $MODULE_DIR/config/sites-available/default /etc/nginx/sites-available/default
 sudo rm -rf /var/www/html
 sudo cp -r $MODULE_DIR/html /var/www/
-sudo mkdir /var/www/html/items
+sudo mkdir -p /var/www/html/items
+sudo mkdir -p /var/www/html/items/deleted
+if [ -d /ARCOS-DATA/PARADE_DATA/items ]; then
+	sudo cp -a /ARCOS-DATA/PARADE_DATA/items /var/www/html/
+fi
 sudo chown -R www-data:www-data /var/www/html
 sudo systemctl restart nginx.service
 sudo cp $MODULE_DIR/bin/*.sh /opt/arcOS/bin/
 sudo chmod +x /opt/arcOS/bin/*parade*.sh
 
-echo "* * * * * user /opt/arcOS/bin/rsync-parade-items.sh" | sudo tee --append /etc/crontab
+if ! grep "rsync-parade-items.sh" /etc/crontab; then
+	echo "* * * * * user /opt/arcOS/bin/rsync-parade-items.sh" | sudo tee --append /etc/crontab
+fi
 cp $MODULE_DIR/applications/*.desktop $HOME/Desktop/
 
 } # END OF MODULE COMMANDS FUNCTION

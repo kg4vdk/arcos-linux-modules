@@ -6,6 +6,7 @@ body {
 
 .container {
 	margin-top: 250px;
+	max-width: 95%;
 }
 
 h3 {
@@ -84,7 +85,7 @@ label {
 
 .item-org {
 	 font-weight: bold;
-	 font-size: 1.5em;
+	 font-size: 1.75em;
 	 line-height: 1em;
 	 margin: 15px 0;
 }
@@ -97,11 +98,13 @@ label {
 	border-radius: 15px;
 	padding: 5px 10px;
 	font-weight: bold;
+	font-size: 1.5em;
 }
 
 .item-contact {
 	margin-top: 15px;
 	font-weight: bold;
+	font-size: 1.5em;
 }
 
 .item-contact a {
@@ -116,5 +119,6 @@ label {
 	border-radius: 15px;
 	text-align: left;
 	padding: 15px;
+	font-size: 1.25em;
 }
 

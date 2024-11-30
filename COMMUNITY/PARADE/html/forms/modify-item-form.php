@@ -1,9 +1,15 @@
 <?php include "../common/header.php"; ?>
+<style type="text/css">
+body {
+	background-color: #6a6a42;
+}
+</style>
 <div class="container">
 	<h3>Modify Item:</h3>
 	<form action="modify-item-form-2.php" method="post">
 <?php $dir = '/var/www/html/items/'; ?>
 <?php $files = array_diff(scandir($dir), array('..', '.', 'deleted')); ?>
+<?php $files = array_reverse($files); ?>
 		<div class="form-group form-group-lg">
 			<select class="custom-select" name="item" required>
 				<option value="">Select item to modify...</option>
