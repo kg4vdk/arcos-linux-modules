@@ -26,10 +26,8 @@ module_commands () {
 mkdir -p $SAVE_DIR
 
 mkdir -p $SAVE_DIR/arcOS.profile
-mkdir -p $HOME/.mozilla/firefox
-ln -sTf $SAVE_DIR/arcOS.profile $HOME/.mozilla/firefox/arcOS.profile
-cp $MODULE_DIR/firefox.desktop $HOME/.local/share/applications/
-
+mkdir -p $HOME/.mozilla/firefox-esr
+ln -sTf $SAVE_DIR/arcOS.profile $HOME/.mozilla/firefox-esr/arcOS.profile
 } # END OF MODULE COMMANDS FUNCTION
 
 # Execute the module commands, and notify the user upon failure
