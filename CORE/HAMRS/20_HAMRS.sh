@@ -27,10 +27,10 @@ sudo cp $MODULE_DIR/save-hamrs.sh /opt/arcOS/bin/
 cp $MODULE_DIR/save-hamrs.desktop $HOME/.local/share/applications/
 mkdir -p $SAVE_DIR
 
-if [ -f $SAVE_DIR/hamrs-1.0.7-linux-x86_64.AppImage.home.tgz ]; then
-	tar -C $HOME/.appimages -xzf $SAVE_DIR/hamrs-1.0.7-linux-x86_64.AppImage.home.tgz
+if [ -f $SAVE_DIR/hamrs.AppImage.home.tgz ]; then
+	tar -C $HOME/.appimages -xzf $SAVE_DIR/hamrs.AppImage.home.tgz
 else
-	mkdir -p $HOME/.appimages/hamrs-1.0.7-linux-x86_64.AppImage.home
+	mkdir -p $HOME/.appimages/hamrs.AppImage.home
 fi
 
 } # END OF MODULE COMMANDS FUNCTION
