@@ -57,8 +57,8 @@ module_commands () {
 
 # cp $HOME/.local/share/applications/wine/Programs/VARA/VARA.desktop $HOME/Desktop/
 # cp $HOME/.local/share/applications/wine/Programs/VARA\ FM/VARA\ FM.desktop $HOME/Desktop/
-# chmod +x $HOME/Desktop/VARA/VARA.desktop
-# chmod +x $HOME/Desktop/VARA\ FM/VARA\ FM.desktop
+# chmod +x $HOME/Desktop/VARA.desktop
+# chmod +x $HOME/Desktop/VARA\ FM.desktop
 
 ##################################################
 } # END OF MODULE COMMANDS FUNCTION
