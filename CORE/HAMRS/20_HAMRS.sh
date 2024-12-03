@@ -33,6 +33,11 @@ else
 	mkdir -p $HOME/.appimages/hamrs.AppImage.home
 fi
 
+if [ -f $SAVE_DIR/hamrs.AppImage ]; then
+	cp $SAVE_DIR/hamrs.AppImage $HOME/.appimages/
+	chmod +x $HOME/.appimages/hamrs.AppImage
+fi
+
 } # END OF MODULE COMMANDS FUNCTION
 
 # Execute the module commands, and notify the user upon failure
