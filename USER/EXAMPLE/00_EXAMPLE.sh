@@ -53,10 +53,12 @@ module_commands () {
 #
 # ls /home/user/.local/share/applications/wine/Programs/VARA
 #
-# This will produce the result VARA.desktop. To place the VARA and VARA FM launchers on the Desktop, uncomment the following lines:
+# This will produce the result VARA.desktop. To place the VARA and VARA FM launchers on the Desktop, uncomment the following 4 lines:
 
 # cp $HOME/.local/share/applications/wine/Programs/VARA/VARA.desktop $HOME/Desktop/
 # cp $HOME/.local/share/applications/wine/Programs/VARA\ FM/VARA\ FM.desktop $HOME/Desktop/
+# chmod +x $HOME/Desktop/VARA/VARA.desktop
+# chmod +x $HOME/Desktop/VARA\ FM/VARA\ FM.desktop
 
 ##################################################
 } # END OF MODULE COMMANDS FUNCTION
