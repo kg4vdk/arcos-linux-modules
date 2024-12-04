@@ -29,6 +29,7 @@ unlink $HOME/.gnupg
 rm -rf $HOME/.gnupg
 
 ln -sTf $SAVE_DIR $HOME/.gnupg
+gpg --import /opt/arcOS/gnupg/all-arcos-users.asc
 } # END OF MODULE COMMANDS FUNCTION
 
 # Execute the module commands, and notify the user upon failure
