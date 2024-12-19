@@ -33,14 +33,14 @@ sudo cp $MODULE_DIR/save-ardop.sh /opt/arcOS/bin/
 cp $MODULE_DIR/save-ardop.desktop $HOME/.local/share/applications/
 mkdir -p $SAVE_DIR
 
-if [ -f $QRV_PROFILE_DIR/${QRV_PROFILE}/$MODULE/ardopcf_${QRV_PROFILE} ]; then
-	ARDOP_CONFIG=$QRV_PROFILE_DIR/${QRV_PROFILE}/$MODULE/ardopcf_${QRV_PROFILE}
+if [ -f $QRV_PROFILE_DIR/${QRV_PROFILE}/$MODULE/start-ardop_${QRV_PROFILE} ]; then
+	ARDOP_CONFIG=$QRV_PROFILE_DIR/${QRV_PROFILE}/$MODULE/start-ardop_${QRV_PROFILE}
 else
-	ARDOP_CONFIG=$QRV_PROFILE_DIR/DEFAULT/$MODULE/ardopcf_DEFAULT
+	ARDOP_CONFIG=$QRV_PROFILE_DIR/DEFAULT/$MODULE/start-ardop_DEFAULT
 fi
 
 if [ -f $ARDOP_CONFIG ]; then
-	sudo cp $ARDOP_CONFIG /opt/arcOS/bin/ardopcf
+	sudo cp $ARDOP_CONFIG /opt/arcOS/bin/start-ardop
 fi
 
 } # END OF MODULE COMMANDS FUNCTION

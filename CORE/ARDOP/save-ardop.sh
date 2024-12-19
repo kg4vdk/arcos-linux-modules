@@ -23,12 +23,12 @@ QRV_PROFILE_DIR=$ARCOS_DATA/QRV/$MYCALL/SAVED/PROFILES
 ardop_save () {
 QRV_PROFILE=$(echo "${QRV_PROFILE}" | tr '[:lower:]' '[:upper:]' | sed 's/|//')
 
-if [ -f $QRV_PROFILE_DIR/${QRV_PROFILE}/$MODULE/ardopcf_${QRV_PROFILE} ]; then
-	mv $QRV_PROFILE_DIR/${QRV_PROFILE}/$MODULE/ardopcf_${QRV_PROFILE} $QRV_PROFILE_DIR/${QRV_PROFILE}/$MODULE/ardopcf_${QRV_PROFILE}_$(date +"%F_%H%M")
-	cp /opt/arcOS/bin/ardopcf $QRV_PROFILE_DIR/${QRV_PROFILE}/$MODULE/ardopcf_${QRV_PROFILE}
+if [ -f $QRV_PROFILE_DIR/${QRV_PROFILE}/$MODULE/start-ardop_${QRV_PROFILE} ]; then
+	mv $QRV_PROFILE_DIR/${QRV_PROFILE}/$MODULE/start-ardop_${QRV_PROFILE} $QRV_PROFILE_DIR/${QRV_PROFILE}/$MODULE/start-ardop_${QRV_PROFILE}_$(date +"%F_%H%M")
+	cp /opt/arcOS/bin/start-ardop $QRV_PROFILE_DIR/${QRV_PROFILE}/$MODULE/start-ardop_${QRV_PROFILE}
 else
 	mkdir -p $QRV_PROFILE_DIR/${QRV_PROFILE}/$MODULE
-	cp /opt/arcOS/bin/ardopcf $QRV_PROFILE_DIR/${QRV_PROFILE}/$MODULE/ardopcf_${QRV_PROFILE}
+	cp /opt/arcOS/bin/start-ardop $QRV_PROFILE_DIR/${QRV_PROFILE}/$MODULE/start-ardop_${QRV_PROFILE}
 fi
 }
 
