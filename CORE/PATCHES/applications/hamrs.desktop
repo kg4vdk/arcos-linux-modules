@@ -1,0 +1,14 @@
+[Desktop Entry]
+Name=HAMRS
+GenericName=HAMRS
+Comment=HAMRS
+Exec=/home/user/.appimages/hamrs.AppImage --no-sandbox
+Icon=hamrs
+Terminal=false
+Type=Application
+StartupWMClass=hamrs-pro
+Actions=save
+
+[Desktop Action save]
+Name=SAVE HAMRS LOGS
+Exec=/opt/arcOS/bin/save-hamrs.sh
