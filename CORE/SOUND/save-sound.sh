@@ -25,7 +25,7 @@ LOGFILE=$MODULE_DIR/$MODULE.log
 QRV_PROFILE_DIR=$ARCOS_DATA/QRV/$MYCALL/SAVED/PROFILES
 ########################
 
-MACHINE_SERIAL=$(sudo dmidecode -s system-serial-number)
+MACHINE_SERIAL=$(sudo dmidecode -s system-serial-number | sed 's/ /_/g')
 
 sound_save () {
 QRV_PROFILE=$(echo "${QRV_PROFILE}" | tr '[:lower:]' '[:upper:]' | sed 's/|//')
