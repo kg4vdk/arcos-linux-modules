@@ -1,9 +1,0 @@
-[Desktop Entry]
-Name=SAVE HAMRS LOGS
-GenericName=SAVE HAMRS LOGS
-Comment=SAVE HAMRS LOGS
-Exec=save-hamrs.sh
-Icon=applications-system
-Terminal=false
-Type=Application
-
