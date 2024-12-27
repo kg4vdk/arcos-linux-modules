@@ -23,19 +23,16 @@ SAVE_DIR=$ARCOS_DATA/QRV/$MYCALL/SAVED/$MODULE
 ### MODULE COMMANDS FUNCTION ###
 module_commands () {
 
-sudo cp $MODULE_DIR/save-hamrs.sh /opt/arcOS/bin/
-cp $MODULE_DIR/save-hamrs.desktop $HOME/.local/share/applications/
-mkdir -p $SAVE_DIR
-
-if [ -f $SAVE_DIR/hamrs.AppImage.home.tgz ]; then
-	tar -C $HOME/.appimages -xzf $SAVE_DIR/hamrs.AppImage.home.tgz
+if [ -d $ARCOS_DATA/QRV/LOGS ]; then
+	if [ -f $ARCOS_DATA/QRV/LOGS/hamrs.AppImage ]; then
+		mkdir -p $ARCOS_DATA/QRV/LOGS/hamrs.AppImage.home
+	fi
+	gio set -t stringv /$ARCOS_DATA/QRV/LOGS metadata::emblems emblem-documents
+	touch /$ARCOS_DATA/QRV/LOGS
 else
-	mkdir -p $HOME/.appimages/hamrs.AppImage.home
-fi
-
-if [ -f $SAVE_DIR/hamrs.AppImage ]; then
-	cp $SAVE_DIR/hamrs.AppImage $HOME/.appimages/
-	chmod +x $HOME/.appimages/hamrs.AppImage
+	mkdir -p $ARCOS_DATA/QRV/LOGS
+	gio set -t stringv /$ARCOS_DATA/QRV/LOGS metadata::emblems emblem-documents
+	touch /$ARCOS_DATA/QRV/LOGS
 fi
 
 } # END OF MODULE COMMANDS FUNCTION
