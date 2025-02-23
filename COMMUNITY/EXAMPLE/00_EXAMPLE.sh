@@ -4,7 +4,7 @@
 # EXAMPLE QRV MODULE #
 ######################
 
-# Nmae of the module directory
+# Name of the module directory
 MODULE="EXAMPLE"
 
 # STATION INFO (Gets information from the .station-info file in the user home directory)
@@ -15,7 +15,7 @@ MYST=$(head -n 4 $HOME/.station-info | tail -n 1)
 MYQTH="${MYCITY}, ${MYST}"
 MYLOC=$(head -n 5 $HOME/.station-info | tail -n 1)
 
-# PATHS (Defines paths referencein the module)
+# PATHS (Defines paths referenced in the module)
 ARCOS_DATA=/ARCOS-DATA
 MODULE_DIR=$ARCOS_DATA/QRV/$MYCALL/arcos-linux-modules/USER/$MODULE
 LOGFILE=$MODULE_DIR/$MODULE.log
