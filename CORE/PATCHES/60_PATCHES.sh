@@ -24,13 +24,6 @@ module_commands () {
 
 ###########################################################################
 
-sudo cp $MODULE_DIR/config/lighttpd.conf /etc/lighttpd/
-sudo cp $MODULE_DIR/config/89-skyaware.conf /etc/lighttpd/conf-available/
-sudo systemctl daemon-reload
-sudo systemctl restart lighttpd.service
-
-cp $MODULE_DIR/applications/hamrs.desktop $HOME/.local/share/applications/
-chmod +x $HOME/.local/share/applications/hamrs.desktop
 
 
 ######################
