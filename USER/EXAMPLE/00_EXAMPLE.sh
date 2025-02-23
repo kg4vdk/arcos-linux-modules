@@ -4,7 +4,7 @@
 # EXAMPLE QRV MODULE #
 ######################
 
-# Nmae of the module directory
+# Name of the module directory
 MODULE="EXAMPLE"
 
 # STATION INFO (Gets information from the .station-info file in the user home directory)
