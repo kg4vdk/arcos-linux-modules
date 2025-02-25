@@ -81,9 +81,9 @@ mkdir -p $SAVE_DIR/{icons,applications}
 
 tar -C $HOME -cf $SAVE_DIR/wine_vara.tar .wine_vara_32
 
-cp $HOME/.local/share/icons/hicolor/48x48/apps/253F_VARAFM.0.png $SAVE_DIR/icons/
-cp $HOME/.local/share/applications/wine/Programs/VARA\ FM/VARA\ FM.desktop $SAVE_DIR/applications/
-cp $HOME/.local/share/icons/hicolor/48x48/apps/E455_VARA.0.png $SAVE_DIR/icons/
+cp $HOME/.local/share/icons/hicolor/48x48/apps/C497_VARAFM.0.png $SAVE_DIR/icons/
+cp $MODULE_DIR/applications/VARA\ FM.desktop $SAVE_DIR/applications/
+cp $HOME/.local/share/icons/hicolor/48x48/apps/F302_VARA.0.png $SAVE_DIR/icons/
 cp $MODULE_DIR/applications/VARA.desktop $SAVE_DIR/applications/
 }
 
@@ -120,19 +120,19 @@ yad --progress \
 remove_vara () {
 rm -rf $SAVE_DIR
 rm -rf $HOME/.wine_vara_32
-rm $HOME/.local/share/icons/hicolor/48x48/apps/253F_VARAFM.0.png
+rm $HOME/.local/share/icons/hicolor/48x48/apps/C497_VARAFM.0.png
 rm -rf $HOME/.local/share/applications/wine/Programs/VARA\ FM
-rm $HOME/.local/share/icons/hicolor/48x48/apps/E455_VARA.0.png
+rm $HOME/.local/share/icons/hicolor/48x48/apps/F302_VARA.0.png
 rm -rf $HOME/.local/share/applications/wine/Programs/VARA
 }
 
 deploy_vara () {
 if [ -f $SAVE_DIR/wine_vara.tar ]; then
 	mkdir -p $HOME/.local/share/icons/hicolor/48x48/apps
-	cp $SAVE_DIR/icons/253F_VARAFM.0.png  $HOME/.local/share/icons/hicolor/48x48/apps/
+	cp $SAVE_DIR/icons/C497_VARAFM.0.png  $HOME/.local/share/icons/hicolor/48x48/apps/
 	mkdir -p $HOME/.local/share/applications/wine/Programs/VARA\ FM
 	cp $SAVE_DIR/applications/VARA\ FM.desktop $HOME/.local/share/applications/wine/Programs/VARA\ FM/
-	cp $SAVE_DIR/icons/E455_VARA.0.png  $HOME/.local/share/icons/hicolor/48x48/apps/
+	cp $SAVE_DIR/icons/F302_VARA.0.png  $HOME/.local/share/icons/hicolor/48x48/apps/
 	mkdir -p $HOME/.local/share/applications/wine/Programs/VARA
 	sudo cp $MODULE_DIR/bin/start-vara-hf.sh /opt/arcOS/bin/
 	cp $SAVE_DIR/applications/VARA.desktop $HOME/.local/share/applications/wine/Programs/VARA/
