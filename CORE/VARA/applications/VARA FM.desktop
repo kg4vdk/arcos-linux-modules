@@ -1,0 +1,7 @@
+[Desktop Entry]
+Name=VARA FM
+Exec=env WINEPREFIX="/home/user/.wine_vara_32" wine-stable C:\\\\ProgramData\\\\Microsoft\\\\Windows\\\\Start\\ Menu\\\\Programs\\\\VARA\\ FM\\\\VARA\\ FM.lnk
+Type=Application
+StartupNotify=true
+Icon=C497_VARAFM.0
+StartupWMClass=varafm.exe

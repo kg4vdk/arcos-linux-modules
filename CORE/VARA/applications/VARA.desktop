@@ -4,5 +4,5 @@ Name=VARA HF
 Exec=start-vara-hf.sh
 Type=Application
 StartupNotify=true
-Icon=E455_VARA.0
+Icon=F302_VARA.0
 StartupWMClass=vara.exe
