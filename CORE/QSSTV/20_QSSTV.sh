@@ -39,6 +39,7 @@ elif [ -f $QRV_PROFILE_DIR/DEFAULT/$MODULE/qsstv_9.0_DEFAULT.conf ]; then
 	cp $QRV_PROFILE_DIR/DEFAULT/$MODULE/qsstv_9.0_DEFAULT.conf $HOME/.config/ON4QZ/qsstv_9.0.conf
 fi
 
+mkdir -p $HOME/.qsstv
 for directory in audio rx tx templates; do
 	mkdir -p $SAVE_DIR/$directory
    	unlink $HOME/.qsstv/$directory 2> /dev/null
