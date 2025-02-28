@@ -1,0 +1,8 @@
+[Desktop Entry]
+Name=SAVE QSSTV CONFIG
+GenericName=SAVE QSSTV CONFIG
+Comment=SAVE QSSTV CONFIG
+Exec=save-qsstv.sh
+Icon=applications-system
+Terminal=false
+Type=Application
