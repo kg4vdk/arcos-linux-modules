@@ -1,0 +1,11 @@
+
+[Data Source]
+DisplayName=Persistent Calendar
+Enabled=true
+Parent=local-stub
+
+[Calendar]
+BackendName=local
+Color=#62a0ea
+Selected=true
+Order=0
