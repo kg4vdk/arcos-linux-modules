@@ -31,18 +31,11 @@ module_commands () {
 
 mkdir -p $SAVE_DIR
 
-mkdir -p $HOME/.config/evolution/sources
 mkdir -p $HOME/.local/share/evolution/calendar/arcOS
-
-cp $MODULE_DIR/sources/birthdays.source $HOME/.config/evolution/sources/
-cp $MODULE_DIR/sources/system-calendar.source $HOME/.config/evolution/sources/
-cp $MODULE_DIR/sources/arcOS.source $HOME/.config/evolution/sources/
 
 if [ -f $SAVE_DIR/calendar.ics ]; then
 	cp $SAVE_DIR/calendar.ics $HOME/.local/share/evolution/calendar/arcOS/
 fi
-
-gsettings set org.gnome.Evolution.DefaultSources default-calendar 'arcOS'
 
 if ! grep "calendar.ics" /etc/crontab; then
 	echo "* * * * * user /usr/bin/rsync --checksum /home/user/.local/share/evolution/calendar/arcOS/calendar.ics $SAVE_DIR/calendar.ics" | sudo tee --append /etc/crontab
