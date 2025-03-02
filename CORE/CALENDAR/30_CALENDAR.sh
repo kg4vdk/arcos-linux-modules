@@ -31,6 +31,16 @@ module_commands () {
 
 mkdir -p $SAVE_DIR
 
+mkdir -p $HOME/.config/evolution/sources
+
+if [ -f $SAVE_DIR/arcOS.source ]; then
+	cp $SAVE_DIR/arcOS.source $HOME/.config/evolution/sources/
+fi
+
+if ! grep "arcOS.source" /etc/crontab; then
+	echo "* * * * * user /usr/bin/rsync --checksum /home/user/.config/evolution/sources/arcOS.source $SAVE_DIR/arcOS.source" | sudo tee --append /etc/crontab
+fi
+
 mkdir -p $HOME/.local/share/evolution/calendar/arcOS
 
 if [ -f $SAVE_DIR/calendar.ics ]; then
@@ -41,6 +51,7 @@ if ! grep "calendar.ics" /etc/crontab; then
 	echo "* * * * * user /usr/bin/rsync --checksum /home/user/.local/share/evolution/calendar/arcOS/calendar.ics $SAVE_DIR/calendar.ics" | sudo tee --append /etc/crontab
 fi
 
+systemctl --user restart evolution-source-registry.service
 systemctl --user restart evolution-calendar-factory.service
 cinnamon-calendar-server &
 
