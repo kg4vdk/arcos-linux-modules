@@ -40,6 +40,10 @@ fi
 if ! grep "calendar.ics" /etc/crontab; then
 	echo "* * * * * user /usr/bin/rsync --checksum /home/user/.local/share/evolution/calendar/arcOS/calendar.ics $SAVE_DIR/calendar.ics" | sudo tee --append /etc/crontab
 fi
+
+systemctl --user restart evolution-calendar-factory.service
+cinnamon-calendar-server &
+
 } # END OF MODULE COMMANDS FUNCTION
 
 # Execute the module commands, and notify the user upon failure
