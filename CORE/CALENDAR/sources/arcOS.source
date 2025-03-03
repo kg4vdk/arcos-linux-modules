@@ -6,6 +6,11 @@ DisplayName=Persistent Calendar
 Enabled=true
 Parent=local-stub
 
+[Local Backend]
+CustomFile=file:///ARCOS-DATA/QRV/CALENDAR/calendar.ics
+EmailAddress=
+Writable=true
+
 [Calendar]
 BackendName=local
 Color=#62a0ea
