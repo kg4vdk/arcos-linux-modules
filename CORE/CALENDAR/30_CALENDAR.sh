@@ -31,29 +31,15 @@ module_commands () {
 
 mkdir -p $SAVE_DIR
 
-mkdir -p $HOME/.config/evolution/sources
+if [ ! -f $SAVE_DIR/arcOS.source ]; then
+	cp $MODULE_DIR/sources/arcOS.source $SAVE_DIR/arcOS.source
 
-if [ -f $SAVE_DIR/arcOS.source ]; then
-	cp $SAVE_DIR/arcOS.source $HOME/.config/evolution/sources/
+if [ ! -f $SAVE_DIR/calendar.ics ]; then
+	cp $MODULE_DIR/calendar/calendar.ics $SAVE_DIR/calendar.ics
 fi
 
-if ! grep "arcOS.source" /etc/crontab; then
-	echo "* * * * * user /usr/bin/rsync --checksum /home/user/.config/evolution/sources/arcOS.source $SAVE_DIR/arcOS.source" | sudo tee --append /etc/crontab
-fi
-
-mkdir -p $HOME/.local/share/evolution/calendar/arcOS
-
-if [ -f $SAVE_DIR/calendar.ics ]; then
-	cp $SAVE_DIR/calendar.ics $HOME/.local/share/evolution/calendar/arcOS/
-fi
-
-if ! grep "calendar.ics" /etc/crontab; then
-	echo "* * * * * user /usr/bin/rsync --checksum /home/user/.local/share/evolution/calendar/arcOS/calendar.ics $SAVE_DIR/calendar.ics" | sudo tee --append /etc/crontab
-fi
-
-systemctl --user restart evolution-source-registry.service
-systemctl --user restart evolution-calendar-factory.service
-cinnamon-calendar-server &
+gsettings set org.gnome.evolution-data-server autoconfig-directory '/ARCOS-DATA/QRV/CALENDAR'
+systemctl --user restart evolution-source-registry
 
 } # END OF MODULE COMMANDS FUNCTION
 
