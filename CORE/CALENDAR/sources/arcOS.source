@@ -1,3 +1,5 @@
+[Autoconfig]
+Revision=1
 
 [Data Source]
 DisplayName=Persistent Calendar
