@@ -13,7 +13,7 @@ Writable=true
 
 [Calendar]
 BackendName=local
-Color=#62a0ea
+Color=rgb(53,132,228)
 Selected=true
 Order=0
 
