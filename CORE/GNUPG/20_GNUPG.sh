@@ -29,6 +29,8 @@ unlink $HOME/.gnupg
 rm -rf $HOME/.gnupg
 
 ln -sTf $SAVE_DIR $HOME/.gnupg
+
+gpgconf --kill gpg-agent
 } # END OF MODULE COMMANDS FUNCTION
 
 # Execute the module commands, and notify the user upon failure
