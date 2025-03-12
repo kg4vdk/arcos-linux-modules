@@ -353,28 +353,14 @@
         "type": "generic",
         "default": [
             "nemo.desktop",
-            "firefox-esr.desktop",
-            "start-ardop.desktop",
-            "start-direwolf.desktop",
-            "webapp-WinlinkClient0335.desktop",
-            "yaac.desktop",
-            "fldigi.desktop",
-            "flamp.desktop",
-            "flmsg.desktop",
-            "js8call.desktop",
-            "wsjtx.desktop"
+            "org.gnome.Terminal.desktop",
+            "firefox-esr.desktop"
         ],
         "value": [
             "nemo.desktop",
-            "firefox-esr.desktop",
             "org.gnome.Terminal.desktop",
-            "org.x.editor.desktop",
-            "webapp-WinlinkClient0335.desktop",
-            "fldigi.desktop",
-            "flamp.desktop",
-            "flmsg.desktop",
-            "js8call.desktop"
+            "firefox-esr.desktop"
         ]
     },
-    "__md5__": "b7d0a7558cf87c22c50195c9d408485f93b150ba81fb9fbf89ad5d72b9463753"
+    "__md5__": "b7d0a7558cf87c22c50195c9d408485f5237bd198ce63ef090dfef7f1e29729d"
 }
