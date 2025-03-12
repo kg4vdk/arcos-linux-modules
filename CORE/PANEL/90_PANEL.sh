@@ -36,7 +36,7 @@ if [ -d $SAVE_DIR/grouped-window-list@cinnamon.org ]; then
 	rm -rf $HOME/.config/cinnamon/spices/grouped-window-list@cinnamon.org
 	ln -sTf $SAVE_DIR/grouped-window-list@cinnamon.org $HOME/.config/cinnamon/spices/grouped-window-list@cinnamon.org
 else
-	cp -r $HOME/.config/cinnamon/spices/grouped-window-list@cinnamon.org $SAVE_DIR/
+	cp -r $MODULE_DIR/grouped-window-list@cinnamon.org $SAVE_DIR/
 	unlink $HOME/.config/cinnamon/spices/grouped-window-list@cinnamon.org 2> /dev/null
 	rm -rf $HOME/.config/cinnamon/spices/grouped-window-list@cinnamon.org
 	ln -sTf $SAVE_DIR/grouped-window-list@cinnamon.org $HOME/.config/cinnamon/spices/grouped-window-list@cinnamon.org 
