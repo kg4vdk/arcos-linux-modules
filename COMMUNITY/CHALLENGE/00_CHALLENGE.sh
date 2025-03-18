@@ -31,8 +31,8 @@ if [ -f /tmp/coords.log ]; then
 	LONGITUDE="$(head -n 1 /tmp/coords.log | awk -F "," '{print $2}' | xargs printf "%.5f\n")"
 	LONGITUDE_ADJ=$(bc <<< "${LONGITUDE} + 0.00500")
 else
-	LATITUDE="00.00000"
-	LONGITUDE="00.00000"
+	LATITUDE="38.00000"
+	LONGITUDE_ADJ="-95.00500"
 fi
 
 sudo dpkg -i $MODULE_DIR/packages/*.deb
