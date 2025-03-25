@@ -18,7 +18,7 @@ SAVE_DIR=$ARCOS_DATA/QRV/$MYCALL/SAVED/$MODULE
 mkdir -p $SAVE_DIR
 
 wifi_save () {
-sudo cp /etc/NetworkManager/system-connections/*.nmconnection $SAVE_DIR/
+sudo cp /run/NetworkManager/system-connections/netplan*.nmconnection $SAVE_DIR/
 }
 
 if wifi_save; then
