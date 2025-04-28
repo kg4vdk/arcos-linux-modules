@@ -23,11 +23,20 @@ SAVE_DIR=$ARCOS_DATA/QRV/$MYCALL/SAVED/$MODULE
 ### MODULE COMMANDS FUNCTION ###
 module_commands () {
 
-mkdir -p $SAVE_DIR
+mkdir -p $SAVE_DIR/mozilla/firefox-esr/arcOS.profile
+if grep "mozilla" /etc/mtab; then
+	sudo umount $HOME/.mozilla
+fi
 
-mkdir -p $SAVE_DIR/arcOS.profile
-mkdir -p $HOME/.mozilla/firefox-esr
-ln -sTf $SAVE_DIR/arcOS.profile $HOME/.mozilla/firefox-esr/arcOS.profile
+rm -rf $HOME/.mozilla
+mkdir -p $HOME/.mozilla
+sudo mount --bind $SAVE_DIR/mozilla $HOME/.mozilla
+
+#mkdir -p $SAVE_DIR
+
+#mkdir -p $SAVE_DIR/arcOS.profile
+#mkdir -p $HOME/.mozilla/firefox-esr
+#ln -sTf $SAVE_DIR/arcOS.profile $HOME/.mozilla/firefox-esr/arcOS.profile
 } # END OF MODULE COMMANDS FUNCTION
 
 # Execute the module commands, and notify the user upon failure
