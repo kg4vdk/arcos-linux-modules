@@ -58,14 +58,14 @@ install_vara () {
 unzip -o -d /tmp $MODULE_DIR/"VARA FM v4.3.8 setup.zip"
 wine /tmp/"VARA FM setup (Run as Administrator)".exe
 sleep 1
-if pidof VARAFM.exe; then
+if pidof "C:\VARA FM\VARAFM.exe"; then
 	killall VARAFM.exe
 fi
 
 unzip -o -d /tmp $MODULE_DIR/"VARA HF v4.8.9 setup.zip"
 wine /tmp/"VARA setup (Run as Administrator)".exe
 sleep 1
-if pidof VARA.exe; then
+if pidof "C:\VARA\VARA.exe"; then
 	killall VARA.exe
 fi
 }
