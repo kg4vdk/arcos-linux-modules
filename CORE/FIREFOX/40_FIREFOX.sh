@@ -33,7 +33,7 @@ rm -rf $HOME/.mozilla
 mkdir -p $HOME/.mozilla
 
 if [ ! -f $SAVE_DIR/mozilla-fs ]; then
-	dd if=/dev/zero of=$SAVE_DIR/mozilla-fs bs=1024 count=500000
+	dd if=/dev/zero of=$SAVE_DIR/mozilla-fs bs=1M count=512
 	mkfs.ext4 $SAVE_DIR/mozilla-fs
 	sudo mount $SAVE_DIR/mozilla-fs $HOME/.mozilla
 	sudo chown user:user $HOME/.mozilla
