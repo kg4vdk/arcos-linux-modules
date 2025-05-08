@@ -25,12 +25,26 @@ module_commands () {
 
 mkdir -p $SAVE_DIR
 
-unlink $HOME/.gnupg
-rm -rf $HOME/.gnupg
+if grep "gnupg" /etc/mtab; then
+	sudo umount $HOME/.gnupg
+fi
 
-ln -sTf $SAVE_DIR $HOME/.gnupg
+rm -rf $HOME/.gnupg
+mkdir -p $HOME/.gnupg
+
+if [ ! -f $SAVE_DIR/gnupg-fs ]; then
+	dd if=/dev/zero of=$SAVE_DIR/gnupg-fs bs=1M count=128
+	mkfs.ext4 $SAVE_DIR/gnupg-fs
+	sudo mount $SAVE_DIR/gnupg-fs $HOME/.gnupg
+	sudo chown user:user $HOME/.gnupg
+	sudo chmod 700 $HOME/.gnupg
+	sudo umount $HOME/.gnupg
+fi
+
+sudo mount $SAVE_DIR/gnupg-fs $HOME/.gnupg
 
 gpgconf --kill gpg-agent
+
 } # END OF MODULE COMMANDS FUNCTION
 
 # Execute the module commands, and notify the user upon failure
