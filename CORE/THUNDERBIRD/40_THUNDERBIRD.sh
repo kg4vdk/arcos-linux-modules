@@ -33,7 +33,7 @@ rm -rf $HOME/.thunderbird
 mkdir -p $HOME/.thunderbird
 
 if [ ! -f $SAVE_DIR/thunderbird-fs ]; then
-	dd if=/dev/zero of=$SAVE_DIR/thunderbird-fs bs=1M count=512
+	dd if=/dev/zero of=$SAVE_DIR/thunderbird-fs bs=1M count=1024
 	mkfs.ext4 $SAVE_DIR/thunderbird-fs
 	sudo mount $SAVE_DIR/thunderbird-fs $HOME/.thunderbird
 	sudo chown user:user $HOME/.thunderbird
