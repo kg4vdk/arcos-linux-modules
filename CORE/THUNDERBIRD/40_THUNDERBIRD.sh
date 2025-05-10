@@ -25,23 +25,30 @@ module_commands () {
 
 mkdir -p $SAVE_DIR
 
-if grep "thunderbird" /etc/mtab; then
-	sudo umount $HOME/.thunderbird
-fi
-
+mkdir -p $SAVE_DIR/thunderbird
+unlink $HOME/.thunderbird
 rm -rf $HOME/.thunderbird
-mkdir -p $HOME/.thunderbird
+ln -sTf $SAVE_DIR/thunderbird $HOME/.thunderbird
 
-if [ ! -f $SAVE_DIR/thunderbird-fs ]; then
-	dd if=/dev/zero of=$SAVE_DIR/thunderbird-fs bs=1M count=1024
-	mkfs.ext4 $SAVE_DIR/thunderbird-fs
-	sudo mount $SAVE_DIR/thunderbird-fs $HOME/.thunderbird
-	sudo chown user:user $HOME/.thunderbird
-	sudo chmod 700 $HOME/.thunderbird
-	sudo umount $HOME/.thunderbird
-fi
+#mkdir -p $SAVE_DIR
+#
+#if grep "thunderbird" /etc/mtab; then
+#	sudo umount $HOME/.thunderbird
+#fi
+#
+#rm -rf $HOME/.thunderbird
+#mkdir -p $HOME/.thunderbird
+#
+#if [ ! -f $SAVE_DIR/thunderbird-fs ]; then
+#	dd if=/dev/zero of=$SAVE_DIR/thunderbird-fs bs=1M count=1024
+#	mkfs.ext4 $SAVE_DIR/thunderbird-fs
+#	sudo mount $SAVE_DIR/thunderbird-fs $HOME/.thunderbird
+#	sudo chown user:user $HOME/.thunderbird
+#	sudo chmod 700 $HOME/.thunderbird
+#	sudo umount $HOME/.thunderbird
+#fi
 
-sudo mount $SAVE_DIR/thunderbird-fs $HOME/.thunderbird
+#sudo mount $SAVE_DIR/thunderbird-fs $HOME/.thunderbird
 
 } # END OF MODULE COMMANDS FUNCTION
 
