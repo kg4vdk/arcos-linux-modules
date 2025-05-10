@@ -94,11 +94,14 @@ cp $MODULE_DIR/applications/VARA.desktop $SAVE_DIR/applications/
 register_vara () {
 REG_CODE=$(yad --title="VARA Registration..." \
 --window-icon="dialog-password-symbolic" \
+--undecorated \
 --form --borders=36 \
 --center \
 --fixed \
---field="VARA Registration Code" \
+--field="" \
 --text="Enter VARA Registration Code, or leave empty to continue without registration.\n\n" \
+--no-ecscape \
+--button="OK" \
 --buttons-layout=end)
 
 REG_CODE=$(echo -n "$REG_CODE" | sed 's/|//')
@@ -110,6 +113,7 @@ sed -i 's/^Registration Code=.*$/Registration Code='"$REG_CODE"'/' $HOME/.wine_v
 
 progress_window () {
 yad --progress \
+--undecorated \
 --window-icon=wine \
 --fixed \
 --center \
@@ -118,6 +122,7 @@ yad --progress \
 --title="Wine" \
 --text="Preparing Wine environment..." \
 --no-buttons \
+--no-escape \
 --auto-close
 }
 
@@ -157,10 +162,9 @@ if [ -f $SAVE_DIR/wine_vara.tar ]; then
 	fi
 else
 	if command -v wine > /dev/null; then
-		notify-send --icon=gnome-break-timer "Deploying VARA Module for the first time..."
 		if prepare_vara | progress_window; then
 			if install_vara && config_vara && persist_vara && register_vara; then
-				notify-send --urgency=critical --icon=info "VARA" "VARA is installed, and is available in the Wine category of the Main Menu.\n\nClick to dismiss this message."
+				notify-send --urgency=critical --icon=info "VARA" "VARA is installed, and will be available in the Wine category of the Main Menu.\n\nClick to dismiss this message."
 			else
 				remove_vara
 				notify-send --icon=error "$MODULE" "$MODULE installation failed!"
