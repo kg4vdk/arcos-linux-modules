@@ -86,8 +86,10 @@ mkdir -p $SAVE_DIR/{icons,applications}
 tar -C $HOME -cf $SAVE_DIR/wine_vara.tar .wine_vara_32
 
 cp $MODULE_DIR/icons/C497_VARAFM.0.png $SAVE_DIR/icons/
+cp $MODULE_DIR/icons/C497_VARAFM.0.png $HOME/.local/share/icons/hicolor/48x48/apps/
 cp $MODULE_DIR/applications/VARA\ FM.desktop $SAVE_DIR/applications/
 cp $MODULE_DIR/icons/F302_VARA.0.png $SAVE_DIR/icons/
+cp $MODULE_DIR/icons/F302_VARA.0.png $HOME/.local/share/icons/hicolor/48x48/apps/
 cp $MODULE_DIR/applications/VARA.desktop $SAVE_DIR/applications/
 }
 
