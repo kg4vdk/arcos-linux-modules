@@ -1,0 +1,8 @@
+[Desktop Entry]
+Name=HAMRS (System)
+GenericName=HAMRS (System)
+Comment=Logs shared by all users
+Exec=/ARCOS-DATA/QRV/LOGS/hamrs.AppImage
+Icon=hamrs
+Terminal=false
+Type=Application

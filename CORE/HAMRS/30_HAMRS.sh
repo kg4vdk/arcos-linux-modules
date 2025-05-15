@@ -29,10 +29,34 @@ if [ -d $ARCOS_DATA/QRV/LOGS ]; then
 	fi
 	gio set -t stringv /$ARCOS_DATA/QRV/LOGS metadata::emblems emblem-documents
 	touch /$ARCOS_DATA/QRV/LOGS
+	cp ${MODULE_DIR}/applications/hamrs_system.desktop $HOME/.local/share/applications/
 else
 	mkdir -p $ARCOS_DATA/QRV/LOGS
 	gio set -t stringv /$ARCOS_DATA/QRV/LOGS metadata::emblems emblem-documents
 	touch /$ARCOS_DATA/QRV/LOGS
+	if [ -f $HOME/.local/share/applications/hamrs_system.desktop ]; then
+		rm $HOME/.local/share/applications/hamrs_system.desktop
+	fi
+fi
+
+if [ -d $ARCOS_DATA/QRV/$MYCALL/LOGS ]; then
+	if [ -f $ARCOS_DATA/QRV/$MYCALL/LOGS/hamrs.AppImage ]; then
+		mkdir -p $ARCOS_DATA/QRV/$MYCALL/LOGS/hamrs.AppImage.home
+	fi
+	gio set -t stringv /$ARCOS_DATA/QRV/$MYCALL/LOGS metadata::emblems emblem-documents
+	touch /$ARCOS_DATA/QRV/LOGS
+	cp ${MODULE_DIR}/applications/hamrs_user.desktop $HOME/.local/share/applications/
+	sed -i "s:^Name=.*$:Name=HAMRS ($MYCALL):" $HOME/.local/share/applications/hamrs_user.desktop
+	sed -i "s:^GenericName=.*$:GenericName=HAMRS ($MYCALL):" $HOME/.local/share/applications/hamrs_user.desktop
+	sed -i "s:^Comment=.*$:Comment=User specific logs:" $HOME/.local/share/applications/hamrs_user.desktop
+	sed -i "s:^Exec=.*$:Exec=$ARCOS_DATA/QRV/$MYCALL/LOGS/hamrs.AppImage:" $HOME/.local/share/applications/hamrs_user.desktop
+else
+	mkdir -p $ARCOS_DATA/QRV/$MYCALL/LOGS
+	gio set -t stringv /$ARCOS_DATA/QRV/$MYCALL/LOGS metadata::emblems emblem-documents
+	touch /$ARCOS_DATA/QRV/$MYCALL/LOGS
+	if [ -f $HOME/.local/share/applications/hamrs_user.desktop ]; then
+		rm $HOME/.local/share/applications/hamrs_user.desktop
+	fi
 fi
 
 } # END OF MODULE COMMANDS FUNCTION
