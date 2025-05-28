@@ -26,7 +26,7 @@ module_commands () {
 
 gsettings set org.cinnamon panels-enabled "['1:0:bottom']"
 cinnamon --replace &
-sleep 3
+sleep 5
 
 ######################
 
