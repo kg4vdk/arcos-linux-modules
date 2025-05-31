@@ -1,9 +1,9 @@
 #!/bin/bash
 
-#######################
-# CINNAMON QRV MODULE #
-#######################
-MODULE="CINNAMON"
+#####################
+# VIKING QRV MODULE #
+#####################
+MODULE="VIKING"
 
 # STATION INFO
 MYCALL=$(head -n 1 $HOME/.station-info)
@@ -17,20 +17,25 @@ MYLOC=$(head -n 5 $HOME/.station-info | tail -n 1)
 ARCOS_DATA=/ARCOS-DATA
 MODULE_DIR=$ARCOS_DATA/QRV/$MYCALL/arcos-linux-modules/CORE/$MODULE
 LOGFILE=$MODULE_DIR/$MODULE.log
+SAVE_DIR=$ARCOS_DATA/QRV/$MYCALL/SAVED/$MODULE
 ########################
 
 ### MODULE COMMANDS FUNCTION ###
 module_commands () {
 
-###########################################################################
+mkdir -p $SAVE_DIR
 
-gsettings set org.cinnamon panels-enabled "['1:0:bottom']"
-cinnamon --replace &
-sleep 5
+mkdir -p $SAVE_DIR/config
+unlink $HOME/.config/viking
+rm -rf $HOME/.config/viking
+ln -sTf $SAVE_DIR/config $HOME/.config/viking
 
-######################
+if [ ! -f $HOME/.config/viking/viking.prefs ]; then
+	cp ${MODULE_DIR}/config/viking.prefs $HOME/.config/viking/
+fi
 
 } # END OF MODULE COMMANDS FUNCTION
 
 # Execute the module commands, and notify the user upon failure
 module_commands > $LOGFILE 2>&1 || notify-send --icon=error "$MODULE" "$MODULE module failed!"
+

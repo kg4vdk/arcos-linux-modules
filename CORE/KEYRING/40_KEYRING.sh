@@ -1,9 +1,9 @@
 #!/bin/bash
 
-#######################
-# CINNAMON QRV MODULE #
-#######################
-MODULE="CINNAMON"
+######################
+# KEYRING QRV MODULE #
+######################
+MODULE="KEYRING"
 
 # STATION INFO
 MYCALL=$(head -n 1 $HOME/.station-info)
@@ -17,20 +17,34 @@ MYLOC=$(head -n 5 $HOME/.station-info | tail -n 1)
 ARCOS_DATA=/ARCOS-DATA
 MODULE_DIR=$ARCOS_DATA/QRV/$MYCALL/arcos-linux-modules/CORE/$MODULE
 LOGFILE=$MODULE_DIR/$MODULE.log
+SAVE_DIR=$ARCOS_DATA/QRV/$MYCALL/SAVED/$MODULE
 ########################
 
 ### MODULE COMMANDS FUNCTION ###
 module_commands () {
 
-###########################################################################
+mkdir -p $SAVE_DIR
 
-gsettings set org.cinnamon panels-enabled "['1:0:bottom']"
-cinnamon --replace &
-sleep 5
+if grep "keyring" /etc/mtab; then
+	sudo umount $HOME/.local/share/keyrings
+fi
 
-######################
+rm -rf $HOME/.local/share/keyrings
+mkdir -p $HOME/.local/share/keyrings
+
+if [ ! -f $SAVE_DIR/keyring-fs ]; then
+	dd if=/dev/zero of=$SAVE_DIR/keyring-fs bs=1M count=128
+	mkfs.ext4 $SAVE_DIR/keyring-fs
+	sudo mount $SAVE_DIR/keyring-fs $HOME/.local/share/keyrings
+	sudo chown user:user $HOME/.local/share/keyrings
+	sudo chmod 700 $HOME/.local/share/keyrings
+	sudo umount $HOME/.local/share/keyrings
+fi
+
+sudo mount $SAVE_DIR/keyring-fs $HOME/.local/share/keyrings
 
 } # END OF MODULE COMMANDS FUNCTION
 
 # Execute the module commands, and notify the user upon failure
 module_commands > $LOGFILE 2>&1 || notify-send --icon=error "$MODULE" "$MODULE module failed!"
+

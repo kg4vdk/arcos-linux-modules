@@ -1,9 +1,9 @@
 #!/bin/bash
 
-#######################
-# CINNAMON QRV MODULE #
-#######################
-MODULE="CINNAMON"
+######################
+# PARACON QRV MODULE #
+######################
+MODULE="PARACON"
 
 # STATION INFO
 MYCALL=$(head -n 1 $HOME/.station-info)
@@ -12,23 +12,36 @@ MYCITY=$(head -n 3 $HOME/.station-info | tail -n 1)
 MYST=$(head -n 4 $HOME/.station-info | tail -n 1)
 MYQTH="${MYCITY}, ${MYST}"
 MYLOC=$(head -n 5 $HOME/.station-info | tail -n 1)
+QRV_PROFILE=$(head -n 7 $HOME/.station-info | tail -n 1)
+
+if [ ${QRV_PROFILE} == ${MYLOC} ]; then
+	QRV_PROFILE="NONE"
+fi
 
 # PATHS
 ARCOS_DATA=/ARCOS-DATA
 MODULE_DIR=$ARCOS_DATA/QRV/$MYCALL/arcos-linux-modules/CORE/$MODULE
 LOGFILE=$MODULE_DIR/$MODULE.log
+SAVE_DIR=$ARCOS_DATA/QRV/$MYCALL/SAVED/$MODULE
+QRV_PROFILE_DIR=$ARCOS_DATA/QRV/$MYCALL/SAVED/PROFILES
 ########################
 
 ### MODULE COMMANDS FUNCTION ###
 module_commands () {
 
-###########################################################################
+mkdir -p ${SAVE_DIR}/bin
 
-gsettings set org.cinnamon panels-enabled "['1:0:bottom']"
-cinnamon --replace &
-sleep 5
+if [ ! -f ${SAVE_DIR}/bin/paracon_1.1.0.pyz ]; then
+	cp ${MODULE_DIR}/bin/paracon_1.1.0.pyz ${SAVE_DIR}/bin/paracon_1.1.0.pyz
+fi
 
-######################
+if [ ! -f ${SAVE_DIR}/bin/paracon.cfg ]; then
+	cat << EOF > ${SAVE_DIR}/bin/paracon.cfg
+[Setup]
+host = localhost
+callsign = $MYCALL
+EOF
+fi
 
 } # END OF MODULE COMMANDS FUNCTION
 
