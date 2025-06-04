@@ -7,7 +7,7 @@ Enabled=true
 Parent=local-stub
 
 [Local Backend]
-CustomFile=file:///ARCOS-DATA/QRV/XXXCALLSIGNXXX/SAVED/CALENDAR/calendar/calendar.ics
+CustomFile=file:///arcHIVE/QRV/XXXCALLSIGNXXX/SAVED/CALENDAR/calendar/calendar.ics
 EmailAddress=
 Writable=true
 

@@ -9,7 +9,7 @@ MODULE="MANUAL"
 MYCALL=$(head -n 1 $HOME/.station-info)
 
 # PATHS
-ARCOS_DATA=/ARCOS-DATA
+ARCOS_DATA=/arcHIVE
 MODULE_DIR=$ARCOS_DATA/QRV/$MYCALL/arcos-linux-modules/CORE/$MODULE
 LOGFILE=$MODULE_DIR/$MODULE.log
 ########################

@@ -19,7 +19,7 @@ if [ ${QRV_PROFILE} == ${MYLOC} ]; then
 fi
 
 # PATHS
-ARCOS_DATA=/ARCOS-DATA
+ARCOS_DATA=/arcHIVE
 MODULE_DIR=$ARCOS_DATA/QRV/$MYCALL/arcos-linux-modules/CORE/$MODULE
 LOGFILE=$MODULE_DIR/$MODULE.log
 SAVE_DIR=$ARCOS_DATA/QRV/$MYCALL/SAVED/$MODULE
@@ -56,7 +56,7 @@ sed -i "s/Revision=.*$/Revision=$TIMESTAMP/" $SAVE_DIR/sources/$MYCALL.source
 sed -i "s/XXXCALLSIGNXXX/$MYCALL/g" $SAVE_DIR/sources/$MYCALL.source
 
 # Set the evolution autoconfig directory
-gsettings set org.gnome.evolution-data-server autoconfig-directory "/ARCOS-DATA/QRV/$MYCALL/SAVED/CALENDAR/sources"
+gsettings set org.gnome.evolution-data-server autoconfig-directory "/arcHIVE/QRV/$MYCALL/SAVED/CALENDAR/sources"
 
 # Set the default calendar
 gsettings set org.gnome.Evolution.DefaultSources default-calendar "$MYCALL"

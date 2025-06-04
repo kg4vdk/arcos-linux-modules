@@ -14,7 +14,7 @@ MYQTH="${MYCITY}, ${MYST}"
 MYLOC=$(head -n 5 $HOME/.station-info | tail -n 1)
 
 # PATHS
-ARCOS_DATA=/ARCOS-DATA
+ARCOS_DATA=/arcHIVE
 MODULE_DIR=$ARCOS_DATA/QRV/$MYCALL/arcos-linux-modules/CORE/$MODULE
 LOGFILE=$MODULE_DIR/$MODULE.log
 ########################
@@ -22,13 +22,13 @@ LOGFILE=$MODULE_DIR/$MODULE.log
 ### MODULE COMMANDS FUNCTION ###
 module_commands () {
 
-for i in $(ls /ARCOS-DATA/QRV/${MYCALL}/arcos-linux-modules/COMMUNITY/*_PRE_*.sh); do
+for i in $(ls /arcHIVE/QRV/${MYCALL}/arcos-linux-modules/COMMUNITY/*_PRE_*.sh); do
 	MODULE_NAME=$(basename $i)
     echo "${MODULE_NAME}"
 	bash $i
 done
 
-for i in $(ls /ARCOS-DATA/QRV/${MYCALL}/arcos-linux-modules/USER/*_PRE_*.sh); do
+for i in $(ls /arcHIVE/QRV/${MYCALL}/arcos-linux-modules/USER/*_PRE_*.sh); do
 	MODULE_NAME=$(basename $i)
     echo "${MODULE_NAME}"
 	bash $i
