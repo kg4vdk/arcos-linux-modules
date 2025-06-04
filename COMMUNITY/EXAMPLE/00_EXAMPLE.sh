@@ -16,7 +16,7 @@ MYQTH="${MYCITY}, ${MYST}"
 MYLOC=$(head -n 5 $HOME/.station-info | tail -n 1)
 
 # PATHS (Defines paths referenced in the module)
-ARCOS_DATA=/ARCOS-DATA
+ARCOS_DATA=/arcHIVE
 MODULE_DIR=$ARCOS_DATA/QRV/$MYCALL/arcos-linux-modules/USER/$MODULE
 LOGFILE=$MODULE_DIR/$MODULE.log
 SAVE_DIR=$ARCOS_DATA/QRV/$MYCALL/SAVED/$MODULE
