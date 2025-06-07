@@ -1,0 +1,21 @@
+### INSTRUCTIONS ###
+
+1) Move the CUSTOM-ICONS directory into the USER Module directory.
+
+2) Create your own custom icons using the included custom-icons.sh script.
+	- Open a terminal in the CUSTOM-ICONS directory and run `./custom-icons.sh XXXXXX YYY [invert]`
+		- Replace "XXXXXX" with the desired hex color (no "#")
+		- Replace "YYY" with the desired tint level (0-200)
+		- Optionally, include "invert" to change to light text
+
+3) Once satisfied with your custom icons, rename the desired "custom-icons-xxxxxx" directory to "custom-icons"
+
+4) Move the included 00_PRE_CUSTOM-ICONS.sh script into the USER Module directory.
+	- Up one level from the CUSTOM-ICONS directory
+
+Notes:
+- The module will be active on the next reboot or re-run of Station Setup. You may re-number it if necessary for your ordering preferences.
+
+- To deactivate the module, place the 00_PRE_CUSTOM-ICONS.sh script back inside the CUSTOM-ICONS directory and reboot.
+
+- In multi-user installations, CUSTOM-ICONS will remain configured for a previous user, if the next user does not also use this module.
