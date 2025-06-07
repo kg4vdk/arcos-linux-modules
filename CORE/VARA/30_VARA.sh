@@ -55,7 +55,7 @@ echo "100"
 }
 
 install_vara () {
-notify-send --urgency-critical --icon=wine "VARA Installers" "For each of the VARA and VARA FM installers:\n\n1) Accept the license agreement.\n2) Click through the installer, leaving all options as the default values.\n\nClick to dismiss this message."
+notify-send --urgency=critical --icon=wine "VARA Installers" "For each of the VARA and VARA FM installers:\n\n1) Accept the license agreement.\n2) Click through the installer, leaving all options as the default values.\n\nClick to dismiss this message."
 unzip -o -d /tmp $MODULE_DIR/"VARA FM v4.3.8 setup.zip"
 wine /tmp/"VARA FM setup (Run as Administrator)".exe
 sleep 1
