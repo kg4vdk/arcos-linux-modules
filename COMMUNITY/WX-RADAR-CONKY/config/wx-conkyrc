@@ -1,0 +1,68 @@
+--[[
+]]
+
+conky.config = {
+
+	--Various settings
+
+	background = false,
+	cpu_avg_samples = 2,
+	double_buffer = true,
+	if_up_strictness = 'address',
+	net_avg_samples = 2,
+	no_buffers = true,
+	temperature_unit = 'celsius',
+	update_interval = 10,
+	imlib_cache_size = 0,
+
+	--Placement
+
+	alignment = 'top_right',
+	gap_x = 5,
+	gap_y = 5,
+	minimum_height = YYY,
+	minimum_width = XXX,
+	maximum_width = XXX,
+
+	--Graphical
+
+	border_inner_margin = 0,
+	border_outer_margin = 0,
+	draw_borders = false,
+	draw_graph_borders = true,
+	draw_shades = false,
+	draw_outline = false,
+
+	--Textual
+	
+	format_human_readable = true,
+	font = 'Ubuntu:style=Regluar:size=9',
+	max_text_width = 0,
+	short_units = true,
+	use_xft = true,
+	xftalpha = 1,
+
+	--Windows
+
+	own_window = true,
+	own_window_class = 'desktop',
+	own_window_transparent = true,
+	own_window_colour = "#000000",
+	own_window_argb_value = 48,
+	own_window_argb_visual = false,
+	own_window_type = 'desktop',
+	
+
+	--Colors
+
+	default_color = '#000000',	-- default color and border color
+	color1 = '#f0f0f0',		-- title_color
+	color2 = '#404040',		-- top memory, process, graphs
+	color3 = '#f0f0f0',		-- text color
+};
+
+
+conky.text = [[
+# WX ATTEMPT
+${if_existing /tmp/radar.gif}${image /tmp/radar.gif -s XXXxYYY -n}${endif}
+]]
