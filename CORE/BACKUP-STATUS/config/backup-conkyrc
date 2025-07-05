@@ -1,0 +1,71 @@
+--[[
+]]
+
+conky.config = {
+
+	--Various settings
+
+	background = true,
+	cpu_avg_samples = 2,
+	double_buffer = true,
+	if_up_strictness = 'address',
+	net_avg_samples = 2,
+	no_buffers = true,
+	temperature_unit = 'celsius',
+	update_interval = 1,
+	imlib_cache_size = 0,
+
+	--Placement
+
+	alignment = 'bottom_left',
+	gap_x = 10,
+	gap_y = 40,
+	minimum_height =22,
+	minimum_width = 220,
+	maximum_width = 220,
+
+	--Graphical
+
+	border_inner_margin = 0,
+	border_outer_margin = 5,
+	draw_borders = false,
+	draw_graph_borders = true,
+	draw_shades = false,
+	draw_outline = false,
+
+	--Textual
+	
+	format_human_readable = true,
+	font = 'Ubuntu:style=Regluar:size=9',
+	max_text_width = 0,
+	short_units = true,
+	use_xft = true,
+	xftalpha = 1,
+
+	--Windows
+
+	own_window = true,
+	own_window_class = 'override',
+	own_window_transparent = true,
+	own_window_colour = "#000000",
+	own_window_argb_value = 48,
+	own_window_argb_visual = true,
+	own_window_type = 'desktop',
+	
+
+	--Colors
+
+	default_color = '#000000',	-- default color and border color
+	color1 = '#f0f0f0',		-- title_color
+	color2 = '#404040',		-- top memory, process, graphs
+	color3 = '#f0f0f0',		-- text color
+        color4 = '#2fb51c',
+        color5 = '#e3c92e',
+        color6 = '#df331a',
+};
+
+
+conky.text = [[
+# LAST BACKUP
+${voffset -10}${color1}${font Ubuntu:style=Bold:size=8}Last Backup: ${if_existing /arcHIVE/QRV/XXXCALLSIGNXXX/.last-backup}${exec head -n 1 /arcHIVE/QRV/XXXCALLSIGNXXX/.last-backup | tr -d '\n'}${else}${color5}UNKNOWN${font}${endif}
+]]
