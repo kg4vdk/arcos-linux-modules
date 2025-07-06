@@ -39,7 +39,7 @@ gsettings set org.x.sticky default-position 'center-center'
 gsettings set org.x.sticky show-in-tray true
 gsettings set org.x.sticky show-manager false
 
-sticky &
+sticky --autostart &
 
 } # END OF MODULE COMMANDS FUNCTION
 
