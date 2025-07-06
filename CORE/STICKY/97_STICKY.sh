@@ -34,7 +34,6 @@ unlink $HOME/.config/sticky
 rm -rf $HOME/.config/sticky
 ln -sTf $SAVE_DIR/sticky $HOME/.config/sticky
 
-gsettings set org.x.sticky autostart-notes-visible true
 gsettings set org.x.sticky default-position 'center-center'
 gsettings set org.x.sticky show-in-tray true
 gsettings set org.x.sticky show-manager false
