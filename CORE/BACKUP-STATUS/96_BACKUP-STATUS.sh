@@ -23,6 +23,8 @@ SAVE_DIR=$ARCOS_DATA/QRV/$MYCALL/SAVED/$MODULE
 ### MODULE COMMANDS FUNCTION ###
 module_commands () {
 
+sudo cp ${MODULE_DIR}/bin/backup-operator.sh /opt/arcOS/bin/
+
 LAST_BKP_FILE="${ARCOS_DATA}/QRV/${MYCALL}/.last-backup"
 
 pkill -f backup-conkyrc
