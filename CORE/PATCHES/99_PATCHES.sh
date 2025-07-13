@@ -24,10 +24,7 @@ module_commands () {
 
 ###########################################################################
 
-if [ -f /opt/arcOS/bin/backup-operator ] && [ -f /opt/arcOS/bin/backup-operator.sh ]; then
-  sudo rm /opt/arcOS/bin/backup-operator
-  sudo ln -s /opt/arcOS/bin/backup-operator.sh /opt/arcOS/bin/backup-operator
-fi
+
 
 ######################
 
