@@ -24,7 +24,8 @@ module_commands () {
 
 ###########################################################################
 
-
+sudo rm /opt/arcOS/bin/backup-operator
+sudo ln -s /opt/arcOS/bin/backup-operator.sh /opt/arcOS/bin/backup-operator
 
 ######################
 
