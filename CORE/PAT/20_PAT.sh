@@ -46,9 +46,18 @@ sed -i "s/\"locator\": .*,$/\"locator\": \"$MYLOC\",/" $HOME/.config/pat/config.
 if [ -f $SAVE_DIR/rmslist.json ]; then
 	ln -sf $SAVE_DIR/rmslist.json $HOME/.local/share/pat/rmslist.json
 else
-	cp $HOME/.local/share/pat/rmslist.json $SAVE_DIR/rmslist.json
+	touch $SAVE_DIR/rmslist.json
 	rm $HOME/.local/share/pat/rmslist.json
-	ln -s $SAVE_DIR/rmslist.json $HOME/.local/share/pat/rmslist.json
+	ln -sf $SAVE_DIR/rmslist.json $HOME/.local/share/pat/rmslist.json
+fi
+
+if [ -d $SAVE_DIR/Standard_Forms ]; then
+	ln -sTf $SAVE_DIR/Standard_Forms $HOME/.local/share/pat/Standard_Forms
+else
+	mkdir -p $SAVE_DIR/Standard_Forms
+	unlink $HOME/.local/share/pat/Standard_Forms
+	rm -rf $HOME/.local/share/pat/Standard_Forms
+	ln -sTf $SAVE_DIR/Standard_Forms $HOME/.local/share/pat/Standard_Forms
 fi
 
 for mailbox in archive in out sent; do
