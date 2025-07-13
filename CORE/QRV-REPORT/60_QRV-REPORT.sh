@@ -17,7 +17,7 @@ LOGFILE=$MODULE_DIR/$MODULE.log
 ### MODULE COMMANDS FUNCTION ###
 module_commands () {
 
-cp $MODULE_DIR/bin/qrv-report.sh /opt/arcOS/bin/
+sudo cp $MODULE_DIR/bin/qrv-report.sh /opt/arcOS/bin/
 
 } # END OF MODULE COMMANDS FUNCTION
 
