@@ -1,0 +1,13 @@
+### INSTRUCTIONS ###
+
+1) Move the BAND-CONDITIONS-CONKY directory into the USER Module directory.
+
+2) Move the included 05_BAND-CONDITIONS-CONKY.sh script into the USER Module directory.
+	- Up one level from the BAND-CONDITIONS-CONKY directory
+
+Notes:
+- The module will be active on the next reboot or re-run of Station Setup. You may re-number it if necessary for your ordering preferences.
+
+- To deactivate the module, place the 05_BAND-CONDITIONS-CONKY.sh script back inside the BAND-CONDITIONS-CONKY directory and reboot.
+
+- In multi-user installations, BAND-CONDITIONS-CONKY will remain configured for a previous user, if the next user does not also use this module.
