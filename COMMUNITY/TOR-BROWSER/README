@@ -1,0 +1,21 @@
+### INSTRUCTIONS ###
+
+1) Move the TOR-BROWSER directory into the USER Module directory.
+
+2) Move the included 25_TOR-BROWSER.sh script into the USER Module directory.
+	- Up one level from the TOR-BROWSER directory
+	
+3) This module requires the user to download and run (once) the Tor Browser application
+	- The Tor Browser can be downloaded from: https://www.torproject.org/download/
+	- Place the downloaded tor-browser-linux-x86_64-X.Y.Z.tar.xz file inside the TOR-BROWSER directory
+	- Right-click the tor-browser-linux-x86_64-X.Y.Z.tar.xz file, and select "Extract here"
+	- This will create a directory named "tor-browser"
+	- Open the "tor-browser" directory and double-click the "Tor Browser Setup" icon
+	- Delete the tor-browser-linux-x86_64-X.Y.Z.tar.xz file
+
+Notes:
+- The module will be active on the next reboot or re-run of Station Setup. You may re-number it if necessary for your ordering preferences.
+
+- To deactivate the module, place the 25_TOR-BROWSER.sh script back inside the TOR-BROWSER directory and reboot.
+
+- In multi-user installations, TOR-BROWSER will remain configured for a previous user, if the next user does not also use this module.

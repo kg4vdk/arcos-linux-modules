@@ -34,6 +34,10 @@ SAVE_DIR=$ARCOS_DATA/QRV/$MYCALL/SAVED/$MODULE
 ### MODULE COMMANDS FUNCTION ###
 module_commands () {
 
+sudo cp ${MODULE_DIR}/bin/get-wx-radar.sh /opt/arcOS/bin/
+
+sudo sed -i "s/XXXNWSSTATIONXXX/${NWS_STATION}/" /opt/arcOS/bin/get-wx-radar.sh
+
 # If NWS Station is empty use the national map
 if [ "${NWS_STATION}" == "" ]; then
 	NWS_STATION="CONUS"
@@ -108,15 +112,15 @@ esac
 
 # Add to cron downloading image every minute
 cat << EOF | sudo tee --append /etc/crontab
-*/2 * * * * user /usr/bin/wget -O /tmp/radar.gif https://radar.weather.gov/ridge/standard/${NWS_STATION}_0.gif || rm /tmp/radar.gif
+*/2 * * * * user /opt/arcOS/bin/get-wx-radar.sh
 EOF
 
 # Restart cron
 sudo systemctl restart cron.service
 
 # Download first image if network is reachable
-if ping -c 5 radar.weather.gov; then
-	wget -O /tmp/radar.gif https://radar.weather.gov/ridge/standard/${NWS_STATION}_0.gif
+if ping -c 1 radar.weather.gov; then
+	/opt/arcOS/bin/get-wx-radar.sh
 fi
 
 # Kill any already running WX conky

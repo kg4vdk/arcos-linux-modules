@@ -1,0 +1,13 @@
+### INSTRUCTIONS ###
+
+1) Move the YT-DLP directory into the USER Module directory.
+
+2) Move the included 25_YT-DLP.sh script into the USER Module directory.
+	- Up one level from the YT-DLP directory
+
+Notes:
+- The module will be active on the next reboot or re-run of Station Setup. You may re-number it if necessary for your ordering preferences.
+
+- To deactivate the module, place the 25_YT-DLP.sh script back inside the YT-DLP directory and reboot.
+
+- In multi-user installations, YT-DLP will remain installed until the system is rebooted an used by a user without this module.

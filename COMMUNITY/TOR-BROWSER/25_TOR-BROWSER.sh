@@ -1,9 +1,9 @@
 #!/bin/bash
 
-####################################
-# BAND-CONDITIONS-CONKY QRV MODULE #
-####################################
-MODULE="BAND-CONDITIONS-CONKY"
+##########################
+# TOR-BROWSER QRV MODULE #
+##########################
+MODULE="TOR-BROWSER"
 
 # STATION INFO
 MYCALL=$(head -n 1 $HOME/.station-info)
@@ -23,29 +23,12 @@ SAVE_DIR=$ARCOS_DATA/QRV/$MYCALL/SAVED/$MODULE
 ### MODULE COMMANDS FUNCTION ###
 module_commands () {
 
-sudo cp ${MODULE_DIR}/bin/get-band-conditions.sh /opt/arcOS/bin/
+pkill -f firefox.real > /dev/null 2>&1
 
-# Add to cron downloading image every minute
-cat << EOF | sudo tee --append /etc/crontab
-*/5 * * * * user /opt/arcOS/bin/get-band-conditions.sh
-EOF
-
-# Restart cron
-sudo systemctl restart cron.service
-
-# Download first image if network is reachable
-if ping -c 5 -n 8.8.8.8; then
-	/opt/arcOS/bin/get-band-conditions.sh
+if [ -f ${MODULE_DIR}/tor-browser/start-tor-browser.desktop ]; then
+	cd ${MODULE_DIR}/tor-browser
+	${MODULE_DIR}/tor-browser/start-tor-browser.desktop --register-app
 fi
-
-# Kill any already running WX conky
-pkill -f "conditions-conkyrc"
-
-# # Create config and place in /tmp
-cp ${MODULE_DIR}/config/conditions-conkyrc /tmp/conditions-conkyrc
-
-# Start WX conky
-conky -c /tmp/conditions-conkyrc -qd
 
 } # END OF MODULE COMMANDS FUNCTION
 

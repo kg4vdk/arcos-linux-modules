@@ -1,9 +1,9 @@
 #!/bin/bash
 
-#####################
-# STICKY QRV MODULE #
-#####################
-MODULE="STICKY"
+############################
+# BACKUP-STATUS QRV MODULE #
+############################
+MODULE="BACKUP-STATUS"
 
 # STATION INFO
 MYCALL=$(head -n 1 $HOME/.station-info)
@@ -23,23 +23,15 @@ SAVE_DIR=$ARCOS_DATA/QRV/$MYCALL/SAVED/$MODULE
 ### MODULE COMMANDS FUNCTION ###
 module_commands () {
 
-mkdir -p $SAVE_DIR/sticky
+sudo cp ${MODULE_DIR}/bin/backup-operator.sh /opt/arcOS/bin/
 
-if [ ! -f $SAVE_DIR/sticky/notes.json ]; then
-	cp ${MODULE_DIR}/config/notes.json $SAVE_DIR/sticky/
-	sed -i "s/XXXCALLSIGNXXX/$MYCALL/" $SAVE_DIR/sticky/notes.json
-fi
+LAST_BKP_FILE="${ARCOS_DATA}/QRV/${MYCALL}/.last-backup"
 
-unlink $HOME/.config/sticky
-rm -rf $HOME/.config/sticky
-ln -sTf $SAVE_DIR/sticky $HOME/.config/sticky
+pkill -f backup-conkyrc
 
-gsettings set org.x.sticky autostart-notes-visible true
-gsettings set org.x.sticky default-position 'center-center'
-gsettings set org.x.sticky show-in-tray true
-gsettings set org.x.sticky show-manager false
+sed "s/XXXCALLSIGNXXX/${MYCALL}/g" ${MODULE_DIR}/config/backup-conkyrc > $HOME/.backup-conkyrc
 
-sticky &
+conky -qd -c $HOME/.backup-conkyrc &
 
 } # END OF MODULE COMMANDS FUNCTION
 
