@@ -55,8 +55,8 @@ echo "100"
 }
 
 install_vara () {
-notify-send --urgency=critical --icon=wine "VARA Installers" "For each of the VARA and VARA FM installers:\n\n1) Accept the license agreement.\n2) Click through the installer, leaving all options as the default values.\n\nClick to dismiss this message."
-unzip -o -d /tmp $MODULE_DIR/"VARA FM v4.3.8 setup.zip"
+notify-send --urgency=critical --icon=wine "VARA" "For each of the VARA and VARA FM installers:\n\n1) Accept the license agreement.\n2) Click through the installer, leaving all options as the default values.\n\nClick to dismiss this message."
+unzip -o -d /tmp $MODULE_DIR/"VARA FM v4.3.9 setup.zip"
 wine /tmp/"VARA FM setup (Run as Administrator)".exe
 sleep 1
 if pidof "C:\VARA FM\VARAFM.exe"; then
@@ -165,6 +165,7 @@ if [ -f $SAVE_DIR/wine_vara.tar ]; then
 	fi
 else
 	if command -v wine > /dev/null; then
+		notify-send --icon=wine "VARA" "Preparing to install..."
 		if prepare_vara | progress_window; then
 			if install_vara && config_vara && persist_vara && register_vara; then
 				notify-send --urgency=critical --icon=info "VARA" "VARA is installed, and will be available in the Wine category of the Main Menu.\n\nClick to dismiss this message."
@@ -177,7 +178,7 @@ else
 			notify-send --icon=error "$MODULE" "$MODULE installation failed!"
 		fi
 	else
-		notify-send --icon=error --urgency=critical "VARA" "To enable compatibility with VARA, you may purchase an unlock key for arcOS at https://arcos-linux.com.\n\nPlease consider using the included open source modems instead."
+		notify-send --icon=error --urgency=critical "VARA" "Wine is not available. $MODULE installation failed!"
 	fi
 fi
 }

@@ -31,8 +31,8 @@ module_commands () {
 
 mkdir -p ${SAVE_DIR}/bin
 
-if [ ! -f ${SAVE_DIR}/bin/paracon_1.1.0.pyz ]; then
-	cp ${MODULE_DIR}/bin/paracon_1.1.0.pyz ${SAVE_DIR}/bin/paracon_1.1.0.pyz
+if [ ! -f ${SAVE_DIR}/bin/paracon.pyz ]; then
+	cp ${MODULE_DIR}/bin/paracon_1.2.0.pyz ${SAVE_DIR}/bin/paracon.pyz
 fi
 
 if [ ! -f ${SAVE_DIR}/bin/paracon.cfg ]; then

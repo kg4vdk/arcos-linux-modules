@@ -45,6 +45,10 @@ sudo mount $SAVE_DIR/gnupg-fs $HOME/.gnupg
 
 gpgconf --kill gpg-agent
 
+if ! gpg --list-keys | grep "root@arcOS" > /dev/null 2>&1; then
+	# Import ISO signing key
+	gpg --import /opt/arcOS/configs/gnupg/arcOS-ISO-Signing-Key_PUBLIC.asc
+fi
 } # END OF MODULE COMMANDS FUNCTION
 
 # Execute the module commands, and notify the user upon failure
