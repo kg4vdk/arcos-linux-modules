@@ -29,14 +29,10 @@ QRV_PROFILE_DIR=$ARCOS_DATA/QRV/$MYCALL/SAVED/PROFILES
 ### MODULE COMMANDS FUNCTION ###
 module_commands () {
 
-mkdir -p ${SAVE_DIR}/bin
+mkdir -p ${SAVE_DIR}
 
-if [ ! -f ${SAVE_DIR}/bin/paracon.pyz ]; then
-	cp ${MODULE_DIR}/bin/paracon_1.2.0.pyz ${SAVE_DIR}/bin/paracon.pyz
-fi
-
-if [ ! -f ${SAVE_DIR}/bin/paracon.cfg ]; then
-	cat << EOF > ${SAVE_DIR}/bin/paracon.cfg
+if [ ! -f ${SAVE_DIR}/paracon.cfg ]; then
+	cat << EOF > ${SAVE_DIR}/paracon.cfg
 [Setup]
 host = localhost
 callsign = $MYCALL
