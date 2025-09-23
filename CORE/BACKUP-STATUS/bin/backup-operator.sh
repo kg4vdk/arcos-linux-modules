@@ -81,12 +81,6 @@ tar -rf "${BACKUP_FILE}" \
 -C /tmp .last-backup \
 | while read -r line; do echo "# ${line}"; done \
 
-if [ -f /arcHIVE/ARCOS-KEYS.pgp ]; then
-tar -rf "${BACKUP_FILE}" \
--C /arcHIVE ARCOS-KEYS.pgp \
-| while read -r line; do echo "# ${line}"; done \
-fi
-
 if [ -d /arcHIVE/QRV/.packages ]; then
 tar -rf "${BACKUP_FILE}" \
 -C /arcHIVE/QRV .packages \
@@ -106,15 +100,8 @@ MODULES_VER="${MODULES_VER} ${MODULES_DATE}"
 echo "${OPERATOR}" > /tmp/backup_info
 echo "${ISO_VER}" >> /tmp/backup_info
 echo "${MODULES_VER}" >> /tmp/backup_info
-if [ -f ${ARCOS_DATA}/ARCOS-KEYS.pgp ];then
-	echo "KEYS" >> /tmp/backup_info
-else
-	echo "" >> /tmp/backup_info
-fi
 if [ -d ${ARCOS_DATA}/QRV/.packages ];then
 	echo "PACKAGES" >> /tmp/backup_info
-else
-	echo "" >> /tmp/backup_info
 fi
 
 tar -rf "${BACKUP_FILE}" \
@@ -133,7 +120,7 @@ fi
 backup_location
 
 if [[ "${BACKUP_DIR}" != "" ]]; then
-	notify-send --icon=document-new-symbolic "Backup Started!" "Files included:\n   + /arcHIVE/.station-info\n   + /arcHIVE/.operators/${OPERATOR}_station-info\n   + /arcHIVE/QRV/${OPERATOR}/*\n   + /arcHIVE/QRV/LOGS\n   + /arcHIVE/QRV/.packages (if it exists)\n   + /arcHIVE/ARCOS-KEYS.pgp (if it exists)\n\n***Offline maps are NOT included! ***\n   - /arcHIVE/QRV/OFFLINE-MAPS"
+	notify-send --icon=document-new-symbolic "Backup Started!" "Files included:\n   + /arcHIVE/.station-info\n   + /arcHIVE/.operators/${OPERATOR}_station-info\n   + /arcHIVE/QRV/${OPERATOR}/*\n   + /arcHIVE/QRV/LOGS\n   + /arcHIVE/QRV/.packages (if it exists)\n\n***Offline maps are NOT included! ***\n   - /arcHIVE/QRV/OFFLINE-MAPS"
 	if backup_operator | backup_progress; then
 		mv /tmp/.last-backup ${ARCOS_DATA}/QRV/${OPERATOR}/.last-backup
 		if [ -f "${USER_MODULES_BACKUP_FILE}" ]; then
