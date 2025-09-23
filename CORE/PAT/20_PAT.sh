@@ -41,6 +41,10 @@ elif [ -f $QRV_PROFILE_DIR/DEFAULT/$MODULE/config_DEFAULT.json ]; then
 	cp $QRV_PROFILE_DIR/DEFAULT/$MODULE/config_DEFAULT.json $HOME/.config/pat/config.json
 fi
 
+MYLOC_LENGTH=${#MYLOC}
+if [ "${MYLOC_LENGTH}" -gt 6 ]; then
+	MYLOC=$(echo "${MYLOC}" | cut -c 1-6)
+fi
 sed -i "s/\"locator\": .*,$/\"locator\": \"$MYLOC\",/" $HOME/.config/pat/config.json
 
 if [ -f $SAVE_DIR/rmslist.json ]; then
