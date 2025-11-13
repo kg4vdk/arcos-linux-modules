@@ -6,7 +6,7 @@
 MODULE="PASSWD"
 
 # STATION INFO
-MYCALL=$(head -n 1 $HOME/.station-info)
+source $HOME/.station-info
 
 # PATHS
 ARCOS_DATA=/arcHIVE

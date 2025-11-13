@@ -1,5 +1,8 @@
 #!/bin/bash
 
+# STATION INFO
+source $HOME/.station-info
+
 # Timestamp
 TIMESTAMP=$(date +"%F_%H%M%Z")
 
@@ -18,7 +21,7 @@ fi
 
 # Operator callsign
 if [ -f /home/user/.station-info ]; then
-	OPERATOR="$(head -n 1 /home/user/.station-info | tr -d '\n')"
+	OPERATOR="${MYCALL}"
 else
 	OPERATOR="arcOS"
 fi

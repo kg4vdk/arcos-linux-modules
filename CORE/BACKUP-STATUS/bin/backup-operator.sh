@@ -1,7 +1,10 @@
 #!/bin/bash
 
 ARCOS_DATA=/arcHIVE
-OPERATOR=$(head -n 1 $HOME/.station-info)
+
+source $HOME/.station-info
+
+OPERATOR="${MYCALL}"
 TIMESTAMP=$(date +"%F_%H%M%Z")
 
 # Kill any running CORE module applications
