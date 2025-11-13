@@ -2,7 +2,9 @@
 
 MODULE="CUSTOM-ICONS"
 
-MYCALL=$(head -n 1 $HOME/.station-info)
+# STATION INFO
+source $HOME/.station-info
+
 ARCOS_DATA=/arcHIVE
 MODULE_DIR=$ARCOS_DATA/QRV/$MYCALL/arcos-linux-modules/USER/$MODULE
 

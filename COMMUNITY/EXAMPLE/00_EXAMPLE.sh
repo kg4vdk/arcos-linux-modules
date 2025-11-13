@@ -7,13 +7,8 @@
 # Name of the module directory
 MODULE="EXAMPLE"
 
-# STATION INFO (Gets information from the .station-info file in the user home directory)
-MYCALL=$(head -n 1 $HOME/.station-info)
-MYNAME=$(head -n 2 $HOME/.station-info | tail -n 1)
-MYCITY=$(head -n 3 $HOME/.station-info | tail -n 1)
-MYST=$(head -n 4 $HOME/.station-info | tail -n 1)
-MYQTH="${MYCITY}, ${MYST}"
-MYLOC=$(head -n 5 $HOME/.station-info | tail -n 1)
+# STATION INFO
+source $HOME/.station-info
 
 # PATHS (Defines paths referenced in the module)
 ARCOS_DATA=/arcHIVE
