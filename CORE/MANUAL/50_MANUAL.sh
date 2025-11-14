@@ -17,7 +17,11 @@ LOGFILE=$MODULE_DIR/$MODULE.log
 ### MODULE COMMANDS FUNCTION ###
 module_commands () {
 
-cp $MODULE_DIR/arcOS-Field-Manual.pdf $HOME/
+cp $MODULE_DIR/arcOS-Field-Manual.html /opt/arcOS/
+unlink $HOME/"arcOS Field Manual"
+ln -s /opt/arcOS/arcOS-Field-Manual.html $HOME/"arcOS Field Manual"
+gio set $HOME/"arcOS Field Manual" metadata::custom-icon file:///usr/share/icons/Mint-Y/apps/64/gnome-books.png
+touch $HOME/"arcOS Field Manual"
 
 } # END OF MODULE COMMANDS FUNCTION
 
