@@ -1,7 +1,6 @@
 [Desktop Entry]
-Name=SAVE DIREWOLF CONFIG
-GenericName=SAVE DIREWOLF CONFIG
-Comment=SAVE DIREWOLF CONFIG
+Name=Save Direwolf Config
+GenericName=Save Direwolf Config
 Exec=save-direwolf.sh
 Icon=applications-system
 Terminal=false
