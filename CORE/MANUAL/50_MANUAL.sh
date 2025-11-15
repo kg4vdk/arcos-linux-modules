@@ -17,7 +17,7 @@ LOGFILE=$MODULE_DIR/$MODULE.log
 ### MODULE COMMANDS FUNCTION ###
 module_commands () {
 
-cp $MODULE_DIR/arcOS-Field-Manual.html /opt/arcOS/
+sudo cp $MODULE_DIR/arcOS-Field-Manual.html /opt/arcOS/
 cp $HOME/.local/share/applications/arcOS-Field-Manual.desktop $HOME/arcOS-Field-Manual.desktop
 
 } # END OF MODULE COMMANDS FUNCTION
