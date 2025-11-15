@@ -1,7 +1,6 @@
 [Desktop Entry]
-Name=SAVE WSJTX CONFIG
-GenericName=SAVE WSJTX CONFIG
-Comment=SAVE WSJTX CONFIG
+Name=Save WSJT-X Config
+GenericName=Save WSJT-X Config
 Exec=save-wsjtx.sh
 Icon=applications-system
 Terminal=false
