@@ -1,7 +1,6 @@
 [Desktop Entry]
-Name=SAVE FL-SUITE CONFIG
-GenericName=SAVE FL-SUITE CONFIG
-Comment=SAVE FL-SUITE CONFIG
+Name=Save FL-Suite Config
+GenericName=Save FL-Suite Config
 Exec=save-fl-suite.sh
 Icon=applications-system
 Terminal=false
