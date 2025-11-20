@@ -29,6 +29,14 @@ if [ ! -f $HOME/.config/viking/viking.prefs ]; then
 	cp ${MODULE_DIR}/config/viking.prefs $HOME/.config/viking/
 fi
 
+if [ ! -f $HOME/.config/maps.xml ]; then
+	cp ${MODULE_DIR}/config/maps.xml $HOME/.config/viking/
+fi
+
+if [ ! -f $HOME/.config/viking_layer_defaults.ini ]; then
+	cp ${MODULE_DIR}/config/viking_layer_defaults.ini $HOME/.config/viking/
+fi
+
 } # END OF MODULE COMMANDS FUNCTION
 
 # Execute the module commands, and notify the user upon failure

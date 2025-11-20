@@ -1,0 +1,184 @@
+<objects>
+  <object class="VikSlippyMapSource">
+    <property name="name">OSM-Mapnik</property>
+    <property name="label">OpenStreetMap (Mapnik)</property>
+    <property name="hostname">https://tile.openstreetmap.org</property>
+    <property name="url">/%d/%d/%d.png</property>
+    <property name="id">13</property>
+    <property name="zoom-min">0</property>
+    <property name="zoom-max">19</property>
+    <property name="copyright">© OpenStreetMap contributors</property>
+    <property name="license">CC-BY-SA</property>
+    <property name="license-url">http://www.openstreetmap.org/copyright</property>
+    <property name="use-etag">TRUE</property>
+    <property name="follow-location">2</property>
+  </object>
+<!-- Built in
+  <object class="VikSlippyMapSource">
+    <property name="name">OSM-Cycle</property>
+    <property name="label">OpenStreetMap (Cycle)</property>
+    <property name="hostname">b.tile.opencyclemap.org</property>
+    <property name="url">/cycle/%d/%d/%d.png</property>
+    <property name="zoom-min">0</property>
+    <property name="zoom-max">18</property>
+    <property name="id">17</property>
+    <property name="copyright">© OpenStreetMap contributors</property>
+    <property name="license">CC-BY-SA</property>
+    <property name="license-url">http://www.openstreetmap.org/copyright</property>
+    <property name="check-file-server-time">TRUE</property>
+    <property name="follow-location">2</property>
+  </object>
+-->
+  <object class="VikSlippyMapSource">
+    <property name="label">OSM GPS Traces</property>
+    <property name="hostname">https://gps-c.tile.openstreetmap.org</property>
+    <property name="url">/lines/%d/%d/%d.png</property>
+    <property name="follow-location">2</property>
+    <property name="zoom-min">0</property>
+    <property name="zoom-max">18</property>
+    <property name="id">33</property>
+    <property name="name">OSM-GPS</property>
+    <property name="copyright">© OpenStreetMap contributors</property>
+    <property name="license">CC-BY-SA</property>
+    <property name="license-url">http://www.openstreetmap.org/copyright</property>
+    <property name="use-etag">TRUE</property>
+  </object>
+  <object class="VikSlippyMapSource">
+    <property name="label">CyclOSM</property>
+    <property name="url">https://c.tile-cyclosm.openstreetmap.fr/cyclosm/%d/%d/%d.png</property>
+    <property name="follow-location">4</property>
+    <property name="zoom-min">0</property>
+    <property name="zoom-max">20</property>
+    <property name="id">65</property>
+    <property name="name">CyclOSM</property>
+    <property name="copyright">© OpenStreetMap contributors</property>
+    <property name="license">CC-BY-SA</property>
+    <property name="license-url">http://www.openstreetmap.org/copyright</property>
+    <property name="check-file-server-time">TRUE</property>
+  </object>
+  <object class="VikSlippyMapSource">
+    <property name="id">29</property>
+    <property name="name">CalTopo</property>
+    <property name="label">CalTopo USGS 7.5" Topos</property>
+    <property name="hostname">s3-us-west-1.amazonaws.com</property>
+    <property name="url">/caltopo/topo/%d/%d/%d.png?v=1</property>
+    <property name="follow-location">2</property>
+    <property name="zoom-min">0</property>
+    <property name="zoom-max">16</property>
+    <property name="lat-min">18.76</property>
+    <property name="lat-max">71.56</property>
+    <property name="lon-min">-178.0</property>
+    <property name="lon-max">-66.95</property>
+    <property name="copyright">CalTopo Terms of Use</property>
+    <property name="license">CalTopo Terms of Use</property>
+    <property name="license-url">http://caltopo.com/</property>
+  </object>
+  <object class="VikSlippyMapSource">
+    <property name="label">Public Transport Map</property>
+    <property name="hostname">tile.xn--pnvkarte-m4a.de</property>
+    <property name="url">/tilegen/%0d/%d/%d.png</property>
+    <property name="follow-location">2</property>
+    <property name="zoom-min">0</property>
+    <property name="zoom-max">18</property>
+    <property name="id">101</property>
+    <property name="name">pnvkarte</property>
+    <property name="copyright">© OpenStreetMap contributors</property>
+    <property name="license">CC-BY-SA</property>
+    <property name="license-url">http://www.openstreetmap.org/copyright</property>
+  </object>
+  <object class="VikSlippyMapSource">
+    <property name="name">OpenSeaMap</property>
+    <property name="label">OpenSeaMap</property>
+    <property name="hostname">tiles.openseamap.org</property>
+    <property name="url">/seamark/%d/%d/%d.png</property>
+    <property name="zoom-min">8</property>
+    <property name="zoom-max">18</property>
+    <property name="id">600</property>
+    <property name="follow-location">2</property>
+    <property name="copyright">© OpenStreetMap contributors</property>
+    <property name="license">CC-BY-SA</property>
+    <property name="license-url">http://www.openstreetmap.org/copyright</property>
+  </object>
+  <object class="VikSlippyMapSource">
+    <property name="name">Waymarked Trails Hiking</property>
+    <property name="label">Waymarked Trails Hiking</property>
+    <property name="hostname">tile.waymarkedtrails.org</property>
+    <property name="url">/hiking/%d/%d/%d.png</property>
+    <property name="id">701</property>
+    <property name="follow-location">2</property>
+    <property name="license">CC-by-SA 3.0 / ODBl</property>
+    <property name="license-url">http://creativecommons.org/licenses/by-sa/3.0/de/deed.en</property>
+  </object>
+  <object class="VikSlippyMapSource">
+    <property name="name">Waymarked Trails Cycling</property>
+    <property name="label">Waymarked Trails Cycling</property>
+    <property name="hostname">tile.waymarkedtrails.org</property>
+    <property name="url">/cycling/%d/%d/%d.png</property>
+    <property name="follow-location">2</property>
+    <property name="id">702</property>
+    <property name="license">CC-by-SA 3.0 / ODBl</property>
+    <property name="license-url">http://creativecommons.org/licenses/by-sa/3.0/de/deed.en</property>
+  </object>
+  <object class="VikSlippyMapSource">
+    <property name="name">Waymarked Trails MTB</property>
+    <property name="label">Waymarked Trails MTB</property>
+    <property name="hostname">tile.waymarkedtrails.org</property>
+    <property name="url">/mtb/%d/%d/%d.png</property>
+    <property name="follow-location">2</property>
+    <property name="id">703</property>
+    <property name="license">CC-by-SA 3.0 / ODBl</property>
+    <property name="license-url">http://creativecommons.org/licenses/by-sa/3.0/de/deed.en</property>
+  </object>
+  <object class="VikSlippyMapSource">
+    <property name="name">Waymarked Trails Inline Skating</property>
+    <property name="label">Waymarked Trails Inline Skating</property>
+    <property name="hostname">tile.waymarkedtrails.org</property>
+    <property name="url">/skating/%d/%d/%d.png</property>
+    <property name="follow-location">2</property>
+    <property name="id">704</property>
+    <property name="license">CC-by-SA 3.0 / ODBl</property>
+    <property name="license-url">http://creativecommons.org/licenses/by-sa/3.0/de/deed.en</property>
+  </object>
+  <object class="VikSlippyMapSource">
+    <property name="name">Waymarked Trails Riding</property>
+    <property name="label">Waymarked Trails Riding</property>
+    <property name="hostname">tile.waymarkedtrails.org</property>
+    <property name="url">/riding/%d/%d/%d.png</property>
+    <property name="follow-location">2</property>
+    <property name="id">705</property>
+    <property name="license">CC-by-SA 3.0 / ODBl</property>
+    <property name="license-url">http://creativecommons.org/licenses/by-sa/3.0/de/deed.en</property>
+  </object>
+  <object class="VikSlippyMapSource">
+    <property name="label">Waymarked Trails Winter Sport Slopes</property>
+    <property name="hostname">tile.waymarkedtrails.org</property>
+    <property name="url">/slopes/%d/%d/%d.png</property>
+    <property name="follow-location">2</property>
+    <property name="id">706</property>
+    <property name="license">CC-by-SA 3.0 / ODBl</property>
+    <property name="license-url">http://creativecommons.org/licenses/by-sa/3.0/de/deed.en</property>
+  </object>
+  <object class="VikSlippyMapSource">
+    <property name="name">4UMaps</property>
+    <property name="label">4UMaps</property>
+    <property name="hostname">tileserver.4umaps.eu</property>
+    <property name="url">/%d/%d/%d.png</property>
+    <property name="copyright">© 4UMaps.eu © OpenStreetMap and contributors</property>
+    <property name="license">CC-BY-SA</property>
+    <property name="license-url">http://www.4umaps.eu/terms-of-use-copyright.aspx</property>
+    <property name="id">801</property>
+  </object>
+<!-- Built in
+  <object class="VikSlippyMapSource">
+    <property name="name">OpenTopoMap</property>
+    <property name="label">OpenTopoMap</property>
+    <property name="hostname">a.tile.opentopomap.org</property>
+    <property name="url">/%d/%d/%d.png</property>
+    <property name="follow-location">2</property>
+    <property name="copyright">Kartendaten: © OpenStreetMap-Mitwirkende, SRTM | Kartendarstellung: © OpenTopoMap</property>
+    <property name="license">CC-BY-SA</property>
+    <property name="license-url">https://creativecommons.org/licenses/by-sa/3.0/</property>
+    <property name="id">901</property>
+  </object>
+-->
+</objects>
