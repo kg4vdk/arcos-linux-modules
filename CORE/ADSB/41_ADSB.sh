@@ -19,9 +19,8 @@ SAVE_DIR=$ARCOS_DATA/QRV/$MYCALL/SAVED/$MODULE
 module_commands () {
 
 sudo unlink /usr/share/skyaware/html/mapnik
-if [ -d ${ARCOS_DATA}/QRV/OFFLINE-MAPS/viking/mapnik ]; then
-	sudo ln -s ${ARCOS_DATA}/QRV/OFFLINE-MAPS/viking/mapnik /usr/share/skyaware/html/mapnik
-fi
+sudo ln -s ${ARCOS_DATA}/QRV/OFFLINE-MAPS/viking/mapnik /usr/share/skyaware/html/mapnik
+
 } # END OF MODULE COMMANDS FUNCTION
 
 # Execute the module commands, and notify the user upon failure
