@@ -37,6 +37,8 @@ if [ ! -f $HOME/.config/viking_layer_defaults.ini ]; then
 	cp /opt/arcOS/configs/viking/viking_layer_defaults.ini $HOME/.config/viking/
 fi
 
+mkdir -p ${ARCOS_DATA}/QRV/OFFLINE-MAPS/viking/mapnik
+
 } # END OF MODULE COMMANDS FUNCTION
 
 # Execute the module commands, and notify the user upon failure
