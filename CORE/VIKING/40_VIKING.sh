@@ -26,15 +26,15 @@ rm -rf $HOME/.config/viking
 ln -sTf $SAVE_DIR/config $HOME/.config/viking
 
 if [ ! -f $HOME/.config/viking/viking.prefs ]; then
-	cp ${MODULE_DIR}/config/viking.prefs $HOME/.config/viking/
+	cp /opt/arcOS/configs/viking/viking.prefs $HOME/.config/viking/
 fi
 
 if [ ! -f $HOME/.config/maps.xml ]; then
-	cp ${MODULE_DIR}/config/maps.xml $HOME/.config/viking/
+	cp /opt/arcOS/configs/viking/maps.xml $HOME/.config/viking/
 fi
 
 if [ ! -f $HOME/.config/viking_layer_defaults.ini ]; then
-	cp ${MODULE_DIR}/config/viking_layer_defaults.ini $HOME/.config/viking/
+	cp /opt/arcOS/configs/viking/viking_layer_defaults.ini $HOME/.config/viking/
 fi
 
 } # END OF MODULE COMMANDS FUNCTION
