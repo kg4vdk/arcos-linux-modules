@@ -30,7 +30,6 @@ elif [ -f $QRV_PROFILE_DIR/DEFAULT/$MODULE/JS8Call_DEFAULT.ini ]; then
 fi
 
 sed -i "s/MyGrid=.*$/MyGrid=$MYLOC/" $HOME/.config/JS8Call.ini
-sed -i "s/MyInfo=.*$/MyInfo=\"${MYNAME} - ${MYQTH}\"/" $HOME/.config/JS8Call.ini
 
 mkdir -p $SAVE_DIR/JS8Call
 unlink $HOME/.local/share/JS8Call 2> /dev/null
