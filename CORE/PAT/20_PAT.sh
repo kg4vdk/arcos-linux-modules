@@ -19,8 +19,10 @@ QRV_PROFILE_DIR=$ARCOS_DATA/QRV/$MYCALL/SAVED/PROFILES
 ### MODULE COMMANDS FUNCTION ###
 module_commands () {
 
-# Workaround for pat-0.19.1 (watch restarted at end of module)
-pkill -f "inotifywait -m -q -e modify /home/user/.config/pat/config.json"
+# Workaround for pat-0.19.1 overwriting "digirig" for varahf
+sudo systemctl stop pat@$USER.service
+sudo mv /usr/bin/pat /usr/bin/pat-0.19.1
+sudo cp ${MODULE_DIR}/bin/pat /usr/bin/pat
 
 sudo cp $MODULE_DIR/save-pat.sh /opt/arcOS/bin/
 cp $MODULE_DIR/save-pat.desktop $HOME/.local/share/applications/
@@ -47,6 +49,8 @@ else
 fi
 
 if [ -d $SAVE_DIR/Standard_Forms ]; then
+	unlink $HOME/.local/share/pat/Standard_Forms
+	rm -rf $HOME/.local/share/pat/Standard_Forms
 	ln -sTf $SAVE_DIR/Standard_Forms $HOME/.local/share/pat/Standard_Forms
 else
 	mkdir -p $SAVE_DIR/Standard_Forms
@@ -63,13 +67,6 @@ for mailbox in archive in out sent; do
 done
 
 sudo systemctl restart pat@$USER.service
-
-# Workaround for pat-0.19.1 overwriting "digirig" for varahf
-inotifywait -m -q -e modify /home/user/.config/pat/config.json |
-while read -r directory event filename; do
-	jq '.varahf.rig = "digirig"' /home/user/.config/pat/config.json > /tmp/config.json
-	mv /tmp/config.json /home/user/.config/pat/config.json
-done
 
 } # END OF MODULE COMMANDS FUNCTION
 
