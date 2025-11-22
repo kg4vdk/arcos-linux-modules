@@ -19,6 +19,9 @@ QRV_PROFILE_DIR=$ARCOS_DATA/QRV/$MYCALL/SAVED/PROFILES
 ### MODULE COMMANDS FUNCTION ###
 module_commands () {
 
+# Workaround for pat-0.19.1 (watch restarted at end of module)
+pkill -f "inotifywait -m -q -e modify /home/user/.config/pat/config.json"
+
 sudo cp $MODULE_DIR/save-pat.sh /opt/arcOS/bin/
 cp $MODULE_DIR/save-pat.desktop $HOME/.local/share/applications/
 mkdir -p $SAVE_DIR
@@ -60,6 +63,13 @@ for mailbox in archive in out sent; do
 done
 
 sudo systemctl restart pat@$USER.service
+
+# Workaround for pat-0.19.1 overwriting "digirig" for varahf
+inotifywait -m -q -e modify /home/user/.config/pat/config.json |
+while read -r directory event filename; do
+	jq '.varahf.rig = "digirig"' /home/user/.config/pat/config.json > /tmp/config.json
+	mv /tmp/config.json /home/user/.config/pat/config.json
+done
 
 } # END OF MODULE COMMANDS FUNCTION
 
