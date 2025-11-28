@@ -1,9 +1,9 @@
 #!/bin/bash
 
-##########################
-# THUNDERBIRD QRV MODULE #
-##########################
-MODULE="THUNDERBIRD"
+#######################
+# GPREDICT QRV MODULE #
+#######################
+MODULE="GPREDICT"
 
 # STATION INFO
 source $HOME/.station-info
@@ -20,10 +20,10 @@ module_commands () {
 
 mkdir -p $SAVE_DIR
 
-mkdir -p $SAVE_DIR/thunderbird
-unlink $HOME/.thunderbird
-rm -rf $HOME/.thunderbird
-ln -sTf $SAVE_DIR/thunderbird $HOME/.thunderbird
+mkdir -p $SAVE_DIR/Gpredict
+unlink $HOME/.config/Gpredict
+rm -rf $HOME/.config/Gpredict
+ln -sTf $SAVE_DIR/Gpredict $HOME/.config/Gpredict
 
 } # END OF MODULE COMMANDS FUNCTION
 
