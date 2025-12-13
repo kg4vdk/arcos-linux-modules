@@ -43,7 +43,7 @@ sed -i "s/\"locator\": .*,$/\"locator\": \"$MYLOC\",/" $HOME/.config/pat/config.
 if [ -f $SAVE_DIR/rmslist.json ]; then
 	ln -sf $SAVE_DIR/rmslist.json $HOME/.local/share/pat/rmslist.json
 else
-	touch $SAVE_DIR/rmslist.json
+	cp /opt/arcOS/configs/pat/rmslist.json $SAVE_DIR/rmslist.json
 	rm $HOME/.local/share/pat/rmslist.json
 	ln -sf $SAVE_DIR/rmslist.json $HOME/.local/share/pat/rmslist.json
 fi
@@ -53,7 +53,7 @@ if [ -d $SAVE_DIR/Standard_Forms ]; then
 	rm -rf $HOME/.local/share/pat/Standard_Forms
 	ln -sTf $SAVE_DIR/Standard_Forms $HOME/.local/share/pat/Standard_Forms
 else
-	mkdir -p $SAVE_DIR/Standard_Forms
+	cp -r /opt/arcOS/configs/pat/Standard_Forms $SAVE_DIR/
 	unlink $HOME/.local/share/pat/Standard_Forms
 	rm -rf $HOME/.local/share/pat/Standard_Forms
 	ln -sTf $SAVE_DIR/Standard_Forms $HOME/.local/share/pat/Standard_Forms
