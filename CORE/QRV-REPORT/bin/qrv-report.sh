@@ -116,7 +116,7 @@ echo "### USER COMMENTS ###" | tee --append /tmp/${OPERATOR}_QRV_${TIMESTAMP}.tx
 echo "[OPTIONAL]" | tee --append /tmp/${OPERATOR}_QRV_${TIMESTAMP}.txt
 echo
 mv /tmp/${OPERATOR}_QRV_${TIMESTAMP}.txt /arcHIVE/${OPERATOR}_QRV_${TIMESTAMP}.txt
-notify-send --urgency=critical --icon=text-x-generic-symbolic "QRV Report generated for ${OPERATOR}!" "File: /arcHIVE/${OPERATOR}_QRV_${TIMESTAMP}.txt\n\nShare your results and your experience with the community by submitting your report (copy/paste) on GitHub:\n\nhttps://github.com/kg4vdk/arcos-linux-modules/discussions/new?category=qrv-reports&title=QRV%20Report%20for%20${OPERATOR}\n\nClick to dismiss this message."
+notify-send --urgency=critical --icon=text-x-generic-symbolic "QRV Report generated for ${OPERATOR}!" "File: /arcHIVE/${OPERATOR}_QRV_${TIMESTAMP}.txt\n\nClick to dismiss this message."
 if pidof ffplay > /dev/null 2>&1; then
 	echo "Let it play, or..."
 	read -p "Press the [ANY KEY] to exit!"
