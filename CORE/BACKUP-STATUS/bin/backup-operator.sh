@@ -41,7 +41,6 @@ BACKUP_DIR="$(yad --file \
 --text="*** If possible, select a backup location other than the arcOS USB drive. ***"
 )"
 BACKUP_FILE="${BACKUP_DIR}"/"${OPERATOR}"_"${TIMESTAMP}".backup
-USER_MODULES_BACKUP_FILE="${BACKUP_DIR}"/"${OPERATOR}"_USER_"${TIMESTAMP}".tar
 }
 
 backup_progress () {
@@ -93,7 +92,6 @@ fi
 ISO_VER=$(grep "^PRETTY_NAME" /etc/os-release | awk -F " " '{print $1}' | awk -F '\"' '{print $2}')
 MODULES_VER=$(head -n 1 /tmp/modules.log)
 cd ${ARCOS_DATA}/QRV/${OPERATOR}/arcos-linux-modules
-#git config --global --add safe.directory ${ARCOS_DATA}/QRV/${OPERATOR}/arcos-linux-modules
 BRANCH=$(git branch --show-current)
 MODULES_VER_FULL=$(tail -n 1 ${ARCOS_DATA}/QRV/${OPERATOR}/arcos-linux-modules/.git/refs/heads/$BRANCH)
 MODULES_DATE=$(git show --no-patch --format=%ci "${MODULES_VER_FULL}")
@@ -112,12 +110,6 @@ tar -rf "${BACKUP_FILE}" \
 | while read -r line; do echo "# ${line}"; done
 
 rm /tmp/backup_info
-
-if [ ! -z "$(ls -A ${ARCOS_DATA}/QRV/${OPERATOR}/arcos-linux-modules/USER)" ]; then
-tar -cvf "${USER_MODULES_BACKUP_FILE}" \
--C /arcHIVE/QRV/${OPERATOR}/arcos-linux-modules USER \
-| while read -r line; do echo "# ${line}"; done \
-fi
 }
 
 backup_location
@@ -126,11 +118,7 @@ if [[ "${BACKUP_DIR}" != "" ]]; then
 	notify-send --icon=document-new-symbolic "Backup Started!" "Files included:\n   + /arcHIVE/.station-info\n   + /arcHIVE/.operators/${OPERATOR}_station-info\n   + /arcHIVE/QRV/${OPERATOR}/*\n   + /arcHIVE/QRV/LOGS\n   + /arcHIVE/QRV/.packages (if it exists)\n\n***Offline maps are NOT included! ***\n   - /arcHIVE/QRV/OFFLINE-MAPS"
 	if backup_operator | backup_progress; then
 		mv /tmp/.last-backup ${ARCOS_DATA}/QRV/${OPERATOR}/.last-backup
-		if [ -f "${USER_MODULES_BACKUP_FILE}" ]; then
-			notify-send --icon=document-new-symbolic "Backup Complete!" "File: $(basename "${BACKUP_FILE}")\nSize: $(du -sh "${BACKUP_FILE}" | awk -F " " '{print $1}')\n\nFile: $(basename "${USER_MODULES_BACKUP_FILE}")\nSize: $(du -sh "${USER_MODULES_BACKUP_FILE}" | awk -F " " '{print $1}')"
-		else
-			notify-send --icon=document-new-symbolic "Backup Complete!" "File: $(basename "${BACKUP_FILE}")\nSize: $(du -sh "${BACKUP_FILE}" | awk -F " " '{print $1}')"
-		fi
+		notify-send --icon=document-new-symbolic "Backup Complete!" "File: $(basename "${BACKUP_FILE}")\nSize: $(du -sh "${BACKUP_FILE}" | awk -F " " '{print $1}')"
 	else
 		notify-send --icon=error "Backup Failed!"
 		echo "FAILED..." > ${ARCOS_DATA}/QRV/${OPERATOR}/.last-backup
