@@ -8,7 +8,7 @@ assignees: ''
 ---
 
 **Bug description:**
-A clear and concise description of the bug you encountered.
+A clear and concise description of what is broken or not working as expected.
 
 **To reproduce:**
 Steps to reproduce the behavior:
