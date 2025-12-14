@@ -7,17 +7,22 @@ assignees: ''
 
 ---
 
-**Summary of feature request:**
-A clear and concise description of what the problem is. Ex. I'm always frustrated when [...]
+**Problem statement:**
+Describe the operational problem or friction you are encountering. Focus on what is difficult or inefficient, not on a specific solution.
 
 **Desired outcome:**
-A clear and concise description of what you want to happen as a result of this feature.
+Describe what would be improved or made easier if this problem were addressed.
 
 **Alternatives considered:**
-A clear and concise description of any alternative solutions or features you've considered.
+Describe any alternative tools, workflows, USER modules, or configurations you have tried or considered, and why they were insufficient.
 
-**Proof of work**
-Add details of any testing you have performed.
+**Proof of work:**
+Provide evidence of experimentation or investigation. Examples might include:
+- A link to a USER module, script, or configuration
+- Description of testing performed
+- Observed benefits and drawbacks
 
-**Additional context**
-Add any other context or screenshots about the feature request here.
+> Requests without demonstrated experimentation or investigation are unlikely to be accepted.
+
+**Additional context:**
+Add any other relevant context or screenshots here.
