@@ -38,6 +38,8 @@ fi
 
 sudo mount $SAVE_DIR/keyring-fs $HOME/.local/share/keyrings
 
+systemctl --user restart gnome-keyring-daemon.service
+
 } # END OF MODULE COMMANDS FUNCTION
 
 # Execute the module commands, and notify the user upon failure
