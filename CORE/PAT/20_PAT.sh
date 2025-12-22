@@ -19,11 +19,6 @@ QRV_PROFILE_DIR=$ARCOS_DATA/QRV/$MYCALL/SAVED/PROFILES
 ### MODULE COMMANDS FUNCTION ###
 module_commands () {
 
-# Workaround for pat-0.19.1 overwriting "digirig" for varahf
-sudo systemctl stop pat@$USER.service
-sudo mv /usr/bin/pat /usr/bin/pat-0.19.1
-sudo cp ${MODULE_DIR}/bin/pat /usr/bin/pat
-
 sudo cp $MODULE_DIR/save-pat.sh /opt/arcOS/bin/
 cp $MODULE_DIR/save-pat.desktop $HOME/.local/share/applications/
 mkdir -p $SAVE_DIR
