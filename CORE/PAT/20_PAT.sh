@@ -66,4 +66,4 @@ sudo systemctl restart pat@$USER.service
 } # END OF MODULE COMMANDS FUNCTION
 
 # Execute the module commands, and notify the user upon failure
-module_commands > $LOGFILE 2>&1 || notify-send --icon=error "$MODULE" "$MODULE module failed!"
+module_commands > $LOGFILE 2>&1 || echo "$MODULE" >> /tmp/.failed-modules.log
