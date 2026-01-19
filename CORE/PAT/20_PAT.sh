@@ -54,12 +54,10 @@ else
 	ln -sTf $SAVE_DIR/Standard_Forms $HOME/.local/share/pat/Standard_Forms
 fi
 
-for mailbox in archive in out sent; do
-	mkdir -p $SAVE_DIR/$mailbox
-   	unlink $HOME/.local/share/pat/mailbox/$MYCALL/$mailbox 2> /dev/null
-   	rm -rf $HOME/.local/share/pat/mailbox/$MYCALL/$mailbox    	
-	ln -sTf $SAVE_DIR/$mailbox $HOME/.local/share/pat/mailbox/$MYCALL/$mailbox
-done
+mkdir -p $SAVE_DIR/mailbox
+unlink $HOME/.local/share/pat/mailbox 2> /dev/null
+rm -rf $HOME/.local/share/pat/mailbox
+ln -sTf $SAVE_DIR/mailbox $HOME/.local/share/pat/mailbox
 
 sudo systemctl restart pat@$USER.service
 
