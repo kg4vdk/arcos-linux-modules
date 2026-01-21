@@ -11,7 +11,7 @@ source $HOME/.station-info
 # PATHS
 ARCOS_DATA=/arcHIVE
 MODULE_DIR=$ARCOS_DATA/QRV/$MYCALL/arcos-linux-modules/CORE/$MODULE
-LOGFILE=$MODULE_DIR/$MODULE.log
+LOGFILE=$MODULE_DIR/$MODULE.pre.log
 ########################
 
 ### MODULE COMMANDS FUNCTION ###
@@ -19,7 +19,7 @@ module_commands () {
 
 ###########################################################################
 
-
+echo "No patches"
 
 ######################
 

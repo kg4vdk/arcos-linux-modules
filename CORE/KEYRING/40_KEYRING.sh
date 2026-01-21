@@ -32,7 +32,10 @@ if [ ! -f $SAVE_DIR/keyring-fs ]; then
 	mkfs.ext4 $SAVE_DIR/keyring-fs
 	sudo mount $SAVE_DIR/keyring-fs $HOME/.local/share/keyrings
 	sudo chown user:user $HOME/.local/share/keyrings
-	sudo chmod 700 $HOME/.local/share/keyrings
+	chmod 700 $HOME/.local/share/keyrings
+	cp ${MODULE_DIR}/keyrings/{Login.keyring,default} $HOME/.local/share/keyrings/
+	chmod 600 $HOME/.local/share/keyrings/Login.keyring
+	chmod 644 $HOME/.local/share/keyrings/default
 	sudo umount $HOME/.local/share/keyrings
 fi
 
