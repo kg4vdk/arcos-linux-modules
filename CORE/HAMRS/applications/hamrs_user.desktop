@@ -6,3 +6,4 @@ Exec=
 Icon=hamrs
 Terminal=false
 Type=Application
+StartupWMClass=hamrs-pro

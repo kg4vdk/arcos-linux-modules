@@ -6,3 +6,4 @@ Exec=/arcHIVE/QRV/LOGS/hamrs.AppImage
 Icon=hamrs
 Terminal=false
 Type=Application
+StartupWMClass=hamrs-pro
