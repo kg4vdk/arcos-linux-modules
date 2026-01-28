@@ -1,7 +1,5 @@
 # [Get arcOS Now!](https://arcos-linux.com/)
 
-ISO hosted on [SourceForge](https://sourceforge.net/projects/arcos-linux/files)
-
 ---
 
 ### Issues and ideas can be discussed [here](https://github.com/kg4vdk/arcos-linux-modules/discussions)
