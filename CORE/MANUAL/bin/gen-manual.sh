@@ -13,6 +13,7 @@ cat <<EOF > ../arcOS-Field-Manual.html
 <style>
 body {
 	font-family: monospace;
+	font-size: 1.5em;
 }
 h1,h2 {
 	padding: 5px 10px;
@@ -29,6 +30,12 @@ h3 {
 blockquote {
 	padding: 5px 10px;
 	background-color: #e0e0e0;
+}
+
+@media print {
+	body {
+		font-size: 1em !important;
+	}
 }
 </style>
 </head>

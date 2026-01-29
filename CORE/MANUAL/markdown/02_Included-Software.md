@@ -8,14 +8,16 @@
 - Hamlib 4.5.5 (Rig Control)
 - JS8Call 2.2.0 (JS8 Client)
 - Paracon 1.2.0 (Packet Client)
-- Pat 0.19.1 (Winlink Client)
+- Pat 0.19.2 (Winlink Client)
 - QSSTV 9.5.8 (Slow Scan Television Client)
 - WSJT-X 2.7.0 (FT8 Client)
 - VARA FM 4.3.9 (Soundcard Modems for Windows)
 - VARA HF 4.8.9 (Soundcard Modems for Windows)
 - YAAC 1.0-beta216 (APRS Client)
 
-> **Developer Note:** While arcOS does include FLRig and rigctl[d], and users may save customized settings in applications to take advantage of this, **NO DEVELOPER SUPPORT FOR CAT/RIG CONTROL WILL BE PROVIDED**.
+> **Developer Note:**
+>
+> While arcOS does include FLRig and rigctl[d], and users may save customized settings in applications to take advantage of this, **NO DEVELOPER SUPPORT FOR CAT/RIG CONTROL WILL BE PROVIDED**.
 >
 > **This is for the following reasons:**
 >
@@ -28,13 +30,12 @@
 > **IF YOU ARE ADAMANT THAT YOU *NEED* CAT/RIG CONTROL: You should have no problem configuring it yourself within arcOS, then saving that configuration as a "QRV Profile".**
 
 ### <span id="section2-2">2.2 - Other Software</span>
-- Kleopatra (Certificate Manager and Unified Crypto GUI)
+- Kleopatra (Certificate Manager and Unified Cryptography GUI)
 - Localsend (Cross-platform File Sharing)
 - GIMP (Image Editor)
 - Audacity (Audio Editor)
-- GNU Radio (Software Radio Toolkit)
-- GQRX (Software defined radio receiver)
 - Hexchat (IRC Client)
+- RTL-SDR (Software defined radio receiver for Realtek RTL2832U)
 - Shotcut (Video Editor)
 - SkyAware (ADS-B Visualizer)
 - Veracrypt (Disk encryption with strong security based on TrueCrypt)
