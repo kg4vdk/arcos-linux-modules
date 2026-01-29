@@ -3,7 +3,8 @@
 1) Move the CUSTOM-ICONS directory into the USER Module directory.
 
 2) Create your own custom icons using the included custom-icons.sh script.
-	- Open a terminal in the CUSTOM-ICONS directory and run `./custom-icons.sh XXXXXX YYY [invert]`
+	- Open a terminal in the CUSTOM-ICONS directory and run `./generate-custom-icons.sh XXXXXX YYY [invert]`
+	    - Icons will be generated in `/arcHIVE/QRV/$CALLSIGN/SAVED/CUSTOM-ICONS`
 		- Replace "XXXXXX" with the desired hex color (no "#")
 		- Replace "YYY" with the desired tint level (0-200)
 		- Optionally, include "invert" to change to light text

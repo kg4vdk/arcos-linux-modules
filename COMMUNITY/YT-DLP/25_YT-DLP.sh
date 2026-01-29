@@ -18,12 +18,14 @@ SAVE_DIR=$ARCOS_DATA/QRV/$MYCALL/SAVED/$MODULE
 ### MODULE COMMANDS FUNCTION ###
 module_commands () {
 
+mkdir -p ${SAVE_DIR}
+
 if [ -f /usr/bin/yt-dlp ]; then
 	sudo rm /usr/bin/yt-dlp
 fi
 
-if [ -f ${MODULE_DIR}/bin/yt-dlp ]; then
-	sudo ln -sf ${MODULE_DIR}/bin/yt-dlp /usr/bin/yt-dlp
+if [ -f ${SAVE_DIR}/bin/yt-dlp ]; then
+	sudo ln -sf ${SAVE_DIR}/bin/yt-dlp /usr/bin/yt-dlp
 fi
 
 } # END OF MODULE COMMANDS FUNCTION

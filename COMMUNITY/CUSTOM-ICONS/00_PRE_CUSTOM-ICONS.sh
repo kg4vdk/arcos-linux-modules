@@ -3,7 +3,7 @@
 ###########################
 # CUSTOM-ICONS QRV MODULE #
 ###########################
-MODULE="CUSTOM-ICONS"
+MODULE="BAND-CONDITIONS-CONKY"
 
 # STATION INFO
 source $HOME/.station-info
@@ -18,7 +18,13 @@ SAVE_DIR=$ARCOS_DATA/QRV/$MYCALL/SAVED/$MODULE
 ### MODULE COMMANDS FUNCTION ###
 module_commands () {
 
-cp -a ${MODULE_DIR}/custom-icons/* $HOME/.local/share/icons/
+mkdir -p ${SAVE_DIR}
+
+if [ ! -d ${SAVE_DIR}/custom-icons ]; then
+    cp -r ${MODULE_DIR}/custom-icons ${SAVE_DIR}/
+fi
+
+cp -a ${SAVE_DIR}/custom-icons/* $HOME/.local/share/icons/
 
 } # END OF MODULE COMMANDS FUNCTION
 

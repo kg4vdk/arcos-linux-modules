@@ -5,6 +5,11 @@
 2) Move the included 25_YT-DLP.sh script into the USER Module directory.
 	- Up one level from the YT-DLP directory
 
+3) This module requires the user to download the `yt-dlp` application from GitHub
+	- The binary can be downloaded from: https://github.com/yt-dlp/yt-dlp/releases/latest/download/yt-dlp
+	- Place the downloaded `yt-dlp` binary inside the /arcHIVE/QRV/$CALLSIGN/SAVED/YT-DLP/bin directory
+	- Keep the binary up to date by running `yt-dlp -U`
+
 Notes:
 - The module will be active on the next reboot or re-run of Station Setup. You may re-number it if necessary for your ordering preferences.
 

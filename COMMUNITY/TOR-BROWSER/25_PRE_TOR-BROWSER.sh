@@ -20,9 +20,11 @@ module_commands () {
 
 pkill -f firefox.real > /dev/null 2>&1
 
-if [ -f ${MODULE_DIR}/tor-browser/start-tor-browser.desktop ]; then
-	cd ${MODULE_DIR}/tor-browser
-	${MODULE_DIR}/tor-browser/start-tor-browser.desktop --register-app
+mkdir -p ${SAVE_DIR}
+
+if [ -f ${SAVE_DIR}/tor-browser/start-tor-browser.desktop ]; then
+	cd ${SAVE_DIR}/tor-browser
+	${SAVE_DIR}/tor-browser/start-tor-browser.desktop --register-app
 fi
 
 } # END OF MODULE COMMANDS FUNCTION
