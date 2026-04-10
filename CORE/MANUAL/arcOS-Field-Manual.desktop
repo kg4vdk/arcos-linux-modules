@@ -1,0 +1,8 @@
+[Desktop Entry]
+Name=arcOS Field Manual
+GenericName=arcOS Field Manual
+Comment=Helpful information for users
+Exec=firefox-esr "file:///opt/arcOS/arcOS-Field-Manual.html"
+Icon=gnome-books
+Terminal=false
+Type=Application
