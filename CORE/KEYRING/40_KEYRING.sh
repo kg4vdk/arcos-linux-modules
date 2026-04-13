@@ -28,7 +28,7 @@ rm -rf $HOME/.local/share/keyrings
 mkdir -p $HOME/.local/share/keyrings
 
 if [ ! -f $SAVE_DIR/keyring-fs ]; then
-	dd if=/dev/zero of=$SAVE_DIR/keyring-fs bs=1M count=128
+	dd if=/dev/zero of=$SAVE_DIR/keyring-fs bs=1M count=16
 	mkfs.ext4 $SAVE_DIR/keyring-fs
 	sudo mount $SAVE_DIR/keyring-fs $HOME/.local/share/keyrings
 	sudo chown user:user $HOME/.local/share/keyrings
