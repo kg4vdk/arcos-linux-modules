@@ -27,16 +27,30 @@ fi
 rm -rf $HOME/.gnupg
 mkdir -p $HOME/.gnupg
 
-if [ ! -f $SAVE_DIR/gnupg-fs ]; then
-	dd if=/dev/zero of=$SAVE_DIR/gnupg-fs bs=1M count=16
-	mkfs.ext4 $SAVE_DIR/gnupg-fs
-	sudo mount $SAVE_DIR/gnupg-fs $HOME/.gnupg
-	sudo chown user:user $HOME/.gnupg
-	sudo chmod 700 $HOME/.gnupg
-	sudo umount $HOME/.gnupg
+# Identify and define the boot device and persistent partition
+BOOT_DEV="$(df -h | grep cdrom | awk -F " " '{print $1}')"
+if [[ $BOOT_DEV == *"nvme"* ]]; then
+	DISK=${BOOT_DEV%??}
+	EXFAT_PARTITION="p3"
+elif [[ $BOOT_DEV == *"mmcblk"* ]]; then
+    DISK=${BOOT_DEV%??}
+	EXFAT_PARTITION="p3"
+else
+	DISK=${BOOT_DEV%?}
+	EXFAT_PARTITION="3"
 fi
 
-sudo mount $SAVE_DIR/gnupg-fs $HOME/.gnupg
+if [ ! -f $SAVE_DIR/gnupg-fs ]; then
+	if [ "${BOOT_DEV}" != "/dev/shm" ] && [ "${BOOT_DEV}" != "/dev/sr0" ] && [ "${BOOT_DEV}" != "/dev/mapper/ventoy" ]; then
+		dd if=/dev/zero of=$SAVE_DIR/gnupg-fs bs=1M count=16
+		mkfs.ext4 $SAVE_DIR/gnupg-fs
+		sudo mount $SAVE_DIR/gnupg-fs $HOME/.gnupg
+		sudo chown user:user $HOME/.gnupg
+		sudo chmod 700 $HOME/.gnupg
+	fi
+else
+	sudo mount $SAVE_DIR/gnupg-fs $HOME/.gnupg
+fi
 
 gpgconf --kill gpg-agent
 

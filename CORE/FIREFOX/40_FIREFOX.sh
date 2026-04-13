@@ -47,13 +47,10 @@ if [ ! -f $SAVE_DIR/mozilla-fs ]; then
 		sudo mount $SAVE_DIR/mozilla-fs $HOME/.mozilla
 		sudo chown user:user $HOME/.mozilla
 		sudo chmod 700 $HOME/.mozilla
-		sudo umount $HOME/.mozilla
 	fi
 else
 	sudo mount $SAVE_DIR/mozilla-fs $HOME/.mozilla
 fi
-
-
 
 } # END OF MODULE COMMANDS FUNCTION
 

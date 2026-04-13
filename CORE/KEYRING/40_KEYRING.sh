@@ -27,19 +27,33 @@ fi
 rm -rf $HOME/.local/share/keyrings
 mkdir -p $HOME/.local/share/keyrings
 
+# Identify and define the boot device and persistent partition
+BOOT_DEV="$(df -h | grep cdrom | awk -F " " '{print $1}')"
+if [[ $BOOT_DEV == *"nvme"* ]]; then
+	DISK=${BOOT_DEV%??}
+	EXFAT_PARTITION="p3"
+elif [[ $BOOT_DEV == *"mmcblk"* ]]; then
+    DISK=${BOOT_DEV%??}
+	EXFAT_PARTITION="p3"
+else
+	DISK=${BOOT_DEV%?}
+	EXFAT_PARTITION="3"
+fi
+
 if [ ! -f $SAVE_DIR/keyring-fs ]; then
-	dd if=/dev/zero of=$SAVE_DIR/keyring-fs bs=1M count=16
-	mkfs.ext4 $SAVE_DIR/keyring-fs
-	sudo mount $SAVE_DIR/keyring-fs $HOME/.local/share/keyrings
-	sudo chown user:user $HOME/.local/share/keyrings
-	chmod 700 $HOME/.local/share/keyrings
+	if [ "${BOOT_DEV}" != "/dev/shm" ] && [ "${BOOT_DEV}" != "/dev/sr0" ] && [ "${BOOT_DEV}" != "/dev/mapper/ventoy" ]; then
+		dd if=/dev/zero of=$SAVE_DIR/keyring-fs bs=1M count=16
+		mkfs.ext4 $SAVE_DIR/keyring-fs
+		sudo mount $SAVE_DIR/keyring-fs $HOME/.local/share/keyrings
+		sudo chown user:user $HOME/.local/share/keyrings
+		chmod 700 $HOME/.local/share/keyrings
+	fi
 	cp ${MODULE_DIR}/keyrings/{login.keyring,default} $HOME/.local/share/keyrings/
 	chmod 600 $HOME/.local/share/keyrings/login.keyring
 	chmod 644 $HOME/.local/share/keyrings/default
-	sudo umount $HOME/.local/share/keyrings
+else
+	sudo mount $SAVE_DIR/keyring-fs $HOME/.local/share/keyrings
 fi
-
-sudo mount $SAVE_DIR/keyring-fs $HOME/.local/share/keyrings
 
 systemctl --user restart gnome-keyring-daemon.service
 
