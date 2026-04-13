@@ -27,16 +27,33 @@ fi
 rm -rf $HOME/.mozilla
 mkdir -p $HOME/.mozilla
 
-if [ ! -f $SAVE_DIR/mozilla-fs ]; then
-	dd if=/dev/zero of=$SAVE_DIR/mozilla-fs bs=1M count=512
-	mkfs.ext4 $SAVE_DIR/mozilla-fs
-	sudo mount $SAVE_DIR/mozilla-fs $HOME/.mozilla
-	sudo chown user:user $HOME/.mozilla
-	sudo chmod 700 $HOME/.mozilla
-	sudo umount $HOME/.mozilla
+# Identify and define the boot device and persistent partition
+BOOT_DEV="$(df -h | grep cdrom | awk -F " " '{print $1}')"
+if [[ $BOOT_DEV == *"nvme"* ]]; then
+	DISK=${BOOT_DEV%??}
+	EXFAT_PARTITION="p3"
+elif [[ $BOOT_DEV == *"mmcblk"* ]]; then
+    DISK=${BOOT_DEV%??}
+	EXFAT_PARTITION="p3"
+else
+	DISK=${BOOT_DEV%?}
+	EXFAT_PARTITION="3"
 fi
 
-sudo mount $SAVE_DIR/mozilla-fs $HOME/.mozilla
+if [ ! -f $SAVE_DIR/mozilla-fs ]; then
+	if [ "${BOOT_DEV}" != "/dev/shm" ] && [ "${BOOT_DEV}" != "/dev/sr0" ] && [ "${BOOT_DEV}" != "/dev/mapper/ventoy" ]; then
+		dd if=/dev/zero of=$SAVE_DIR/mozilla-fs bs=1M count=512
+		mkfs.ext4 $SAVE_DIR/mozilla-fs
+		sudo mount $SAVE_DIR/mozilla-fs $HOME/.mozilla
+		sudo chown user:user $HOME/.mozilla
+		sudo chmod 700 $HOME/.mozilla
+		sudo umount $HOME/.mozilla
+	fi
+else
+	sudo mount $SAVE_DIR/mozilla-fs $HOME/.mozilla
+fi
+
+
 
 } # END OF MODULE COMMANDS FUNCTION
 
