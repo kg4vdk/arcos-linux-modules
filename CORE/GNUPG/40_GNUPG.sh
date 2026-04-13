@@ -28,7 +28,7 @@ rm -rf $HOME/.gnupg
 mkdir -p $HOME/.gnupg
 
 if [ ! -f $SAVE_DIR/gnupg-fs ]; then
-	dd if=/dev/zero of=$SAVE_DIR/gnupg-fs bs=1M count=128
+	dd if=/dev/zero of=$SAVE_DIR/gnupg-fs bs=1M count=16
 	mkfs.ext4 $SAVE_DIR/gnupg-fs
 	sudo mount $SAVE_DIR/gnupg-fs $HOME/.gnupg
 	sudo chown user:user $HOME/.gnupg

@@ -28,7 +28,7 @@ rm -rf $HOME/.ssh
 mkdir -p $HOME/.ssh
 
 if [ ! -f $SAVE_DIR/ssh-fs ]; then
-	dd if=/dev/zero of=$SAVE_DIR/ssh-fs bs=1M count=128
+	dd if=/dev/zero of=$SAVE_DIR/ssh-fs bs=1M count=16
 	mkfs.ext4 $SAVE_DIR/ssh-fs
 	sudo mount $SAVE_DIR/ssh-fs $HOME/.ssh
 	sudo chown user:user $HOME/.ssh
