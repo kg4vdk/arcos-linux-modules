@@ -13,7 +13,8 @@ SAVE_DIR=$ARCOS_DATA/QRV/$MYCALL/SAVED/$MODULE
 mkdir -p $SAVE_DIR
 
 wifi_save () {
-sudo cp /run/NetworkManager/system-connections/netplan*.nmconnection $SAVE_DIR/
+WIFI_CONNS="$(sudo grep -l "type=wifi" /run/NetworkManager/system-connections/netplan*.nmconnection)"
+sudo cp $WIFI_CONNS $SAVE_DIR/
 }
 
 if wifi_save; then

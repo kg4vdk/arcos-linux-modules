@@ -22,13 +22,15 @@ sudo cp $MODULE_DIR/save-wifi.sh /opt/arcOS/bin/
 cp $MODULE_DIR/save-wifi.desktop $HOME/.local/share/applications/
 mkdir -p $SAVE_DIR
 
-WIFI_DEVICE=$(iwconfig 2> /dev/null | grep wl | awk -F " " '{print $1}')
+WIFI_DEVICE=$(iwconfig 2> /dev/null | grep ^wl | awk -F " " '{print $1}')
 if ls $SAVE_DIR/*.nmconnection &>/dev/null; then
     for nmconnection in $SAVE_DIR/*.nmconnection; do
-        sed -i "s/^interface-name=.*$/interface-name=$WIFI_DEVICE/" "$nmconnection"
-        sudo cp "$nmconnection" /etc/NetworkManager/system-connections/
-        sudo chmod 600 /etc/NetworkManager/system-connections/*.nmconnection
+    	if grep "type=wifi" $nmconnection &>/dev/null; then
+	        sed -i "s/^interface-name=.*$/interface-name=$WIFI_DEVICE/" "$nmconnection"
+    	fi
+		sudo cp "$nmconnection" /etc/NetworkManager/system-connections/
     done
+    sudo chmod 600 /etc/NetworkManager/system-connections/*.nmconnection
     sudo systemctl daemon-reload
     sudo systemctl restart NetworkManager.service
 fi
@@ -37,4 +39,3 @@ fi
 
 # Execute the module commands, and notify the user upon failure
 module_commands > $LOGFILE 2>&1 || echo "$MODULE" >> /tmp/.failed-modules.log
-
